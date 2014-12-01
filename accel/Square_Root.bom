@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<BillOfMaterials Version="1" Minor="2">
+	<IPInstance name="Square_Root">
+		<FileSets>
+		</FileSets>
+	</IPInstance>
+</BillOfMaterials>
+
