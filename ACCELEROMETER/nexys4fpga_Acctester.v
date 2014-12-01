@@ -1,5 +1,35 @@
-// nexys4fpga.v - Top level module for Nexys4 as used in the ECE 540 Project FINAL
-
+// nexys4fpga.v - Top level module for Nexys4 as used in the ECE 540 Project 1
+//
+// Copyright Roy Kravitz, 2008-2013, 2014, 2015
+// 
+// Created By:		Roy Kravitz and Dave Glover
+// Last Modified:	27-Mar-2014 (RK)
+//
+// Revision History:
+// -----------------
+// Nov-2008		RK		Created this module for the S3E Starter Board
+// Apr-2012		DG		Modified for Nexys 3 board
+// Dec-2014		RJ		Cleaned up formatting.  No functional changes
+// Mar-2014		CZ		Modified for Nexys 4 board and added functionality for CPU RESET button
+// Aug-2014		RK		Modified for Vivado.  No functional changes
+//
+// Description:
+// ------------
+// Top level module for the ECE 540 Project 1 reference design
+// on the Nexys4 FPGA Board (Xilinx XC7A100T-CSG324)
+// Can be used with some modifications for Projec1 1
+//
+// Use the pushbuttons to control the Rojobot wheels:
+//	btnl			Left wheel forward
+//	btnu			Left wheel reverse
+//	btnr			Right wheel forward
+//	btnd			Right wheel reverse
+//  btnc			Not used in this design
+//	btnCpuReset		CPU RESET Button - System reset.  Asserted low by Nexys 4 board
+//
+//	sw[15:0]		Not used in this design
+//
+// External port names match pin names in the nexys4fpga.xdc constraints file
 ///////////////////////////////////////////////////////////////////////////
 
 module Nexys4fpga (
@@ -41,10 +71,7 @@ module Nexys4fpga (
 /******************************************************************/
 /* CHANGE THIS SECTION FOR YOUR LAB 1                             */
 /******************************************************************/		
-		
-
-wire	[3:0]		y_out, x_out;
-	
+	wire	[7:0]		left_pos, right_pos;
 	wire 	[63:0]		digits_out;				// ASCII digits (Only for Simulation)
 
 	// set up the display and LEDs
@@ -52,12 +79,12 @@ wire	[3:0]		y_out, x_out;
 	assign	dig6 = {5'b11111};
 	assign	dig5 = {5'b11111};
 	assign	dig4 = {5'b11111};
-	//so these are assigning tuples to the dig's, it is initiating them at 0?? 
-	assign	dig2 = {5'b11111};
-	assign	dig3 = {5'b11111};
-	assign	dig0 = {1'b0, y_out};
-	assign	dig1 = {1'b0, x_out};	//direction indicator 
-	assign	decpts = 8'b00000000;			// all decimal points off. 
+	
+	assign	dig3 = {1'b0,left_pos[7:4]};
+	assign	dig2 = {1'b0,left_pos[3:0]};
+	assign 	dig1 = {1'b0,right_pos[7:4]};
+	assign	dig0 = {1'b0,right_pos[3:0]};
+	assign	decpts = 8'b00000100;			// d2 is on
 	assign	led = db_sw;					// leds show the debounced switches
 
 /******************************************************************/
@@ -72,18 +99,18 @@ wire	[3:0]		y_out, x_out;
 	
 	assign	JA = {sysclk, sysreset, 6'b000000};
 	
-	//instantiate the debounce module
-	debounce
+	//instantiate the accelerometer module, should just be able to list all the input/outputs? Using debounce instantiation from project1 demo.
+	AccelerometerCtl-LAB
 	#(
 		.RESET_POLARITY_LOW(1),
 		.SIMULATE(SIMULATE)
-	)  	DB
+	)  	ACC
 	(
-		.clk(sysclk),	
-		.pbtn_in({btnC,btnL,btnU,btnR,btnD,btnCpuReset}),
-		.switch_in(sw),
-		.pbtn_db(db_btns),
-		.swtch_db(db_sw)
+		.clk(sysclk),	//keep
+		.pbtn_in({btnC,btnL,btnU,btnR,btnD,btnCpuReset}),//change to  ACCEL_X, ACCEL_Y, ACCEL_Z, ACCEL_TMP_OUT, Data_Ready
+		.switch_in(sw),//delete >>>>>>>>>>>>>>>>>>>>>>>>>>Is it necessary to instantiate the SPI interface and stuff here? Is that 
+		.pbtn_db(db_btns),//delete >>>>>>>>>>>>>>>>>>>>>>>a separate module? DOes AcceleromterCtl call it?
+		.swtch_db(db_sw)//delete
 	);	
 		
 	// instantiate the 7-segment, 8-digit display
@@ -116,24 +143,5 @@ wire	[3:0]		y_out, x_out;
 		.digits_out(digits_out)
 	);
 
-/******************************************************************/
-/* CHANGE THIS DEFINITION FOR YOUR LAB 1                          */
-/******************************************************************/							
-	// instantiate ball module						
-    Ball
-	#(
-		.RESET_POLARITY_LOW(1),
-		.SIMULATE(SIMULATE)
-	) BLL
-	(
-		.clk(sysclk),
-		.reset(sysreset),
-		.x_increment(db_btns[3]),
-		.x_decrement(db_btns[4]), 
-		.y_increment(db_btns[1]),
-		.y_decrement(db_btns[2]),
-		.x_out(x_out),
-		.y_out(y_out) 
-	);
-			
+
 endmodule

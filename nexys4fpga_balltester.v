@@ -43,7 +43,8 @@ module Nexys4fpga (
 /******************************************************************/		
 		
 
-wire	[3:0]		y_out, x_out;
+wire [3:0]		loc_y;
+wire [3:0]		loc_x;
 	
 	wire 	[63:0]		digits_out;				// ASCII digits (Only for Simulation)
 
@@ -54,9 +55,9 @@ wire	[3:0]		y_out, x_out;
 	assign	dig4 = {5'b11111};
 	//so these are assigning tuples to the dig's, it is initiating them at 0?? 
 	assign	dig2 = {5'b11111};
-	assign	dig3 = {5'b11111};
-	assign	dig0 = {1'b0, y_out};
-	assign	dig1 = {1'b0, x_out};	//direction indicator 
+	assign	dig1 = {5'b11111};
+	assign	dig0 = {1'b0, loc_y[3:0]};
+	assign	dig3 = {1'b0, loc_x[3:0]};	//direction indicator 
 	assign	decpts = 8'b00000000;			// all decimal points off. 
 	assign	led = db_sw;					// leds show the debounced switches
 
@@ -119,21 +120,21 @@ wire	[3:0]		y_out, x_out;
 /******************************************************************/
 /* CHANGE THIS DEFINITION FOR YOUR LAB 1                          */
 /******************************************************************/							
-	// instantiate ball module						
-    Ball
+	// instantiate RojoBot module						
+    ball
 	#(
 		.RESET_POLARITY_LOW(1),
 		.SIMULATE(SIMULATE)
-	) BLL
+	) RB
 	(
 		.clk(sysclk),
 		.reset(sysreset),
 		.x_increment(db_btns[3]),
-		.x_decrement(db_btns[4]), 
+		.x_decriment(db_btns[4]), 
 		.y_increment(db_btns[1]),
 		.y_decrement(db_btns[2]),
-		.x_out(x_out),
-		.y_out(y_out) 
+		.loc_x(loc_x),
+		.loc_y(loc_y) 
 	);
 			
 endmodule

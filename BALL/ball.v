@@ -30,16 +30,16 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	input				x_decrement,
 	input				y_increment,
 	input				y_decrement,
-	//These are internal registers for storing the next x/y position for later check against legality of the move on the map
-	reg			[3:0]	x_pos,
-	reg			[3:0]	y_pos,
+	
 	//These are the actual output coordinates of the ball, if it was able to move to a particular spot
     output reg	[7:0]	y_out,
 	output reg	[7:0]	x_out
 );
 
 	// internal variables
-	
+	//These are internal registers for storing the next x/y position for later check against legality of the move on the map
+        reg            [3:0]    x_pos;
+        reg        [3:0]    y_pos;
 	// reset - asserted high
 	wire reset_in = RESET_POLARITY_LOW ? ~reset : reset;
 	
@@ -89,6 +89,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 			y_pos <= y_pos;
 			x_pos <= x_pos;
 		end
+		
 	end  // inc/dec ball location counter
 	//This will assign the above values of x and y to output values of x and y if the map pixel is not blocked at that location
 	//this obviously doesnt work as is here, what we need to do is move, check the map, then update x_out and y_out
@@ -99,9 +100,10 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 			y_out <= 8'd0;
 			x_out <= 8'd0;
 		end
-        if (map_value ~= 2) begin 
-			y_out <=y_pos
-			x_out <=x_pos
+     //   if (map_value != 2) begin 
+     else begin
+			y_out <=y_pos;
+			x_out <=x_pos;
 	
 		end
 	end
