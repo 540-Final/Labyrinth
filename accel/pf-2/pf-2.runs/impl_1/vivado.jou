@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Mon Dec 01 19:28:27 2014
+# Process ID: 4836
+# Log file: H:/Document/School/ece540/pfinal/pf-2/pf-2.runs/impl_1/Nexys4fpga.vdi
+# Journal file: H:/Document/School/ece540/pfinal/pf-2/pf-2.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source Nexys4fpga.tcl -notrace
