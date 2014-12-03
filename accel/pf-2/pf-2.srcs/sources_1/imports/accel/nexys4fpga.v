@@ -159,10 +159,10 @@ module Nexys4fpga (
 	) SSB
 	(
 		// inputs for control signals
-		.d0(dig0),
-		.d1(dig1),
- 		.d2(dig2),
-		.d3(dig3),
+		.d0 (accelX[3:0]),
+		.d1 (accelX[7:4]),
+		.d2 (accelY[3:0]),
+		.d3 (accelY[7:4]),
 		.d4(dig4),
 		.d5(dig5),
 		.d6(dig6),
