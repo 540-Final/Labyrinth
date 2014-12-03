@@ -16,98 +16,11 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/imports/accel/world_map.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/world_map.v"/>
-          <Attr Name="ImportTime" Val="1414798863"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/world_map.ngc">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/world_map.ngc"/>
-          <Attr Name="ImportTime" Val="1413222877"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/accel/SPI_If.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/SPI_If.vhd"/>
           <Attr Name="ImportTime" Val="1399362868"/>
           <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/world_if.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/world_if.v"/>
-          <Attr Name="ImportTime" Val="1414798863"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/map.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/map.v"/>
-          <Attr Name="ImportTime" Val="1414798863"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/icon_rom/synth/icon_rom.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/icon_rom/synth/icon_rom.vhd"/>
-          <Attr Name="ImportTime" Val="1417237776"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/icon_rom/sim/icon_rom.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/icon_rom/sim/icon_rom.v"/>
-          <Attr Name="ImportTime" Val="1417237776"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/icon_rom/icon_rom_stub.vhdl">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/icon_rom/icon_rom_stub.vhdl"/>
-          <Attr Name="ImportTime" Val="1417243535"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/icon_rom/icon_rom_stub.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/icon_rom/icon_rom_stub.v"/>
-          <Attr Name="ImportTime" Val="1417243535"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/dtg.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/dtg.v"/>
-          <Attr Name="ImportTime" Val="1414798863"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/colorizer.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/colorizer.v"/>
-          <Attr Name="ImportTime" Val="1414798863"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -127,55 +40,10 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/kcpsm6.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/kcpsm6.v"/>
-          <Attr Name="ImportTime" Val="1414798863"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/bot_pgm.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/bot_pgm.v"/>
-          <Attr Name="ImportTime" Val="1414798863"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/vga_subsystem.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/vga_subsystem.v"/>
-          <Attr Name="ImportTime" Val="1414829168"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/accel/sevensegment.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/sevensegment.v"/>
           <Attr Name="ImportTime" Val="1414798863"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/nexys4_bot_if.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/nexys4_bot_if.v"/>
-          <Attr Name="ImportTime" Val="1414798863"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/icon.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/icon.v"/>
-          <Attr Name="ImportTime" Val="1414911716"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -195,24 +63,6 @@
           <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/AccelerometerCtl.vhd"/>
           <Attr Name="ImportTime" Val="1399872416"/>
           <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/bot.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/bot.v"/>
-          <Attr Name="ImportTime" Val="1414798863"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/proj2.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/proj2.v"/>
-          <Attr Name="ImportTime" Val="1415270192"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -259,15 +109,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/ip/icon_rom/icon_rom.upgrade_log"/>
       <File Path="$PSRCDIR/sources_1/ip/clk_wizard/clk_wizard.upgrade_log"/>
-      <File Path="$PSRCDIR/sources_1/imports/clk_wizard/clk_wizard_clk_wiz.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/clk_wizard/clk_wizard_clk_wiz.v"/>
-          <Attr Name="ImportTime" Val="1417409089"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/ece540/p2/p2_1/project_3/all_icons.coe">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../p2/p2_1/project_3/all_icons.coe"/>
@@ -308,36 +149,6 @@
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
-    <FileSet Name="icon_rom" Type="BlockSrcs" RelSrcDir="$PSRCDIR/icon_rom">
-      <File Path="$PSRCDIR/sources_1/ip/icon_rom/icon_rom.xci">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/icon_rom/icon_rom.xci"/>
-          <Attr Name="ImportTime" Val="1417237771"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="icon_rom"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="clk_wizard" Type="BlockSrcs" RelSrcDir="$PSRCDIR/clk_wizard">
-      <File Path="$PSRCDIR/sources_1/ip/clk_wizard/clk_wizard.xci">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/clk_wizard/clk_wizard.xci"/>
-          <Attr Name="ImportTime" Val="1417237750"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="clk_wizard"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="Square_Root" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Square_Root">
       <File Path="$PSRCDIR/sources_1/ip/Square_Root/Square_Root.xci">
         <FileInfo>
@@ -375,20 +186,6 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="icon_rom_synth_1" Type="Ft3:Synth" SrcSet="icon_rom" Part="xc7a75tcsg324-1" ConstrsSet="icon_rom" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/icon_rom_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-    </Run>
-    <Run Id="clk_wizard_synth_1" Type="Ft3:Synth" SrcSet="clk_wizard" Part="xc7a75tcsg324-1" ConstrsSet="clk_wizard" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/clk_wizard_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-    </Run>
     <Run Id="Square_Root_synth_1" Type="Ft3:Synth" SrcSet="Square_Root" Part="xc7a75tcsg324-1" ConstrsSet="Square_Root" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Square_Root_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
@@ -410,34 +207,6 @@
         <Step Id="write_bitstream"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-    </Run>
-    <Run Id="icon_rom_impl_1" Type="Ft2:EntireDesign" Part="xc7a75tcsg324-1" ConstrsSet="icon_rom" Description="Vivado Implementation Defaults" SynthRun="icon_rom_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-    </Run>
-    <Run Id="clk_wizard_impl_1" Type="Ft2:EntireDesign" Part="xc7a75tcsg324-1" ConstrsSet="clk_wizard" Description="Vivado Implementation Defaults" SynthRun="clk_wizard_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
     </Run>
     <Run Id="Square_Root_impl_1" Type="Ft2:EntireDesign" Part="xc7a75tcsg324-1" ConstrsSet="Square_Root" Description="Vivado Implementation Defaults" SynthRun="Square_Root_synth_1">
       <Strategy Version="1" Minor="2">
