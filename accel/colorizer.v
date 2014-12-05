@@ -22,7 +22,7 @@
 
 module colorizer(
     input video_on,
-    input [1:0] world_pixel,
+    input [7:0] world_pixel,
     input [1:0] icon,
     output [3:0] red,
     output [3:0] green,
@@ -58,11 +58,7 @@ module colorizer(
         else begin
             case (icon)
 				ICON_ADDR_TP		: begin			// Icon is transparent, use world input
-					case (world_pixel)
-						WORLD_ADDR_BG	: color <= WORLD_COLOR_BG;
-						WORLD_ADDR_LINE	: color <= WORLD_COLOR_LINE;
-						WORLD_ADDR_OBS	: color <= WORLD_COLOR_OBS;
-					endcase
+				    color <= {world_pixel[7:6], 2'b00, world_pixel[5:3], 1'b0, world_pixel[2:0], 1'b0};
 					end
 				// Icon is not transparent, use the icon color
 				ICON_ADDR_1			: color <= ICON_COLOR_1;

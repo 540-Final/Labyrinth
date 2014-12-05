@@ -1,14 +1,14 @@
 -- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
--- Date        : Sun Nov 30 20:45:41 2014
+-- Date        : Fri Dec 05 11:58:08 2014
 -- Host        : Black-PC running 64-bit Service Pack 1  (build 7601)
 -- Command     : write_vhdl -force -mode funcsim
 --               H:/Document/School/ece540/pfinal/pf-2/pf-2.srcs/sources_1/ip/clk_wizard/clk_wizard_funcsim.vhdl
 -- Design      : clk_wizard
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a75tcsg324-1
+-- Device      : xc7a100tcsg324-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

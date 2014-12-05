@@ -54,7 +54,7 @@ module Nexys4fpga (
 	output				Hsync, Vsync,
 	
 	output	aclSCK,
-	output	aclMISO,
+	input	aclMISO,
 	output	aclMOSI,
 	output	aclSS,
 	input	aclInt1,
@@ -133,9 +133,7 @@ module Nexys4fpga (
 	
 	assign	JA = {sysclk, sysreset, 6'b000000};
 	
-	assign vid_rowx4 = vid_row >> 2;
-	assign vid_colx4 = vid_col >> 2;
-  assign vid_rowx2 = vid_row >> 1;
+  	assign vid_rowx2 = vid_row >> 1;
 	assign vid_colx2 = vid_col >> 1;
 	//instantiate the debounce module
 	debounce
@@ -159,10 +157,10 @@ module Nexys4fpga (
 	) SSB
 	(
 		// inputs for control signals
-		.d0(dig0),
-		.d1(dig1),
- 		.d2(dig2),
-		.d3(dig3),
+		.d0 (accelX[3:0]),
+		.d1 (accelX[7:4]),
+		.d2 (accelY[3:0]),
+		.d3 (accelY[7:4]),
 		.d4(dig4),
 		.d5(dig5),
 		.d6(dig6),
@@ -181,120 +179,6 @@ module Nexys4fpga (
 		.digits_out()//digits_out)
 	);
 
-/******************************************************************/
-/* CHANGE THIS DEFINITION FOR YOUR LAB 1                          */
-/******************************************************************/							
-	// instantiate RojoBot module						
-	bot	bot2(
-		.MotCtl_in 		(motctl),
-		.LocX_reg		(locX),
-		.LocY_reg		(locY),
-		.Sensors_reg	(sensors),
-		.BotInfo_reg	(botinfo),
-		.LMDist_reg		(lmdist),
-		.RMDist_reg 	(rmdist),
-		.vid_row		(vid_rowx4),
-		.vid_col		(vid_colx4),
-//		.vid_row		(vid_row),
-//		.vid_col		(vid_col),
-		.vid_pixel_out	(vid_pixel_out),
-		.clk			(sysclk),
-		.reset			(~sysreset),
-		.upd_sysregs	(upd_sysreg)
-	);
-	   
-  kcpsm6 #(
-		.interrupt_vector (12'h3FF),
-  		.scratch_pad_memory_size (64),
-  		.hwbuild (8'h00)
-	)
-  	processor1 (
-		.address 			(address),
-  		.instruction 		(instruction),
-  		.bram_enable 		(bram_enable),
-  		.port_id 				(port_id),
-  		.write_strobe 	(write_strobe),
-  		.k_write_strobe (k_write_strobe),
-  		.out_port 			(out_port),
-  		.read_strobe 		(read_strobe),
-  		.in_port 				(in_port),
-  		.interrupt 			(interrupt),
-  		.interrupt_ack 	(interrupt_ack),
-  		.reset 					(kcpsm6_reset),
-  		.sleep					(kcpsm6_sleep),
-  		.clk 						(sysclk)
-  );
-  
-	assign kcpsm6_reset = ~sysreset | rdl;
-   
-	proj2 hqproj2(	
-		.address		(address),
-		.enable			(bram_enable),
-		.instruction	(instruction),
-		.clk			(sysclk),
-		.rdl			(rdl)	
-	);
-		
-	nexys4_bot_if hq_n4_bot_if (    
-		.clk (sysclk),
-		.reset (~sysreset),
-		.pb_port_id (port_id),
-		.pb_out_port (out_port),
-		.pb_k_write_strobe (k_write_strobe),
-		.pb_write_strobe (write_strobe),
-		.pb_read_strobe (read_strobe),
-		.pb_interrupt_ack (interrupt_ack),
-		.bot_locX (locX),
-		.bot_locY (locY),
-		.bot_botinfo (botinfo),
-		.bot_sensors (sensors),
-		.bot_lmdist (lmdist),
-		.bot_rmdist (rmdist),
-		.bot_upd_sysreg (upd_sysreg),
-		.db_btns (db_btns[5:1]),
-		.db_sw (db_sw),		
-		
-		.bot_motctl (motctl),
-		.pb_in_port (in_port),
-		.pb_interrupt (interrupt),
-		.dig0 (dig0),
-		.dig1 (dig1),
-		.dig2 (dig2),
-		.dig3 (dig3),
-		.dig4 (dig4),
-		.dig5 (dig5),
-		.dig6 (dig6),
-		.dig7 (dig7),
-		.dp (decpts),
-		.led (led)
-	);
-	
-	draw_icon di(
-	    .vert(vid_row),
-			.horz(vid_col),
-			.clk (sysclk),
-			.bot_LocX(locX), 
-			.bot_LocY(locY),
-			.bot_Orie(botinfo[2:0]),
-			.icon_out(icon)  
-	);
-	
-	vga_subsystem vga(
-		.sys_clk(sysclk),
-		.sys_rst(~sysreset),
-		.LocX_reg(locX),
-		.LocY_reg(locY),
-		.BotInfo_reg(botinfo),
-		.world_pixel(vid_pixel_out),
-		.icon_pixel (icon),
-		.vert_sync(Vsync),
-		.horiz_sync(Hsync),
-		.pixel_row(vid_row),
-		.pixel_column(vid_col),
-		.red(vgaRed),
-		.green(vgaGreen),
-		.blue(vgaBlue)
-	);
 	
 	AccelerometerCtl accelCtl (
 								.SYSCLK(sysclk),
@@ -308,6 +192,37 @@ module Nexys4fpga (
 								.SS (aclSS)
 	);
 	
+	vga_subsystem vga(
+		.sys_clk(sysclk),
+		.sys_rst(~sysreset),
+		.LocX_reg(locX),
+		.LocY_reg(locY),
+		.world_pixel(vid_pixel_out),
+		.icon_pixel (icon),
+		.vert_sync(Vsync),
+		.horiz_sync(Hsync),
+		.pixel_row(vid_row),
+		.pixel_column(vid_col),
+		.red(vgaRed),
+		.green(vgaGreen),
+		.blue(vgaBlue)
+	);
+	
+	Ball aball 
+	(
+		.clk 			(sysclk),
+		.reset			(~sysreset),
+		.accelX_IN		(accelX),
+		.accelY_IN		(accelY),
+	
+		.y_out			(locX),
+		.x_out			(locY),
+	
+		.vid_row		(vid_rowx2),	
+		.vid_col		(vid_colx2),		
+		.vid_pixel_out	(vid_pixel_out)
+	
+	);
 
 
 endmodule

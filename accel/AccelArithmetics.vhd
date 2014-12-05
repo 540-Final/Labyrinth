@@ -79,11 +79,11 @@ architecture Behavioral of AccelArithmetics is
 -- Use a Square Root Logicore component to calculate the magnitude
 COMPONENT Square_Root
   PORT (
-    x_in : IN STD_LOGIC_VECTOR(25 DOWNTO 0);
-    nd : IN STD_LOGIC;
-    x_out : OUT STD_LOGIC_VECTOR(13 DOWNTO 0);
-    rdy : OUT STD_LOGIC;
-    clk : IN STD_LOGIC
+    s_axis_cartesian_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    s_axis_cartesian_tvalid : IN STD_LOGIC;
+    m_axis_dout_tdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    m_axis_dout_tvalid : OUT STD_LOGIC;
+    aclk : IN STD_LOGIC
   );
 END COMPONENT;
 
@@ -113,8 +113,8 @@ signal ACCEL_X_SQUARE : std_logic_vector (23 downto 0) := (others => '0');
 signal ACCEL_Y_SQUARE : std_logic_vector (23 downto 0) := (others => '0');
 signal ACCEL_Z_SQUARE : std_logic_vector (23 downto 0) := (others => '0');
 
-signal ACCEL_MAG_SQUARE : std_logic_vector (25 downto 0) := (others => '0');
-signal ACCEL_MAG_SQRT: std_logic_vector (13 downto 0) := (others => '0');
+signal ACCEL_MAG_SQUARE : std_logic_vector (31 downto 0) := (others => '0');
+signal ACCEL_MAG_SQRT: std_logic_vector (15 downto 0) := (others => '0');
 
 
 
@@ -220,7 +220,7 @@ Calculate_Square_Sum: process (SYSCLK, Data_Ready_0, ACCEL_X_SQUARE, ACCEL_Y_SQU
 begin
    if SYSCLK'EVENT and SYSCLK = '1' then
       if Data_Ready_0 = '1' then 
-         ACCEL_MAG_SQUARE <= ("00" & ACCEL_X_SQUARE) + ("00" & ACCEL_Y_SQUARE) + ("00" & ACCEL_Z_SQUARE);
+         ACCEL_MAG_SQUARE <= "000000" & ("00" & ACCEL_X_SQUARE) + ("00" & ACCEL_Y_SQUARE) + ("00" & ACCEL_Z_SQUARE);
       end if;
    end if;
 end process Calculate_Square_Sum;
@@ -228,11 +228,11 @@ end process Calculate_Square_Sum;
 -- Calculate the square root to determine magnitude
 Magnitude_Calculation: Square_Root
   PORT MAP (
-    x_in => ACCEL_MAG_SQUARE,
-    nd => Data_Ready_1,
-    x_out => ACCEL_MAG_SQRT,
-    rdy => open,
-    clk => SYSCLK
+    s_axis_cartesian_tdata => ACCEL_MAG_SQUARE,
+    s_axis_cartesian_tvalid => Data_Ready_1,
+    m_axis_dout_tdata => ACCEL_MAG_SQRT,
+    m_axis_dout_tvalid => open,
+    aclk => SYSCLK
   );
 
 -- Also divide the square root by 4

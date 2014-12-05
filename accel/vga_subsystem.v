@@ -23,10 +23,9 @@
 module vga_subsystem(
     input sys_clk,
     input sys_rst,
-    input [7:0] LocX_reg,
-    input [7:0] LocY_reg,
-    input [7:0] BotInfo_reg,
-    input [1:0] world_pixel,
+    input [8:0] LocX_reg,
+    input [8:0] LocY_reg,
+    input [7:0] world_pixel,
     input [1:0] icon_pixel,
     output vert_sync,
     output horiz_sync,
