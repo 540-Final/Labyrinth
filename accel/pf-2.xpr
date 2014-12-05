@@ -24,6 +24,33 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/accel/map.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/map.v"/>
+          <Attr Name="ImportTime" Val="1417480861"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/accel/dtg.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/dtg.v"/>
+          <Attr Name="ImportTime" Val="1417480861"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/accel/colorizer.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/colorizer.v"/>
+          <Attr Name="ImportTime" Val="1417480861"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/accel/ADXL362Ctrl.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/ADXL362Ctrl.vhd"/>
@@ -37,6 +64,24 @@
           <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/AccelArithmetics.vhd"/>
           <Attr Name="ImportTime" Val="1397171482"/>
           <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/accel/acceleratedball.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/acceleratedball.v"/>
+          <Attr Name="ImportTime" Val="1417734884"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/accel/vga_subsystem.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/vga_subsystem.v"/>
+          <Attr Name="ImportTime" Val="1417480861"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -83,14 +128,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/accel/icon_rom/icon_rom.mif">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/icon_rom/icon_rom.mif"/>
-          <Attr Name="ImportTime" Val="1417237776"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/accel/icon_rom/dist_mem_gen_v8_0/hdl/dist_mem_utils.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/icon_rom/dist_mem_gen_v8_0/hdl/dist_mem_utils.vhd"/>
@@ -99,24 +136,8 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/ece540/pfinal/Labyrinth/accel/all_icons.coe">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/all_icons.coe"/>
-          <Attr Name="ImportTime" Val="1417480861"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/ip/icon_rom/icon_rom.upgrade_log"/>
       <File Path="$PSRCDIR/sources_1/ip/clk_wizard/clk_wizard.upgrade_log"/>
-      <File Path="$PSRCDIR/sources_1/imports/ece540/p2/p2_1/project_3/all_icons.coe">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../p2/p2_1/project_3/all_icons.coe"/>
-          <Attr Name="ImportTime" Val="1414895994"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/ip/Square_Root/Square_Root.upgrade_log"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
@@ -162,6 +183,34 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="maze" Type="BlockSrcs" RelSrcDir="$PSRCDIR/maze">
+      <File Path="$PSRCDIR/sources_1/ip/maze/maze.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="maze"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="clk_wizard" Type="BlockSrcs" RelSrcDir="$PSRCDIR/clk_wizard">
+      <File Path="$PSRCDIR/sources_1/ip/clk_wizard/clk_wizard.xci">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Labyrinth/accel/clk_wizard/clk_wizard.xci"/>
+          <Attr Name="ImportTime" Val="1414798863"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="clk_wizard"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
   </FileSets>
   <Simulators>
     <Simulator Name="XSim">
@@ -193,7 +242,25 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1">
+    <Run Id="maze_synth_1" Type="Ft3:Synth" SrcSet="maze" Part="xc7a100tcsg324-1" ConstrsSet="maze" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/maze_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="clk_wizard_synth_1" Type="Ft3:Synth" SrcSet="clk_wizard" Part="xc7a100tcsg324-1" ConstrsSet="clk_wizard" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/clk_wizard_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" SynthRun="synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
         <Step Id="init_design"/>
@@ -206,11 +273,42 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="Square_Root_impl_1" Type="Ft2:EntireDesign" Part="xc7a75tcsg324-1" ConstrsSet="Square_Root" Description="Vivado Implementation Defaults" SynthRun="Square_Root_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="maze_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="maze" Description="Vivado Implementation Defaults" SynthRun="maze_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
+          <Desc>Vivado Implementation Defaults</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="clk_wizard_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="clk_wizard" Description="Vivado Implementation Defaults" SynthRun="clk_wizard_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
+          <Desc>Vivado Implementation Defaults</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
