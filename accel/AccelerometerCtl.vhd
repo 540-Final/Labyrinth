@@ -74,7 +74,7 @@ generic
 (
    SYSCLK_FREQUENCY_HZ : integer := 100000000;
    SCLK_FREQUENCY_HZ   : integer := 1000000;
-   NUM_READS_AVG       : integer := 16;
+   NUM_READS_AVG       : integer := 160000;
    UPDATE_FREQUENCY_HZ : integer := 1000
 );
 port

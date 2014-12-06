@@ -26,8 +26,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
     input 				clk,
 	input				reset,
 	//These are inputs from the accelerometer, I dont know what actual format they will come in. 					
-	input[7:0]				accelX_IN,
-	input[7:0]				accelY_IN,
+	input[8:0]				accelX_IN,
+	input[8:0]				accelY_IN,
 	
 	//These are the actual output coordinates of the ball, if it was able to move to a particular spot
     output reg	[7:0]	y_out,
@@ -67,9 +67,9 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 		end
 	end // update clock enable
     
-	
+	/*
 	always @(posedge clk) begin
-		if (accelY_IN>=400) begin
+		if (accelY_IN[3]==1) begin
 			y_increment <= 1;
 			end
 		else if (accelY_IN<=100) begin
@@ -92,7 +92,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 			x_increment<=0;
 			x_decrement<=0;
 		end
-	end
+	end*/
       
 	always @(posedge clk) begin
 		if (reset_in) begin
@@ -100,13 +100,13 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 			x_pos <= 8'd0;
 		end
 		else if (tick5hz) begin
-			case ({y_increment, y_decrement})
+			case ({accelY_IN[8]==1, accelY_IN[8]==0})
 				2'b10: y_pos  <= y_pos + 1'b1;
 				2'b01: y_pos  <= y_pos - 1'b1;
 				
 				default: y_pos <= y_pos;
 			endcase
-			case ({x_increment, x_decrement})
+			case ({accelX_IN[8]==1, accelX_IN[8]==0})
 				2'b10: x_pos <= x_pos + 1'b1;
 				2'b01: x_pos <= x_pos - 1'b1;
 				
