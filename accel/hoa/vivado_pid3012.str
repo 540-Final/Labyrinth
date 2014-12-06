@@ -4324,3 +4324,164 @@ selectCodeEditor("vga_subsystem.v", 220, 229); // bi:J (JPanel:JComponent, ch:JF
 // Elapsed time: 550 seconds
 selectCodeEditor("vga_subsystem.v", 526, 280); // bi:J (JPanel:JComponent, ch:JFrame)
 // HMemoryUtils.trashcanNow. Engine heap size: 2,702 MB. GUI used memory: 1,313 MB. Current time: 12/5/14 4:34:14 PM
+// Elapsed time: 2068 seconds
+selectCodeEditor("vga_subsystem.v", 1009, 125); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 74, 540); // bi:J (JPanel:JComponent, ch:JFrame)
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // v:JideButton (CommandBar:DockableBar, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// b:g (ch:JFrame): Add Sources: addNotify
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_HDL_AND_NETLIST_FILES_OR_DIRECTORIES, "Add or create design sources"); // a:JRadioButton (JPanel:JComponent, b:g)
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, "Add or create simulation sources"); // a:JRadioButton (JPanel:JComponent, b:g)
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES, "Add or create constraints"); // a:JRadioButton (JPanel:JComponent, b:g)
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_HDL_AND_NETLIST_FILES_OR_DIRECTORIES, "Add or create design sources"); // a:JRadioButton (JPanel:JComponent, b:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // a:JButton (H:JPanel, b:g)
+setFileChooser("C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v");
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+// 'f' command handler elapsed time: 12 seconds
+dismissDialog("Add Sources"); // b:g (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+selectCodeEditor("vga_subsystem.v", 94, 535); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 12 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), vga - vga_subsystem (vga_subsystem.v)]", 9); // u:k (I:JPanel, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 91, 549); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coefficient Files]", 17, true); // u:k (I:JPanel, ch:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, draw_icon (icon.v)]", 16, true); // u:k (I:JPanel, ch:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, draw_icon (icon.v)]", 16, true, false, false, false, false, true); // u:k (I:JPanel, ch:JFrame) - Double Click - Node
+// Elapsed time: 13 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "icon.v", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 29, 539); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 103, 539); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 164, 538); // bi:J (JPanel:JComponent, ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 421 seconds
+selectCodeEditor("vga_subsystem.v", 145, 537); // bi:J (JPanel:JComponent, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vga_subsystem.v", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectCodeEditor("icon.v", 182, 363); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "icon.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 67 seconds
+selectCodeEditor("icon.v", 248, 399); // bi:J (JPanel:JComponent, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "icon.v", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+typeControlKey((HResource) null, "vga_subsystem.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 81, 465); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 152, 467); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 18 seconds
+selectCodeEditor("vga_subsystem.v", 146, 335); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 24 seconds
+selectCodeEditor("vga_subsystem.v", 238, 475); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 55, 354); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 39 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vga_subsystem.v", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+// Elapsed time: 65 seconds
+selectCodeEditor("icon.v", 495, 441); // bi:J (JPanel:JComponent, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "icon.v", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 188, 310); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 214, 319); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 142, 266); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 142, 266, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+typeControlKey((HResource) null, "vga_subsystem.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 125, 434); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "vga_subsystem.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 131, 350); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 131, 350, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+typeControlKey((HResource) null, "vga_subsystem.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 125, 503); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "vga_subsystem.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 253, 416); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 22 seconds
+selectCodeEditor("vga_subsystem.v", 218, 461); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 19 seconds
+selectCodeEditor("vga_subsystem.v", 349, 288); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 57, 159); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 56, 159, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+typeControlKey((HResource) null, "vga_subsystem.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 88, 434); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "vga_subsystem.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 307, 498); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("vga_subsystem.v", 158, 343); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 158, 343, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+selectCodeEditor("vga_subsystem.v", 185, 367); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 185, 367, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+typeControlKey((HResource) null, "vga_subsystem.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 97, 399); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "vga_subsystem.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 213, 184); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 213, 184, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+typeControlKey((HResource) null, "vga_subsystem.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 96, 418); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "vga_subsystem.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 325, 490); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 96, 197); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 96, 197, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+typeControlKey((HResource) null, "vga_subsystem.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 124, 485); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "vga_subsystem.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 339, 463); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 149, 283); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 149, 283, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vga_subsystem.v", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+// Elapsed time: 28 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "nexys4fpga.v", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("vga_subsystem.v", 54, 281); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 130, 282); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 17 seconds
+selectCodeEditor("vga_subsystem.v", 126, 329); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 304, 396); // bi:J (JPanel:JComponent, ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vga_subsystem.v", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("nexys4fpga.v", 423, 315); // bi:J (JPanel:JComponent, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "nexys4fpga.v", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectCodeEditor("icon.v", 28, 332); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("icon.v", 199, 260); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 155 seconds
+selectCodeEditor("icon.v", 401, 482); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("icon.v", 245, 266); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 14 seconds
+selectCodeEditor("icon.v", 122, 457); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("icon.v", 126, 421); // bi:J (JPanel:JComponent, ch:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, IP Catalog]", 4, false); // w:Y (v:I, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+// cm:N (ch:JFrame):  IP Catalog : addNotify
+dismissDialog("IP Catalog"); // cm:N (ch:JFrame)
