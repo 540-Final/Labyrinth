@@ -10,8 +10,8 @@
 module AccelArithmetics
 #(
 
-parameter integer high_threshold = 9'h1C0,
-parameter integer low_threshold  = 9'h050,
+parameter integer high_threshold = 12'hBE7,
+parameter integer low_threshold  = 12'h417,
 parameter integer  SYSCLK_FREQUENCY_HZ  = 100000000
 )
 //ports
@@ -43,10 +43,16 @@ output reg [3:0] tilt
 always @(posedge SYSCLK) begin
 		if (ACCEL_Y>=high_threshold) begin //left hand tilt
 			tilt[0] <= 1'b1;
-			tilt[1]<=1'b0;
+			tilt[1]<=1'b0;//put in else statements setting to 0
+			
 			end
 		else if (ACCEL_Y<=low_threshold) begin //right hand tilt
 			tilt[1] <=1'b1;
+			tilt[0]<=1'b0;
+			end
+			
+			else
+			tilt[1] <=1'b0;
 			tilt[0]<=1'b0;
 			end
 			
@@ -63,7 +69,9 @@ always @(posedge SYSCLK) begin
 			tilt[3] <=1'b1;
 			tilt[2] <= 1'b0;
 			end
-			
+		else
+			tilt[3] <=1'b0;
+			tilt[2]<=1'b0;		
 	end
 	
 	endmodule
