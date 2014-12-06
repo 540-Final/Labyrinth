@@ -133,8 +133,7 @@ module Nexys4fpga (
 	
 	assign	JA = {sysclk, sysreset, 6'b000000};
 	
-  	assign vid_rowx2 = vid_row >> 1;
-	assign vid_colx2 = vid_col >> 1;
+
 	//instantiate the debounce module
 	debounce
 	#(
@@ -218,8 +217,8 @@ module Nexys4fpga (
 		.y_out			(locX),
 		.x_out			(locY),
 	
-		.vid_row		(vid_rowx2),	
-		.vid_col		(vid_colx2),		
+		.vid_row		(vid_row),	
+		.vid_col		(vid_col),		
 		.vid_pixel_out	(vid_pixel_out)
 	
 	);

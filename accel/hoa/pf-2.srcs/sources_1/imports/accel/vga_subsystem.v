@@ -51,7 +51,10 @@ wire video_on;
     );
     
     // Display Timing Generator
-    dtg dtg(
+    dtg
+    #(
+        .HORIZ_PIXELS(640)
+    ) dtg (
         .clock(new_clk),
         .rst(sys_rst),
         .horiz_sync(horiz_sync),
