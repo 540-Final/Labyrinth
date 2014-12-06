@@ -32,6 +32,8 @@ set rt::rc [catch {
       ./.Xil/Vivado-3012-BeepBoop/realtime/Square_Root_stub.v
       ./.Xil/Vivado-3012-BeepBoop/realtime/clk_wizard_stub.v
       ./.Xil/Vivado-3012-BeepBoop/realtime/maze_memory_stub.v
+      ./.Xil/Vivado-3012-BeepBoop/realtime/icon_rom_stub.v
+      C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v
       C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/dtg.v
       C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v
       C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v

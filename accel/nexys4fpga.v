@@ -221,8 +221,7 @@ module Nexys4fpga (
 	
 		.vid_row		(vid_row),	
 		.vid_col		(vid_col),		
-		.vid_pixel	    (vid_pixel)
-	
+		.vid_pixel_out  (vid_pixel)
 	);
 
 
