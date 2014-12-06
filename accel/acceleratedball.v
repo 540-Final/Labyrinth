@@ -25,14 +25,14 @@ I need to figure out how to do that here in a way that makes sense. For now its 
     input 				clk,
 	input				reset,
 	//These are inputs from the accelerometer, I dont know what actual format they will come in. 					
-	input[7:0]				accelX_IN,
-	input[7:0]				accelY_IN,
+	input[8:0]				accelX_IN,
+	input[8:0]				accelY_IN,
 	
 	//These are the actual output coordinates of the ball, if it was able to move to a particular spot
-    output reg	[7:0]	y_out,
-	output reg	[7:0]	x_out,
+    output reg	[9:0]	y_out,
+	output reg	[8:0]	x_out,
 	
-	input 		[9:0]	vid_row,		// video logic row address
+	input 		[8:0]	vid_row,		// video logic row address
 	input 		[9:0]	vid_col,		// video logic column address
 	output   	[7:0]	vid_pixel_out	// pixel (location) value
 );
@@ -54,8 +54,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	reg								tick5hz;				// update clock enable							
     
 	wire 	[7:0]		wrld_loc_info;		// location value from world map
-	wire 	[8:0]		wrld_col_addr,		// column address to map logic
-						wrld_row_addr;		// row address to map logic
+	wire 	[9:0]		wrld_col_addr;		// column address to map logic
+	wire 	[8:0]		wrld_row_addr;		// row address to map logic
 						
 	// generate update clock enable
 	

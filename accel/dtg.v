@@ -36,7 +36,7 @@ module dtg(
 // We are only using 512 of the 640 columns so change HORIZ_PIXELS
 // to get rid of the screen duplication
 parameter
-		HORIZ_PIXELS = 512,  HCNT_MAX  = 799, HCNT_END = 699, 		
+		HORIZ_PIXELS = 640,  HCNT_MAX  = 799, HCNT_END = 699, 		
 		HSYNC_START  = 659,  HSYNC_END = 755,
 
 		VERT_PIXELS  = 480,  VCNT_MAX  = 524,

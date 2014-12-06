@@ -68,7 +68,7 @@ module map (
 //	RSVD	= 8'b00;	// reserved - treat as "ground" for now
 		
 		
-wire 	[18:0] 	wrld_mem_addr, vid_mem_addr;	// dual port RAM addresses for 
+wire 	[16:0] 	wrld_mem_addr, vid_mem_addr;	// dual port RAM addresses for 
 										// external world emulator and video logic
                                       
 	assign wrld_mem_addr = {wrld_row_addr >> 1, wrld_col_addr >> 1};

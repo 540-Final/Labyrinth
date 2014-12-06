@@ -97,21 +97,21 @@ module Nexys4fpga (
 	
 	//wires for bot
 	wire [7:0]	motctl;
-	wire [7:0]	locX;
-	wire [7:0]	locY;
+	wire [9:0]	locX;
+	wire [8:0]	locY;
 	wire [7:0]	sensors;
 	wire [7:0]	botinfo;
 	wire [7:0]	lmdist;
 	wire [7:0]	rmdist;
 	wire 		upd_sysreg;
-	wire [9:0]	vid_row;				//video ctrlr
+	wire [8:0]	vid_row;				//video ctrlr
 	wire [9:0]	vid_col;				//video ctrlr
-	wire [1:0]	vid_pixel;	//video ctrlr
+	wire [7:0]	vid_pixel;	//video ctrlr
 	
-	wire [9:0]	vid_rowx4;				//video ctrlr
-	wire [9:0]	vid_colx4;				//video ctrlr
-	wire [9:0]	vid_rowx2;				//video ctrlr
-	wire [9:0]	vid_colx2;				//video ctrlr
+	//wire [9:0]	vid_rowx4;				//video ctrlr
+	//wire [9:0]	vid_colx4;				//video ctrlr
+	//wire [9:0]	vid_rowx2;				//video ctrlr
+	//wire [9:0]	vid_colx2;				//video ctrlr
 	
 	//wire [1:0] icon;
 	

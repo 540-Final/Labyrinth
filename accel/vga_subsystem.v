@@ -29,7 +29,7 @@ module vga_subsystem(
     // input [1:0] icon_pixel,
     output vert_sync,
     output horiz_sync,
-    output [9:0] pixel_row,
+    output [8:0] pixel_row,
     output [9:0] pixel_column,
     output [3:0] red,
     output [3:0] green,
@@ -38,7 +38,7 @@ module vga_subsystem(
 
 // Internal connections
 wire new_clk;           // 25MHz
-wire [1:0] icon_pixel; // for testing, change after implementing icon module
+wire [7:0] icon_pixel; // for testing, change after implementing icon module
 wire video_on;
 
     // Clock divider 100MHz -> 25MHz
