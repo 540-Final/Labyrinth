@@ -4790,3 +4790,884 @@ WARNING: [Vivado 12-4147] The synthesis checkpoint for IP 'C:/Users/Colten/Dropb
 Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
 [Fri Dec 05 19:38:58 2014] Launched impl_1...
 Run output will be captured here: C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/impl_1/runme.log
+open_hw
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2014.4
+  **** Build date : Nov 18 2014-18:09:44
+    ** Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+****** Xilinx hw_server v2014.4
+  **** Build date : Nov 18 2014-18:09:44
+    ** Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210274532609A]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210274532609A]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210274532609A
+set_property PROGRAM.FILE {C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/impl_1/Nexys4fpga.bit} [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+set_property PROBES.FILE {C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/impl_1/Nexys4fpga.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-32] Done pin status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Vivado 12-4173] The following IPs are not generated and locked, no out-of-context (OOC) run will be created. Please select 'Report IP Status' from 'Tools/Report' or run Tcl command 'report_ip_status' for more information.
+C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci
+
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:18:52 ; elapsed = 08:24:05 . Memory (MB): peak = 3079.516 ; gain = 2917.293
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Nexys4fpga' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:35]
+	Parameter SIMULATE bound to: 0 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'debounce' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:24]
+	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter DEBOUNCE_FREQUENCY_HZ bound to: 250 - type: integer 
+	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer 
+	Parameter CNTR_WIDTH bound to: 32 - type: integer 
+	Parameter SIMULATE bound to: 0 - type: integer 
+	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer 
+	Parameter pb0_in bound to: 4'b0001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:102]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:103]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:104]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:105]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:106]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:107]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:110]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:111]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:112]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:113]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:114]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:115]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:116]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:117]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:118]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:119]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:120]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:122]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:123]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:124]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:125]
+INFO: [Synth 8-256] done synthesizing module 'debounce' (1#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:24]
+INFO: [Synth 8-638] synthesizing module 'sevensegment' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:35]
+	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter REFRESH_FREQUENCY_HZ bound to: 500 - type: integer 
+	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer 
+	Parameter CNTR_WIDTH bound to: 32 - type: integer 
+	Parameter SIMULATE bound to: 0 - type: integer 
+	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer 
+	Parameter digit1 bound to: 8'b11111110 
+	Parameter digit2 bound to: 8'b11111101 
+	Parameter digit3 bound to: 8'b11111011 
+	Parameter digit4 bound to: 8'b11110111 
+	Parameter digit5 bound to: 8'b11101111 
+	Parameter digit6 bound to: 8'b11011111 
+	Parameter digit7 bound to: 8'b10111111 
+	Parameter digit8 bound to: 8'b01111111 
+INFO: [Synth 8-638] synthesizing module 'Digit' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:196]
+	Parameter zero bound to: 7'b1000000 
+	Parameter one bound to: 7'b1111001 
+	Parameter two bound to: 7'b0100100 
+	Parameter three bound to: 7'b0110000 
+	Parameter four bound to: 7'b0011001 
+	Parameter five bound to: 7'b0010010 
+	Parameter six bound to: 7'b0000010 
+	Parameter seven bound to: 7'b1111000 
+	Parameter eight bound to: 7'b0000000 
+	Parameter nine bound to: 7'b0010000 
+	Parameter A bound to: 7'b0001000 
+	Parameter B bound to: 7'b0000011 
+	Parameter C bound to: 7'b1000110 
+	Parameter D bound to: 7'b0100001 
+	Parameter E bound to: 7'b0000110 
+	Parameter F bound to: 7'b0001110 
+	Parameter seg_a bound to: 7'b1111110 
+	Parameter seg_b bound to: 7'b1111101 
+	Parameter seg_c bound to: 7'b1111011 
+	Parameter seg_d bound to: 7'b1110111 
+	Parameter seg_e bound to: 7'b1101111 
+	Parameter seg_f bound to: 7'b1011111 
+	Parameter seg_g bound to: 7'b0111111 
+	Parameter upH bound to: 7'b0001001 
+	Parameter upL bound to: 7'b1000111 
+	Parameter upR bound to: 7'b0001000 
+	Parameter lol bound to: 7'b1001111 
+	Parameter lor bound to: 7'b0101111 
+	Parameter blank bound to: 7'b1111111 
+INFO: [Synth 8-256] done synthesizing module 'Digit' (2#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:196]
+INFO: [Synth 8-256] done synthesizing module 'sevensegment' (3#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:35]
+INFO: [Synth 8-638] synthesizing module 'AccelerometerCtl' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:70]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+	Parameter NUM_READS_AVG bound to: 16 - type: integer 
+	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer 
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+	Parameter NUM_READS_AVG bound to: 16 - type: integer 
+	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer 
+INFO: [Synth 8-3491] module 'ADXL362Ctrl' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:89' bound to instance 'ADXL_Control' of component 'ADXL362Ctrl' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:163]
+INFO: [Synth 8-638] synthesizing module 'ADXL362Ctrl__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:117]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+	Parameter NUM_READS_AVG bound to: 16 - type: integer 
+	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer 
+INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:283]
+INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:312]
+INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:365]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+INFO: [Synth 8-3491] module 'SPI_If' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:42' bound to instance 'SPI_Interface' of component 'SPI_If' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:373]
+INFO: [Synth 8-638] synthesizing module 'SPI_If__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:66]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:113]
+INFO: [Synth 8-256] done synthesizing module 'SPI_If__parameterized0' (4#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:66]
+INFO: [Synth 8-256] done synthesizing module 'ADXL362Ctrl__parameterized0' (5#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:117]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter ACC_X_Y_MAX bound to: 10'b0111111111 
+	Parameter ACC_X_Y_MIN bound to: 10'b0000000000 
+INFO: [Synth 8-3491] module 'AccelArithmetics' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:49' bound to instance 'Accel_Calculation' of component 'AccelArithmetics' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:190]
+INFO: [Synth 8-638] synthesizing module 'AccelArithmetics__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:74]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter ACC_X_Y_MAX bound to: 10'b0111111111 
+	Parameter ACC_X_Y_MIN bound to: 10'b0000000000 
+INFO: [Synth 8-3491] module 'Square_Root' declared at 'c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/Square_Root_stub.v:7' bound to instance 'Magnitude_Calculation' of component 'Square_Root' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:229]
+INFO: [Synth 8-638] synthesizing module 'Square_Root' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/Square_Root_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'Square_Root' (6#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/Square_Root_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'AccelArithmetics__parameterized0' (7#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 'AccelerometerCtl' (8#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'vga_subsystem' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:23]
+INFO: [Synth 8-638] synthesizing module 'clk_wizard' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/clk_wizard_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'clk_wizard' (9#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/clk_wizard_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'dtg' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/dtg.v:29]
+	Parameter HORIZ_PIXELS bound to: 640 - type: integer 
+	Parameter HCNT_MAX bound to: 799 - type: integer 
+	Parameter HCNT_END bound to: 699 - type: integer 
+	Parameter HSYNC_START bound to: 659 - type: integer 
+	Parameter HSYNC_END bound to: 755 - type: integer 
+	Parameter VERT_PIXELS bound to: 480 - type: integer 
+	Parameter VCNT_MAX bound to: 524 - type: integer 
+	Parameter VSYNC_START bound to: 493 - type: integer 
+	Parameter VSYNC_END bound to: 494 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'dtg' (10#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/dtg.v:29]
+WARNING: [Synth 8-689] width (9) of port connection 'pixel_row' does not match port width (10) of module 'dtg' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:60]
+INFO: [Synth 8-638] synthesizing module 'colorizer' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v:23]
+	Parameter BLK bound to: 12'b000000000000 
+	Parameter TRANSPARENT bound to: 8'b00000000 
+INFO: [Synth 8-256] done synthesizing module 'colorizer' (11#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v:23]
+INFO: [Synth 8-638] synthesizing module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v:20]
+	Parameter ICON_WIDTH bound to: 15 - type: integer 
+	Parameter ICON_HEIGHT bound to: 15 - type: integer 
+	Parameter BLANK bound to: 226 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'icon_rom' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/icon_rom_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'icon_rom' (12#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/icon_rom_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'draw_icon' (13#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v:20]
+WARNING: [Synth 8-689] width (9) of port connection 'vert' does not match port width (10) of module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:74]
+INFO: [Synth 8-256] done synthesizing module 'vga_subsystem' (14#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:23]
+INFO: [Synth 8-638] synthesizing module 'Ball' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:8]
+	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter UPDATE_FREQUENCY_HZ bound to: 5 - type: integer 
+	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer 
+	Parameter CNTR_WIDTH bound to: 32 - type: integer 
+	Parameter SIMULATE bound to: 0 - type: integer 
+	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'map' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:47]
+INFO: [Synth 8-638] synthesizing module 'maze_memory' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/maze_memory_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'maze_memory' (15#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/maze_memory_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'map' (16#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:47]
+WARNING: [Synth 8-3848] Net wrld_col_addr in module/entity Ball does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:57]
+WARNING: [Synth 8-3848] Net wrld_row_addr in module/entity Ball does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:58]
+INFO: [Synth 8-256] done synthesizing module 'Ball' (17#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:8]
+WARNING: [Synth 8-3848] Net led in module/entity Nexys4fpga does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:43]
+WARNING: [Synth 8-3848] Net dig4 in module/entity Nexys4fpga does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:76]
+WARNING: [Synth 8-3848] Net dig5 in module/entity Nexys4fpga does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:76]
+WARNING: [Synth 8-3848] Net dig6 in module/entity Nexys4fpga does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:75]
+WARNING: [Synth 8-3848] Net dig7 in module/entity Nexys4fpga does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:75]
+WARNING: [Synth 8-3848] Net decpts in module/entity Nexys4fpga does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:79]
+INFO: [Synth 8-256] done synthesizing module 'Nexys4fpga' (18#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:35]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[15]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[14]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[13]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[12]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[11]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[10]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[9]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[8]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[7]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[6]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[5]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[4]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[3]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[2]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[1]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[0]
+WARNING: [Synth 8-3917] design Nexys4fpga has port JA[5] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4fpga has port JA[4] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4fpga has port JA[3] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4fpga has port JA[2] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4fpga has port JA[1] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4fpga has port JA[0] driven by constant 0
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port aclInt1
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port aclInt2
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:18:53 ; elapsed = 08:24:06 . Memory (MB): peak = 3079.516 ; gain = 2917.293
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col_addr[9] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col_addr[8] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col_addr[7] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col_addr[6] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col_addr[5] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col_addr[4] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col_addr[3] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col_addr[2] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col_addr[1] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col_addr[0] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row_addr[8] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row_addr[7] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row_addr[6] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row_addr[5] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row_addr[4] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row_addr[3] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row_addr[2] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row_addr[1] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row_addr[0] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d4[4] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d4[3] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d4[2] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d4[1] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d4[0] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d5[4] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d5[3] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d5[2] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d5[1] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d5[0] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d6[4] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d6[3] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d6[2] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d6[1] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d6[0] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d7[4] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d7[3] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d7[2] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d7[1] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d7[0] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[7] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[6] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[5] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[4] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[3] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[2] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[1] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[0] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:18:53 ; elapsed = 08:24:06 . Memory (MB): peak = 3079.516 ; gain = 2917.293
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/dcp_5/clk_wizard_in_context.xdc] for cell 'vga/clk_wiz'
+Finished Parsing XDC File [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/dcp_5/clk_wizard_in_context.xdc] for cell 'vga/clk_wiz'
+Parsing XDC File [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga_withvideo.xdc]
+Finished Parsing XDC File [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga_withvideo.xdc]
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 3082.609 ; gain = 3.094
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+WARNING: [Vivado 12-4147] The synthesis checkpoint for IP 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci' is already available but stale. Since IP is locked, no update to the IP run/dcp can be done. The synthesis will use the stale checkpoint and may result in incorrect behavior.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [Runs 36-337] The following IPs are either missing output products or output products are not up-to-date for Synthesis target. Since these IPs are locked, no update to the output products cant be done. 
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci
+
+[Fri Dec 05 21:12:47 2014] Launched synth_1...
+Run output will be captured here: C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/synth_1/runme.log
+[Fri Dec 05 21:12:47 2014] Launched impl_1...
+Run output will be captured here: C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/impl_1/runme.log
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream
+WARNING: [Vivado 12-4147] The synthesis checkpoint for IP 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci' is already available but stale. Since IP is locked, no update to the IP run/dcp can be done. The synthesis will use the stale checkpoint and may result in incorrect behavior.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+[Fri Dec 05 21:13:46 2014] Launched impl_1...
+Run output will be captured here: C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/impl_1/runme.log
+WARNING: [Vivado 12-4173] The following IPs are not generated and locked, no out-of-context (OOC) run will be created. Please select 'Report IP Status' from 'Tools/Report' or run Tcl command 'report_ip_status' for more information.
+C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci
+
+refresh_design
+ERROR: [Synth 8-2715] syntax error near [ [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:74]
+INFO: [Synth 8-2350] module map ignored due to previous errors [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:47]
+Failed to read verilog 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v'
+    while executing
+"rt::read_verilog {
+      ./.Xil/Vivado-3012-BeepBoop/realtime/Square_Root_stub.v
+      ./.Xil/Vivado-3012-BeepBoop/realtime/clk_wizard_stub.v
+      ./..."
+    ("uplevel" body line 23)
+    invoked from within
+"uplevel #0 {
+    set ::env(BUILTIN_SYNTH) true
+    source $::env(HRT_TCL_PATH)/rtSynthPrep.tcl
+    rt::HARTNDb_resetJobStats
+    rt::HARTNDb_startJobS..."
+ERROR: [Common 17-39] 'refresh_design' failed due to earlier errors.
+WARNING: [Vivado 12-4173] The following IPs are not generated and locked, no out-of-context (OOC) run will be created. Please select 'Report IP Status' from 'Tools/Report' or run Tcl command 'report_ip_status' for more information.
+C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci
+
+refresh_design
+ERROR: [Synth 8-2715] syntax error near [ [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:74]
+INFO: [Synth 8-2350] module map ignored due to previous errors [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:47]
+Failed to read verilog 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v'
+    while executing
+"rt::read_verilog {
+      ./.Xil/Vivado-3012-BeepBoop/realtime/Square_Root_stub.v
+      ./.Xil/Vivado-3012-BeepBoop/realtime/clk_wizard_stub.v
+      ./..."
+    ("uplevel" body line 23)
+    invoked from within
+"uplevel #0 {
+    set ::env(BUILTIN_SYNTH) true
+    source $::env(HRT_TCL_PATH)/rtSynthPrep.tcl
+    rt::HARTNDb_resetJobStats
+    rt::HARTNDb_startJobS..."
+ERROR: [Common 17-39] 'refresh_design' failed due to earlier errors.
+WARNING: [Vivado 12-4173] The following IPs are not generated and locked, no out-of-context (OOC) run will be created. Please select 'Report IP Status' from 'Tools/Report' or run Tcl command 'report_ip_status' for more information.
+C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci
+
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:20:35 ; elapsed = 08:55:42 . Memory (MB): peak = 3086.086 ; gain = 2923.863
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Nexys4fpga' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:35]
+	Parameter SIMULATE bound to: 0 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'debounce' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:24]
+	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter DEBOUNCE_FREQUENCY_HZ bound to: 250 - type: integer 
+	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer 
+	Parameter CNTR_WIDTH bound to: 32 - type: integer 
+	Parameter SIMULATE bound to: 0 - type: integer 
+	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer 
+	Parameter pb0_in bound to: 4'b0001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:102]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:103]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:104]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:105]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:106]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:107]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:110]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:111]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:112]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:113]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:114]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:115]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:116]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:117]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:118]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:119]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:120]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:122]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:123]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:124]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:125]
+INFO: [Synth 8-256] done synthesizing module 'debounce' (1#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:24]
+INFO: [Synth 8-638] synthesizing module 'sevensegment' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:35]
+	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter REFRESH_FREQUENCY_HZ bound to: 500 - type: integer 
+	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer 
+	Parameter CNTR_WIDTH bound to: 32 - type: integer 
+	Parameter SIMULATE bound to: 0 - type: integer 
+	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer 
+	Parameter digit1 bound to: 8'b11111110 
+	Parameter digit2 bound to: 8'b11111101 
+	Parameter digit3 bound to: 8'b11111011 
+	Parameter digit4 bound to: 8'b11110111 
+	Parameter digit5 bound to: 8'b11101111 
+	Parameter digit6 bound to: 8'b11011111 
+	Parameter digit7 bound to: 8'b10111111 
+	Parameter digit8 bound to: 8'b01111111 
+INFO: [Synth 8-638] synthesizing module 'Digit' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:196]
+	Parameter zero bound to: 7'b1000000 
+	Parameter one bound to: 7'b1111001 
+	Parameter two bound to: 7'b0100100 
+	Parameter three bound to: 7'b0110000 
+	Parameter four bound to: 7'b0011001 
+	Parameter five bound to: 7'b0010010 
+	Parameter six bound to: 7'b0000010 
+	Parameter seven bound to: 7'b1111000 
+	Parameter eight bound to: 7'b0000000 
+	Parameter nine bound to: 7'b0010000 
+	Parameter A bound to: 7'b0001000 
+	Parameter B bound to: 7'b0000011 
+	Parameter C bound to: 7'b1000110 
+	Parameter D bound to: 7'b0100001 
+	Parameter E bound to: 7'b0000110 
+	Parameter F bound to: 7'b0001110 
+	Parameter seg_a bound to: 7'b1111110 
+	Parameter seg_b bound to: 7'b1111101 
+	Parameter seg_c bound to: 7'b1111011 
+	Parameter seg_d bound to: 7'b1110111 
+	Parameter seg_e bound to: 7'b1101111 
+	Parameter seg_f bound to: 7'b1011111 
+	Parameter seg_g bound to: 7'b0111111 
+	Parameter upH bound to: 7'b0001001 
+	Parameter upL bound to: 7'b1000111 
+	Parameter upR bound to: 7'b0001000 
+	Parameter lol bound to: 7'b1001111 
+	Parameter lor bound to: 7'b0101111 
+	Parameter blank bound to: 7'b1111111 
+INFO: [Synth 8-256] done synthesizing module 'Digit' (2#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:196]
+INFO: [Synth 8-256] done synthesizing module 'sevensegment' (3#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:35]
+INFO: [Synth 8-638] synthesizing module 'AccelerometerCtl' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:70]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+	Parameter NUM_READS_AVG bound to: 16 - type: integer 
+	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer 
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+	Parameter NUM_READS_AVG bound to: 16 - type: integer 
+	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer 
+INFO: [Synth 8-3491] module 'ADXL362Ctrl' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:89' bound to instance 'ADXL_Control' of component 'ADXL362Ctrl' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:163]
+INFO: [Synth 8-638] synthesizing module 'ADXL362Ctrl__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:117]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+	Parameter NUM_READS_AVG bound to: 16 - type: integer 
+	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer 
+INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:283]
+INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:312]
+INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:365]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+INFO: [Synth 8-3491] module 'SPI_If' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:42' bound to instance 'SPI_Interface' of component 'SPI_If' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:373]
+INFO: [Synth 8-638] synthesizing module 'SPI_If__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:66]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:113]
+INFO: [Synth 8-256] done synthesizing module 'SPI_If__parameterized0' (4#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:66]
+INFO: [Synth 8-256] done synthesizing module 'ADXL362Ctrl__parameterized0' (5#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:117]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter ACC_X_Y_MAX bound to: 10'b0111111111 
+	Parameter ACC_X_Y_MIN bound to: 10'b0000000000 
+INFO: [Synth 8-3491] module 'AccelArithmetics' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:49' bound to instance 'Accel_Calculation' of component 'AccelArithmetics' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:190]
+INFO: [Synth 8-638] synthesizing module 'AccelArithmetics__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:74]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter ACC_X_Y_MAX bound to: 10'b0111111111 
+	Parameter ACC_X_Y_MIN bound to: 10'b0000000000 
+INFO: [Synth 8-3491] module 'Square_Root' declared at 'c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/Square_Root_stub.v:7' bound to instance 'Magnitude_Calculation' of component 'Square_Root' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:229]
+INFO: [Synth 8-638] synthesizing module 'Square_Root' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/Square_Root_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'Square_Root' (6#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/Square_Root_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'AccelArithmetics__parameterized0' (7#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 'AccelerometerCtl' (8#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'vga_subsystem' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:23]
+INFO: [Synth 8-638] synthesizing module 'clk_wizard' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/clk_wizard_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'clk_wizard' (9#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/clk_wizard_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'dtg' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/dtg.v:29]
+	Parameter HORIZ_PIXELS bound to: 640 - type: integer 
+	Parameter HCNT_MAX bound to: 799 - type: integer 
+	Parameter HCNT_END bound to: 699 - type: integer 
+	Parameter HSYNC_START bound to: 659 - type: integer 
+	Parameter HSYNC_END bound to: 755 - type: integer 
+	Parameter VERT_PIXELS bound to: 480 - type: integer 
+	Parameter VCNT_MAX bound to: 524 - type: integer 
+	Parameter VSYNC_START bound to: 493 - type: integer 
+	Parameter VSYNC_END bound to: 494 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'dtg' (10#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/dtg.v:29]
+WARNING: [Synth 8-689] width (9) of port connection 'pixel_row' does not match port width (10) of module 'dtg' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:60]
+INFO: [Synth 8-638] synthesizing module 'colorizer' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v:23]
+	Parameter BLK bound to: 12'b000000000000 
+	Parameter TRANSPARENT bound to: 8'b00000000 
+INFO: [Synth 8-256] done synthesizing module 'colorizer' (11#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v:23]
+INFO: [Synth 8-638] synthesizing module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v:20]
+	Parameter ICON_WIDTH bound to: 15 - type: integer 
+	Parameter ICON_HEIGHT bound to: 15 - type: integer 
+	Parameter BLANK bound to: 226 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'icon_rom' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/icon_rom_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'icon_rom' (12#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/icon_rom_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'draw_icon' (13#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v:20]
+WARNING: [Synth 8-689] width (9) of port connection 'vert' does not match port width (10) of module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:74]
+INFO: [Synth 8-256] done synthesizing module 'vga_subsystem' (14#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:23]
+INFO: [Synth 8-638] synthesizing module 'Ball' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:8]
+	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter UPDATE_FREQUENCY_HZ bound to: 5 - type: integer 
+	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer 
+	Parameter CNTR_WIDTH bound to: 32 - type: integer 
+	Parameter SIMULATE bound to: 0 - type: integer 
+	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'map' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:47]
+INFO: [Synth 8-638] synthesizing module 'maze_memory' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/maze_memory_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'maze_memory' (15#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/maze_memory_stub.v:7]
+WARNING: [Synth 8-689] width (1) of port connection 'addra' does not match port width (17) of module 'maze_memory' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:85]
+WARNING: [Synth 8-689] width (1) of port connection 'addrb' does not match port width (17) of module 'maze_memory' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:89]
+INFO: [Synth 8-256] done synthesizing module 'map' (16#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:47]
+ERROR: [Synth 8-448] named port connection 'wrld_col_addr' does not exist for instance 'amap' of module 'map' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:148]
+ERROR: [Synth 8-448] named port connection 'wrld_row_addr' does not exist for instance 'amap' of module 'map' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:149]
+ERROR: [Synth 8-285] failed synthesizing module 'Ball' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:8]
+ERROR: [Synth 8-285] failed synthesizing module 'Nexys4fpga' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:35]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:20:36 ; elapsed = 08:55:43 . Memory (MB): peak = 3088.508 ; gain = 2926.285
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+    while executing
+"rt::run_rtlelab -module $rt::top"
+    ("uplevel" body line 59)
+    invoked from within
+"uplevel #0 {
+    set ::env(BUILTIN_SYNTH) true
+    source $::env(HRT_TCL_PATH)/rtSynthPrep.tcl
+    rt::HARTNDb_resetJobStats
+    rt::HARTNDb_startJobS..."
+ERROR: [Common 17-39] 'refresh_design' failed due to earlier errors.
+WARNING: [Vivado 12-4173] The following IPs are not generated and locked, no out-of-context (OOC) run will be created. Please select 'Report IP Status' from 'Tools/Report' or run Tcl command 'report_ip_status' for more information.
+C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci
+
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:20:39 ; elapsed = 08:56:10 . Memory (MB): peak = 3094.063 ; gain = 2931.840
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Nexys4fpga' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:35]
+	Parameter SIMULATE bound to: 0 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'debounce' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:24]
+	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter DEBOUNCE_FREQUENCY_HZ bound to: 250 - type: integer 
+	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer 
+	Parameter CNTR_WIDTH bound to: 32 - type: integer 
+	Parameter SIMULATE bound to: 0 - type: integer 
+	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer 
+	Parameter pb0_in bound to: 4'b0001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:102]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:103]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:104]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:105]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:106]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:107]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:110]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:111]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:112]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:113]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:114]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:115]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:116]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:117]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:118]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:119]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:120]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:122]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:123]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:124]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:125]
+INFO: [Synth 8-256] done synthesizing module 'debounce' (1#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:24]
+INFO: [Synth 8-638] synthesizing module 'sevensegment' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:35]
+	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter REFRESH_FREQUENCY_HZ bound to: 500 - type: integer 
+	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer 
+	Parameter CNTR_WIDTH bound to: 32 - type: integer 
+	Parameter SIMULATE bound to: 0 - type: integer 
+	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer 
+	Parameter digit1 bound to: 8'b11111110 
+	Parameter digit2 bound to: 8'b11111101 
+	Parameter digit3 bound to: 8'b11111011 
+	Parameter digit4 bound to: 8'b11110111 
+	Parameter digit5 bound to: 8'b11101111 
+	Parameter digit6 bound to: 8'b11011111 
+	Parameter digit7 bound to: 8'b10111111 
+	Parameter digit8 bound to: 8'b01111111 
+INFO: [Synth 8-638] synthesizing module 'Digit' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:196]
+	Parameter zero bound to: 7'b1000000 
+	Parameter one bound to: 7'b1111001 
+	Parameter two bound to: 7'b0100100 
+	Parameter three bound to: 7'b0110000 
+	Parameter four bound to: 7'b0011001 
+	Parameter five bound to: 7'b0010010 
+	Parameter six bound to: 7'b0000010 
+	Parameter seven bound to: 7'b1111000 
+	Parameter eight bound to: 7'b0000000 
+	Parameter nine bound to: 7'b0010000 
+	Parameter A bound to: 7'b0001000 
+	Parameter B bound to: 7'b0000011 
+	Parameter C bound to: 7'b1000110 
+	Parameter D bound to: 7'b0100001 
+	Parameter E bound to: 7'b0000110 
+	Parameter F bound to: 7'b0001110 
+	Parameter seg_a bound to: 7'b1111110 
+	Parameter seg_b bound to: 7'b1111101 
+	Parameter seg_c bound to: 7'b1111011 
+	Parameter seg_d bound to: 7'b1110111 
+	Parameter seg_e bound to: 7'b1101111 
+	Parameter seg_f bound to: 7'b1011111 
+	Parameter seg_g bound to: 7'b0111111 
+	Parameter upH bound to: 7'b0001001 
+	Parameter upL bound to: 7'b1000111 
+	Parameter upR bound to: 7'b0001000 
+	Parameter lol bound to: 7'b1001111 
+	Parameter lor bound to: 7'b0101111 
+	Parameter blank bound to: 7'b1111111 
+INFO: [Synth 8-256] done synthesizing module 'Digit' (2#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:196]
+INFO: [Synth 8-256] done synthesizing module 'sevensegment' (3#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:35]
+INFO: [Synth 8-638] synthesizing module 'AccelerometerCtl' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:70]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+	Parameter NUM_READS_AVG bound to: 16 - type: integer 
+	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer 
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+	Parameter NUM_READS_AVG bound to: 16 - type: integer 
+	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer 
+INFO: [Synth 8-3491] module 'ADXL362Ctrl' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:89' bound to instance 'ADXL_Control' of component 'ADXL362Ctrl' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:163]
+INFO: [Synth 8-638] synthesizing module 'ADXL362Ctrl__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:117]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+	Parameter NUM_READS_AVG bound to: 16 - type: integer 
+	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer 
+INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:283]
+INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:312]
+INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:365]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+INFO: [Synth 8-3491] module 'SPI_If' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:42' bound to instance 'SPI_Interface' of component 'SPI_If' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:373]
+INFO: [Synth 8-638] synthesizing module 'SPI_If__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:66]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
+INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:113]
+INFO: [Synth 8-256] done synthesizing module 'SPI_If__parameterized0' (4#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:66]
+INFO: [Synth 8-256] done synthesizing module 'ADXL362Ctrl__parameterized0' (5#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:117]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter ACC_X_Y_MAX bound to: 10'b0111111111 
+	Parameter ACC_X_Y_MIN bound to: 10'b0000000000 
+INFO: [Synth 8-3491] module 'AccelArithmetics' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:49' bound to instance 'Accel_Calculation' of component 'AccelArithmetics' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:190]
+INFO: [Synth 8-638] synthesizing module 'AccelArithmetics__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:74]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter ACC_X_Y_MAX bound to: 10'b0111111111 
+	Parameter ACC_X_Y_MIN bound to: 10'b0000000000 
+INFO: [Synth 8-3491] module 'Square_Root' declared at 'c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/Square_Root_stub.v:7' bound to instance 'Magnitude_Calculation' of component 'Square_Root' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:229]
+INFO: [Synth 8-638] synthesizing module 'Square_Root' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/Square_Root_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'Square_Root' (6#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/Square_Root_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'AccelArithmetics__parameterized0' (7#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 'AccelerometerCtl' (8#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'vga_subsystem' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:23]
+INFO: [Synth 8-638] synthesizing module 'clk_wizard' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/clk_wizard_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'clk_wizard' (9#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/clk_wizard_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'dtg' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/dtg.v:29]
+	Parameter HORIZ_PIXELS bound to: 640 - type: integer 
+	Parameter HCNT_MAX bound to: 799 - type: integer 
+	Parameter HCNT_END bound to: 699 - type: integer 
+	Parameter HSYNC_START bound to: 659 - type: integer 
+	Parameter HSYNC_END bound to: 755 - type: integer 
+	Parameter VERT_PIXELS bound to: 480 - type: integer 
+	Parameter VCNT_MAX bound to: 524 - type: integer 
+	Parameter VSYNC_START bound to: 493 - type: integer 
+	Parameter VSYNC_END bound to: 494 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'dtg' (10#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/dtg.v:29]
+WARNING: [Synth 8-689] width (9) of port connection 'pixel_row' does not match port width (10) of module 'dtg' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:60]
+INFO: [Synth 8-638] synthesizing module 'colorizer' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v:23]
+	Parameter BLK bound to: 12'b000000000000 
+	Parameter TRANSPARENT bound to: 8'b00000000 
+INFO: [Synth 8-256] done synthesizing module 'colorizer' (11#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v:23]
+INFO: [Synth 8-638] synthesizing module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v:20]
+	Parameter ICON_WIDTH bound to: 15 - type: integer 
+	Parameter ICON_HEIGHT bound to: 15 - type: integer 
+	Parameter BLANK bound to: 226 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'icon_rom' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/icon_rom_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'icon_rom' (12#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/icon_rom_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'draw_icon' (13#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v:20]
+WARNING: [Synth 8-689] width (9) of port connection 'vert' does not match port width (10) of module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:74]
+INFO: [Synth 8-256] done synthesizing module 'vga_subsystem' (14#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:23]
+INFO: [Synth 8-638] synthesizing module 'Ball' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:8]
+	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
+	Parameter UPDATE_FREQUENCY_HZ bound to: 5 - type: integer 
+	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer 
+	Parameter CNTR_WIDTH bound to: 32 - type: integer 
+	Parameter SIMULATE bound to: 0 - type: integer 
+	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'map' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:47]
+INFO: [Synth 8-638] synthesizing module 'maze_memory' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/maze_memory_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'maze_memory' (15#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/maze_memory_stub.v:7]
+WARNING: [Synth 8-689] width (1) of port connection 'addra' does not match port width (17) of module 'maze_memory' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:85]
+WARNING: [Synth 8-689] width (1) of port connection 'addrb' does not match port width (17) of module 'maze_memory' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:89]
+INFO: [Synth 8-256] done synthesizing module 'map' (16#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:47]
+WARNING: [Synth 8-3848] Net wrld_col_addr in module/entity Ball does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:57]
+WARNING: [Synth 8-3848] Net wrld_row_addr in module/entity Ball does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:58]
+INFO: [Synth 8-256] done synthesizing module 'Ball' (17#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:8]
+WARNING: [Synth 8-3848] Net led in module/entity Nexys4fpga does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:43]
+WARNING: [Synth 8-3848] Net dig4 in module/entity Nexys4fpga does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:76]
+WARNING: [Synth 8-3848] Net dig5 in module/entity Nexys4fpga does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:76]
+WARNING: [Synth 8-3848] Net dig6 in module/entity Nexys4fpga does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:75]
+WARNING: [Synth 8-3848] Net dig7 in module/entity Nexys4fpga does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:75]
+WARNING: [Synth 8-3848] Net decpts in module/entity Nexys4fpga does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:79]
+INFO: [Synth 8-256] done synthesizing module 'Nexys4fpga' (18#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:35]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[15]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[14]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[13]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[12]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[11]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[10]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[9]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[8]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[7]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[6]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[5]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[4]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[3]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[2]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[1]
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port led[0]
+WARNING: [Synth 8-3917] design Nexys4fpga has port JA[5] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4fpga has port JA[4] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4fpga has port JA[3] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4fpga has port JA[2] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4fpga has port JA[1] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4fpga has port JA[0] driven by constant 0
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port aclInt1
+WARNING: [Synth 8-3331] design Nexys4fpga has unconnected port aclInt2
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:20:41 ; elapsed = 08:56:12 . Memory (MB): peak = 3094.063 ; gain = 2931.840
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col[9] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col[8] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col[7] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col[6] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col[5] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col[4] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col[3] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col[2] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col[1] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_col[0] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row[8] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row[7] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row[6] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row[5] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row[4] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row[3] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row[2] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row[1] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin amap:wrld_row[0] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:145]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d4[4] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d4[3] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d4[2] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d4[1] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d4[0] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d5[4] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d5[3] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d5[2] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d5[1] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d5[0] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d6[4] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d6[3] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d6[2] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d6[1] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d6[0] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d7[4] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d7[3] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d7[2] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d7[1] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:d7[0] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[7] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[6] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[5] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[4] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[3] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[2] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[1] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+WARNING: [Synth 8-3295] tying undriven pin SSB:dp[0] to constant 0 [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:156]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:20:41 ; elapsed = 08:56:12 . Memory (MB): peak = 3094.063 ; gain = 2931.840
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/dcp_5/clk_wizard_in_context.xdc] for cell 'vga/clk_wiz'
+Finished Parsing XDC File [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/dcp_5/clk_wizard_in_context.xdc] for cell 'vga/clk_wiz'
+Parsing XDC File [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga_withvideo.xdc]
+Finished Parsing XDC File [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga_withvideo.xdc]
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 3097.418 ; gain = 8.910
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+WARNING: [Vivado 12-4147] The synthesis checkpoint for IP 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci' is already available but stale. Since IP is locked, no update to the IP run/dcp can be done. The synthesis will use the stale checkpoint and may result in incorrect behavior.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [Runs 36-337] The following IPs are either missing output products or output products are not up-to-date for Synthesis target. Since these IPs are locked, no update to the output products cant be done. 
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci
+
+[Fri Dec 05 21:27:32 2014] Launched synth_1...
+Run output will be captured here: C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/synth_1/runme.log
+[Fri Dec 05 21:27:32 2014] Launched impl_1...
+Run output will be captured here: C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/impl_1/runme.log
+close_design
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 90 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2014.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'vga/clk_wiz/clk_in1' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/dcp_4/Nexys4fpga.edf:38041]
+Parsing XDC File [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/dcp_4/Nexys4fpga_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/clk_wizard/clk_wizard.xdc:56]
+INFO: [Timing 38-2] Deriving generated clocks [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/clk_wizard/clk_wizard.xdc:56]
+get_clocks: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3414.879 ; gain = 317.461
+Finished Parsing XDC File [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/dcp_4/Nexys4fpga_early.xdc]
+Parsing XDC File [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/dcp_4/Nexys4fpga.xdc]
+Finished Parsing XDC File [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/dcp_4/Nexys4fpga.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.345 . Memory (MB): peak = 3416.426 ; gain = 1.496
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.345 . Memory (MB): peak = 3416.426 ; gain = 1.496
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:21 ; elapsed = 00:00:18 . Memory (MB): peak = 3460.199 ; gain = 362.781
+set_property PROBES.FILE {C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/impl_1/Nexys4fpga.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-32] Done pin status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].

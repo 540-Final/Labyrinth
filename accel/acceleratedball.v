@@ -145,8 +145,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	map amap (
 			.clk (clk),
 			.reset (reset),
-			.wrld_col_addr (wrld_col_addr),
-			.wrld_row_addr (wrld_row_addr),
+			.wrld_col (wrld_col_addr),
+			.wrld_row (wrld_row_addr),
 			.wrld_loc_info (wrld_loc_info),
 			
 			.vid_row (vid_row),
