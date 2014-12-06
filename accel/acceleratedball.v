@@ -35,7 +35,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	
 	input 		[9:0]	vid_row,		// video logic row address
 	input 		[9:0]	vid_col,		// video logic column address
-	output reg	[7:0]	vid_pixel_out	// pixel (location) value
+	output   	[7:0]	vid_pixel_out	// pixel (location) value
 );
 
 	// internal variables

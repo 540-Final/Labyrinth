@@ -106,14 +106,14 @@ module Nexys4fpga (
 	wire 		upd_sysreg;
 	wire [9:0]	vid_row;				//video ctrlr
 	wire [9:0]	vid_col;				//video ctrlr
-	wire [1:0]	vid_pixel_out;	//video ctrlr
+	wire [1:0]	vid_pixel;	//video ctrlr
 	
 	wire [9:0]	vid_rowx4;				//video ctrlr
 	wire [9:0]	vid_colx4;				//video ctrlr
 	wire [9:0]	vid_rowx2;				//video ctrlr
 	wire [9:0]	vid_colx2;				//video ctrlr
 	
-	wire [1:0] icon;
+	//wire [1:0] icon;
 	
 	wire [8:0]	accelX;
 	wire [8:0]	accelY;
@@ -133,8 +133,7 @@ module Nexys4fpga (
 	
 	assign	JA = {sysclk, sysreset, 6'b000000};
 	
-  	assign vid_rowx2 = vid_row >> 1;
-	assign vid_colx2 = vid_col >> 1;
+
 	//instantiate the debounce module
 	debounce
 	#(
@@ -195,17 +194,19 @@ module Nexys4fpga (
 	vga_subsystem vga(
 		.sys_clk(sysclk),
 		.sys_rst(~sysreset),
-		.LocX_reg(locX),
-		.LocY_reg(locY),
-		.world_pixel(vid_pixel_out),
-		.icon_pixel (icon),
-		.vert_sync(Vsync),
-		.horiz_sync(Hsync),
+		.ball_loc_X(locX),
+		.ball_loc_Y(locY),
+		//.icon_pixel (icon),
+		
 		.pixel_row(vid_row),
 		.pixel_column(vid_col),
+		.world_pixel(vid_pixel),
+		
 		.red(vgaRed),
 		.green(vgaGreen),
-		.blue(vgaBlue)
+		.blue(vgaBlue),
+		.vert_sync(Vsync),
+		.horiz_sync(Hsync)
 	);
 	
 	Ball aball 
@@ -218,9 +219,9 @@ module Nexys4fpga (
 		.y_out			(locX),
 		.x_out			(locY),
 	
-		.vid_row		(vid_rowx2),	
-		.vid_col		(vid_colx2),		
-		.vid_pixel_out	(vid_pixel_out)
+		.vid_row		(vid_row),	
+		.vid_col		(vid_col),		
+		.vid_pixel	    (vid_pixel)
 	
 	);
 
