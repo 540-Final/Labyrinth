@@ -21,10 +21,10 @@ module draw_icon(
     input [9:0] vert,
     input [9:0] horz,
     input clk,
-    input [7:0] bot_LocX,
-    input [7:0] bot_LocY,
+    input [9:0] bot_LocX,
+    input [8:0] bot_LocY,
     //input [2:0] bot_Orie,
-    output [1:0] icon_out
+    output [7:0] icon_out
     );
     
 	// Positioning variables
@@ -34,7 +34,7 @@ module draw_icon(
 	                         // This value should refer to the last address in the rom.
     
     // Internal nets and regs
-    reg [11:0] addr;
+    reg [7:0] addr;
 
 	// Bot location is scaled up to match vga resolution
     assign bot_LocXx4 = bot_LocX <<2;

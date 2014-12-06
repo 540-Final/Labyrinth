@@ -23,7 +23,7 @@
 module vga_subsystem(
     input sys_clk,
     input sys_rst,
-    input [8:0] ball_loc_X,
+    input [9:0] ball_loc_X,
     input [8:0] ball_loc_Y,
     input [7:0] world_pixel,
     // input [1:0] icon_pixel,
@@ -38,7 +38,7 @@ module vga_subsystem(
 
 // Internal connections
 wire new_clk;           // 25MHz
-wire [1:0] icon; // for testing, change after implementing icon module
+wire [1:0] icon_pixel; // for testing, change after implementing icon module
 wire video_on;
 
     // Clock divider 100MHz -> 25MHz
@@ -64,7 +64,7 @@ wire video_on;
     colorizer c(
         .video_on(video_on),
         .world_pixel(world_pixel),
-        .icon(icon),
+        .icon(icon_pixel),
         .red(red),
         .green(green),
         .blue(blue)
@@ -76,7 +76,7 @@ wire video_on;
         .clk(new_clk),
         .bot_LocX(ball_loc_X),
         .bot_LocY(ball_loc_Y),
-        .icon_out(icon)
+        .icon_out(icon_pixel)
     );
     
 

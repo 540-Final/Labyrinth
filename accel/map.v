@@ -68,7 +68,6 @@ module map (
 //	RSVD	= 8'b00;	// reserved - treat as "ground" for now
 		
 		
-		
 wire 	[18:0] 	wrld_mem_addr, vid_mem_addr;	// dual port RAM addresses for 
 										// external world emulator and video logic
                                       
@@ -80,10 +79,11 @@ maze_memory amaze (
 	.clka(clk),
 	.addra(wrld_mem_addr),
 	.douta(wrld_loc_info),
+	.ena(1'b1),
 	.clkb(clk),
 	.addrb(vid_mem_addr),
-	.doutb(vid_pixel_out)
+	.doutb(vid_pixel_out),
+	.enb(1'b1)
 );	
-	
 	
 endmodule

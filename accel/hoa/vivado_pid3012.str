@@ -5426,3 +5426,1113 @@ selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Op
 // Elapsed time: 782 seconds
 selectCodeEditor("icon.v", 487, 351); // bi:J (JPanel:JComponent, ch:JFrame)
 selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vga_subsystem.v", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+// Elapsed time: 111 seconds
+selectCodeEditor("vga_subsystem.v", 478, 467); // bi:J (JPanel:JComponent, ch:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, [Opt 31-67] Problem: A LUT2 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: aball/amap/amaze/U0/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/bindec_a.bindec_inst_a/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_i_1.. ]", 2, true); // ae:k (JViewport:JComponent, ch:JFrame) - Node
+// Elapsed time: 21 seconds
+selectCheckBox(PAResourceItoN.MsgView_ERROR_MESSAGES, (String) null, false); // h:JCheckBox (JPanel:JComponent, ch:JFrame): FALSE
+selectCheckBox(PAResourceItoN.MsgView_CRITICAL_WARNINGS, (String) null, true); // h:JCheckBox (JPanel:JComponent, ch:JFrame): TRUE
+selectCheckBox(PAResourceItoN.MsgView_ERROR_MESSAGES, (String) null, true); // h:JCheckBox (JPanel:JComponent, ch:JFrame): TRUE
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design]", 3); // ae:k (JViewport:JComponent, ch:JFrame)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, [Opt 31-67] Problem: A LUT2 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: aball/amap/amaze/U0/inst_blk_mem_gen/gnativebmg.native_blk_mem_gen/valid.cstr/bindec_a.bindec_inst_a/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_i_1.. ]", 4); // ae:k (JViewport:JComponent, ch:JFrame)
+// Elapsed time: 11 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-4442] BlackBox module \\aball/amap/amaze  has unconnected pin ena. ]", 1, true); // ae:k (JViewport:JComponent, ch:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-4442] BlackBox module \\aball/amap/amaze  has unconnected pin ena. ]", 1, true, false, false, false, false, true); // ae:k (JViewport:JComponent, ch:JFrame) - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-4442] BlackBox module \\aball/amap/amaze  has unconnected pin ena. , [Synth 8-4442] BlackBox module \\aball/amap/amaze  has unconnected pin enb. ]", 2, false); // ae:k (JViewport:JComponent, ch:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-4442] BlackBox module \\aball/amap/amaze  has unconnected pin ena. , [Synth 8-4442] BlackBox module \\aball/amap/amaze  has unconnected pin enb. ]", 2, false, false, false, false, false, true); // ae:k (JViewport:JComponent, ch:JFrame) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "icon.v", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "map.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectCodeEditor("map.v", 208, 498); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 182 seconds
+selectCodeEditor("map.v", 62, 534); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("map.v", 87, 535); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("map.v", 13, 533); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("map.v", 58, 541); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("map.v", 280, 473); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 18 seconds
+selectCodeEditor("map.v", 43, 553); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("map.v", 73, 561); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("map.v", 52, 550); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("map.v", 119, 479); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 12 seconds
+selectCodeEditor("map.v", 39, 551); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("map.v", 47, 553); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("map.v", 76, 569); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("map.v", 144, 255); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("map.v", 77, 565); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 15 seconds
+selectCodeEditor("map.v", 41, 535); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 27 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), aball - Ball (acceleratedball.v)]", 6); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), aball - Ball (acceleratedball.v), amap - map (map.v), amaze - maze_memory (maze_memory.xci)]", 8, false); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), aball - Ball (acceleratedball.v), amap - map (map.v), amaze - maze_memory (maze_memory.xci)]", 8, false, false, false, false, false, true); // u:k (I:JPanel, ch:JFrame) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_RECUSTOMIZE_CORE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// cm:N (ch:JFrame):  Re-customize IP : addNotify
+// q:N (ch:JFrame): Re-customize IP: addNotify
+dismissDialog("Re-customize IP"); // cm:N (ch:JFrame)
+// Elapsed time: 74 seconds
+selectCodeEditor("map.v", 161, 466); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("map.v", 163, 422); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 30 seconds
+typeControlKey((HResource) null, "map.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "map.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+selectButton(PAResourceOtoP.ProjectTab_RELOAD, "Reload"); // h:k (JPanel:JComponent, ch:JFrame)
+// HOptionPane Warning: 'A background task is running. Please wait until it completes and try again. (Background Task)'
+selectButton("RDIResource.ProgressDialog_BACKGROUND_TASK_RUNNING_OK", "OK"); // BasicOptionPaneUI$ButtonFactory:JButton (JPanel:JComponent, Q:JDialog)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceOtoP.ProjectTab_RELOAD, "Reload"); // h:k (JPanel:JComponent, ch:JFrame)
+// cm:N (ch:JFrame):  Reloading : addNotify
+// TclEventType: ELABORATE_START
+// Tcl Message: refresh_design 
+// TclEventType: ELABORATE_FAIL
+// Tcl Message: ERROR: [Synth 8-2715] syntax error near . [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:86] 
+// Tcl Message: INFO: [Synth 8-2350] module map ignored due to previous errors [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:47] 
+// Tcl Message: Failed to read verilog 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v'     while executing "rt::read_verilog {       ./.Xil/Vivado-3012-BeepBoop/realtime/Square_Root_stub.v       ./.Xil/Vivado-3012-BeepBoop/realtime/clk_wizard_stub.v       ./..."     ("uplevel" body line 23)     invoked from within "uplevel #0 {     set ::env(BUILTIN_SYNTH) true     source $::env(HRT_TCL_PATH)/rtSynthPrep.tcl     rt::HARTNDb_resetJobStats     rt::HARTNDb_startJobS..." ERROR: [Common 17-39] 'refresh_design' failed due to earlier errors. 
+dismissDialog("Reloading"); // cm:N (ch:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near .. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:86]. ]", 2, false); // ae:k (JViewport:JComponent, ch:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Colten\Dropbox\_SCHOOL\ECE_540_SoC_Design\Final_Project\Labyrinth\accel\map.v;-;;-;15;-;line;-;86;-;;-;15;-;"); // ae:k (JViewport:JComponent, ch:JFrame)
+selectCodeEditor("map.v", 188, 522); // bi:J (JPanel:JComponent, ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceOtoP.ProjectTab_RELOAD, "Reload"); // h:k (JPanel:JComponent, ch:JFrame)
+// cm:N (ch:JFrame):  Reloading : addNotify
+// TclEventType: ELABORATE_START
+// Tcl Message: refresh_design 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:14:56 ; elapsed = 05:34:42 . Memory (MB): peak = 3054.676 ; gain = 2892.453 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// TclEventType: ELABORATE_FINISH
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 2,702 MB. GUI used memory: 1,374 MB. Current time: 12/5/14 6:02:10 PM
+// Engine heap size: 2,702 MB. GUI used memory: 1,375 MB. Current time: 12/5/14 6:02:10 PM
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'Nexys4fpga' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:35] 
+// Tcl Message: 	Parameter SIMULATE bound to: 0 - type: integer  
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'debounce' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:24] 
+// Tcl Message: 	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter DEBOUNCE_FREQUENCY_HZ bound to: 250 - type: integer  	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer  	Parameter CNTR_WIDTH bound to: 32 - type: integer  	Parameter SIMULATE bound to: 0 - type: integer  	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer  	Parameter pb0_in bound to: 4'b0001  
+// Tcl Message: 	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter REFRESH_FREQUENCY_HZ bound to: 500 - type: integer  	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer  	Parameter CNTR_WIDTH bound to: 32 - type: integer  	Parameter SIMULATE bound to: 0 - type: integer  	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer  	Parameter digit1 bound to: 8'b11111110  	Parameter digit2 bound to: 8'b11111101  	Parameter digit3 bound to: 8'b11111011  	Parameter digit4 bound to: 8'b11110111  	Parameter digit5 bound to: 8'b11101111  	Parameter digit6 bound to: 8'b11011111  	Parameter digit7 bound to: 8'b10111111  	Parameter digit8 bound to: 8'b01111111  
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'Digit' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:196] 
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'Digit' (2#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:196] INFO: [Synth 8-256] done synthesizing module 'sevensegment' (3#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:35] 
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'AccelerometerCtl' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:70] 
+// Tcl Message: 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer  	Parameter NUM_READS_AVG bound to: 16 - type: integer  	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer  	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer  	Parameter NUM_READS_AVG bound to: 16 - type: integer  	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer  
+// Tcl Message: INFO: [Synth 8-3491] module 'ADXL362Ctrl' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:89' bound to instance 'ADXL_Control' of component 'ADXL362Ctrl' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:163] INFO: [Synth 8-638] synthesizing module 'ADXL362Ctrl__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:117] 
+// Tcl Message: 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer  	Parameter NUM_READS_AVG bound to: 16 - type: integer  	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer  
+// Tcl Message: INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:283] INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:312] INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:365] 
+// Tcl Message: 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer  
+// Tcl Message: INFO: [Synth 8-3491] module 'SPI_If' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:42' bound to instance 'SPI_Interface' of component 'SPI_If' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:373] INFO: [Synth 8-638] synthesizing module 'SPI_If__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:66] 
+// Tcl Message: 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer  
+// Tcl Message: INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:113] INFO: [Synth 8-256] done synthesizing module 'SPI_If__parameterized0' (4#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:66] INFO: [Synth 8-256] done synthesizing module 'ADXL362Ctrl__parameterized0' (5#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:117] 
+// Tcl Message: 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter ACC_X_Y_MAX bound to: 10'b0111111111  	Parameter ACC_X_Y_MIN bound to: 10'b0000000000  
+// Tcl Message: INFO: [Synth 8-3491] module 'AccelArithmetics' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:49' bound to instance 'Accel_Calculation' of component 'AccelArithmetics' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:190] INFO: [Synth 8-638] synthesizing module 'AccelArithmetics__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:74] 
+// Tcl Message: 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter ACC_X_Y_MAX bound to: 10'b0111111111  	Parameter ACC_X_Y_MIN bound to: 10'b0000000000  
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'vga_subsystem' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:23] INFO: [Synth 8-638] synthesizing module 'clk_wizard' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/clk_wizard_stub.v:6] INFO: [Synth 8-256] done synthesizing module 'clk_wizard' (9#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/clk_wizard_stub.v:6] INFO: [Synth 8-638] synthesizing module 'dtg' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/dtg.v:29] 
+// Tcl Message: 	Parameter HORIZ_PIXELS bound to: 512 - type: integer  	Parameter HCNT_MAX bound to: 799 - type: integer  	Parameter HCNT_END bound to: 699 - type: integer  	Parameter HSYNC_START bound to: 659 - type: integer  	Parameter HSYNC_END bound to: 755 - type: integer  	Parameter VERT_PIXELS bound to: 480 - type: integer  	Parameter VCNT_MAX bound to: 524 - type: integer  	Parameter VSYNC_START bound to: 493 - type: integer  	Parameter VSYNC_END bound to: 494 - type: integer  
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'dtg' (10#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/dtg.v:29] INFO: [Synth 8-638] synthesizing module 'colorizer' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v:23] 
+// Tcl Message: 	Parameter WORLD_COLOR_BG bound to: 12'b111111111111  	Parameter WORLD_COLOR_LINE bound to: 12'b000000000000  	Parameter WORLD_COLOR_OBS bound to: 12'b010101000101  	Parameter ICON_COLOR_1 bound to: 12'b111100000000  	Parameter ICON_COLOR_2 bound to: 12'b000011110000  	Parameter ICON_COLOR_3 bound to: 12'b000000001111  	Parameter BLK bound to: 12'b000000000000  	Parameter WORLD_ADDR_BG bound to: 2'b00  	Parameter WORLD_ADDR_LINE bound to: 2'b01  	Parameter WORLD_ADDR_OBS bound to: 2'b10  	Parameter ICON_ADDR_TP bound to: 2'b00  	Parameter ICON_ADDR_1 bound to: 2'b01  	Parameter ICON_ADDR_2 bound to: 2'b10  	Parameter ICON_ADDR_3 bound to: 2'b11  
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'colorizer' (11#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v:23] INFO: [Synth 8-638] synthesizing module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v:20] 
+// Tcl Message: 	Parameter ICON_WIDTH bound to: 15 - type: integer  	Parameter ICON_HEIGHT bound to: 15 - type: integer  	Parameter BLANK bound to: 226 - type: integer  
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'icon_rom' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/icon_rom_stub.v:7] INFO: [Synth 8-256] done synthesizing module 'icon_rom' (12#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/icon_rom_stub.v:7] 
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'draw_icon' (13#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v:20] 
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'vga_subsystem' (14#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:23] 
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'Ball' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:9] 
+// Tcl Message: 	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter UPDATE_FREQUENCY_HZ bound to: 5 - type: integer  	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer  	Parameter CNTR_WIDTH bound to: 32 - type: integer  	Parameter SIMULATE bound to: 0 - type: integer  	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer  
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'map' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:47] INFO: [Synth 8-638] synthesizing module 'maze_memory' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/maze_memory_stub.v:7] INFO: [Synth 8-256] done synthesizing module 'maze_memory' (15#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/maze_memory_stub.v:7] 
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'map' (16#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:47] 
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'Ball' (17#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:9] 
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'Nexys4fpga' (18#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:35] 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:14:57 ; elapsed = 05:34:43 . Memory (MB): peak = 3054.676 ; gain = 2892.453 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message:  Report Check Netlist:  +------+------------------+-------+---------+-------+------------------+ |      |Item              |Errors |Warnings |Status |Description       | +------+------------------+-------+---------+-------+------------------+ |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets | +------+------------------+-------+---------+-------+------------------+ 
+// Tcl Message: --------------------------------------------------------------------------------- Finished RTL Optimization Phase 1 : Time (s): cpu = 00:14:58 ; elapsed = 05:34:43 . Memory (MB): peak = 3054.676 ; gain = 2892.453 --------------------------------------------------------------------------------- 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_CNS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 2,702 MB. GUI used memory: 1,319 MB. Current time: 12/5/14 6:02:11 PM
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi.loadEngineXgd elapsed time: 0.3s
+// Tcl Message: INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message:  Processing XDC Constraints Initializing timing engine Parsing XDC File [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/dcp_2/clk_wizard_in_context.xdc] for cell 'vga/clk_wiz' Finished Parsing XDC File [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/dcp_2/clk_wizard_in_context.xdc] for cell 'vga/clk_wiz' Parsing XDC File [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga_withvideo.xdc] Finished Parsing XDC File [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga_withvideo.xdc] Completed Processing XDC Constraints  
+// Tcl Message: refresh_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 3056.457 ; gain = 1.781 
+// Elapsed time: 11 seconds
+dismissDialog("Reloading"); // cm:N (ch:JFrame)
+// Elapsed time: 23 seconds
+selectButton((HResource) null, "Messages_cleanUpMessages"); // v:JideButton (CommandBar:DockableBar, ch:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-4442] BlackBox module \\aball/amap/amaze  has unconnected pin ena. , [Synth 8-4442] BlackBox module \\aball/amap/amaze  has unconnected pin enb. ]", 2, false); // ae:k (JViewport:JComponent, ch:JFrame)
+selectCodeEditor("icon.v", 349, 393); // bi:J (JPanel:JComponent, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "map.v", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+// Elapsed time: 322 seconds
+selectCodeEditor("map.v", 236, 548); // bi:J (JPanel:JComponent, ch:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-4442] BlackBox module \\aball/amap/amaze  has unconnected pin ena. ]", 1, true); // ae:k (JViewport:JComponent, ch:JFrame) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 19, false); // w:Y (v:I, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// cm:N (ch:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// cm:N (ch:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 
+// Tcl Message: [Fri Dec 05 18:08:17 2014] Launched synth_1... Run output will be captured here: C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // cm:N (ch:JFrame)
+// TclEventType: RUN_COMPLETED
+// Q:al (ch:JFrame): Synthesis Completed: addNotify
+// Elapsed time: 38 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, Q:al)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// cm:N (ch:JFrame):  Starting Design Runs : addNotify
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 
+// Tcl Message: [Fri Dec 05 18:08:56 2014] Launched impl_1... Run output will be captured here: C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // cm:N (ch:JFrame)
+selectCheckBox(PAResourceItoN.MsgView_ERROR_MESSAGES, (String) null, false); // h:JCheckBox (JPanel:JComponent, ch:JFrame): FALSE
+selectCheckBox(PAResourceItoN.MsgView_WARNING_MESSAGES, (String) null, true); // h:JCheckBox (JPanel:JComponent, ch:JFrame): TRUE
+floatFrame(PAResourceOtoP.PAViews_MESSAGES, "Messages"); // al:DockableFrame (FrameContainer:JideTabbedPane, ch:JFrame)
+// TclEventType: RUN_STEP_COMPLETED
+// [GUI Memory]: 1,503 MB (+74704kb) [05:42:08]
+// [GUI Memory]: 1,514 MB (+11471kb) [05:42:13]
+// Elapsed time: 22 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, rtl_1, launch_runs synth_1. , [Vivado 12-4147] The synthesis checkpoint for IP 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci' is already available but stale. Since IP is locked, no update to the IP run/dcp can be done. The synthesis will use the stale checkpoint and may result in incorrect behavior.. Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.. ]", 2, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, rtl_1, launch_runs synth_1. , [Runs 36-337] The following IPs are either missing output products or output products are not up-to-date for Synthesis target. Since these IPs are locked, no update to the output products cant be done. . Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.. C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci. . ]", 3, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, rtl_1, launch_runs impl_1. ]", 4, true); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, rtl_1, launch_runs impl_1. , [Vivado 12-4147] The synthesis checkpoint for IP 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci' is already available but stale. Since IP is locked, no update to the IP run/dcp can be done. The synthesis will use the stale checkpoint and may result in incorrect behavior.. Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.. ]", 5, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, rtl_1, launch_runs impl_1. ]", 4, true); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, rtl_1, launch_runs synth_1. , [Runs 36-337] The following IPs are either missing output products or output products are not up-to-date for Synthesis target. Since these IPs are locked, no update to the output products cant be done. . Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.. C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci. . ]", 3, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// [GUI Memory]: 1,516 MB (+1949kb) [05:42:28]
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, rtl_1, launch_runs synth_1. , [Vivado 12-4147] The synthesis checkpoint for IP 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci' is already available but stale. Since IP is locked, no update to the IP run/dcp can be done. The synthesis will use the stale checkpoint and may result in incorrect behavior.. Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.. ]", 2, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, rtl_1, launch_runs synth_1. , [Runs 36-337] The following IPs are either missing output products or output products are not up-to-date for Synthesis target. Since these IPs are locked, no update to the output products cant be done. . Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.. C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci. . ]", 3, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// TclEventType: RUN_COMPLETED
+// Q:al (FrameFloatingContainer:ResizableFrame): Implementation Completed: addNotify
+// Elapsed time: 15 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:al)
+dismissDialog("Implementation Completed"); // Q:al (FrameFloatingContainer:ResizableFrame)
+// [GUI Memory]: 1,518 MB (+2100kb) [05:42:46]
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.. C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci. . ]", 7, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [IP_Flow 19-2162] IP 'Square_Root' is locked:. * Current project part 'xc7a100tcsg324-1' and the part 'xc7a75tcsg324-1' used to customize the IP 'Square_Root' do not match.. Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.. ]", 8, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.. C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci. . ]", 7, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [IP_Flow 19-2162] IP 'Square_Root' is locked:. * Current project part 'xc7a100tcsg324-1' and the part 'xc7a75tcsg324-1' used to customize the IP 'Square_Root' do not match.. Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.. ]", 8, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// [GUI Memory]: 1,520 MB (+1716kb) [05:42:59]
+// [GUI Memory]: 1,524 MB (+4167kb) [05:42:59]
+// [GUI Memory]: 1,526 MB (+2319kb) [05:42:59]
+// [GUI Memory]: 1,527 MB (+1273kb) [05:43:00]
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), accelCtl - AccelerometerCtl - Behavioral (AccelerometerCtl.vhd)]", 4); // u:k (I:JPanel, ch:JFrame)
+// [GUI Memory]: 1,531 MB (+3914kb) [05:43:02]
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), accelCtl - AccelerometerCtl - Behavioral (AccelerometerCtl.vhd), Accel_Calculation - AccelArithmetics - Behavioral (AccelArithmetics.vhd)]", 6); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), accelCtl - AccelerometerCtl - Behavioral (AccelerometerCtl.vhd), Accel_Calculation - AccelArithmetics - Behavioral (AccelArithmetics.vhd)]", 6, true); // u:k (I:JPanel, ch:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), accelCtl - AccelerometerCtl - Behavioral (AccelerometerCtl.vhd), Accel_Calculation - AccelArithmetics - Behavioral (AccelArithmetics.vhd), Magnitude_Calculation - Square_Root (Square_Root.xci)]", 7, false); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), accelCtl - AccelerometerCtl - Behavioral (AccelerometerCtl.vhd), Accel_Calculation - AccelArithmetics - Behavioral (AccelArithmetics.vhd), Magnitude_Calculation - Square_Root (Square_Root.xci)]", 7, false, false, false, false, true, false); // u:k (I:JPanel, ch:JFrame) - Popup Trigger
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), accelCtl - AccelerometerCtl - Behavioral (AccelerometerCtl.vhd), Accel_Calculation - AccelArithmetics - Behavioral (AccelArithmetics.vhd), Magnitude_Calculation - Square_Root (Square_Root.xci)]", 7, false); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), accelCtl - AccelerometerCtl - Behavioral (AccelerometerCtl.vhd), Accel_Calculation - AccelArithmetics - Behavioral (AccelArithmetics.vhd), Magnitude_Calculation - Square_Root (Square_Root.xci)]", 7, false, false, false, false, false, true); // u:k (I:JPanel, ch:JFrame) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_RECUSTOMIZE_CORE
+// TclEventType: IP_LOCK_CHANGE
+// q:N (ch:JFrame): Re-customize IP: addNotify
+// [GUI Memory]: 1,531 MB (+577kb) [05:43:12]
+// [GUI Memory]: 1,535 MB (+4203kb) [05:43:12]
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, q:N)
+// [GUI Memory]: 1,537 MB (+1325kb) [05:43:23]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), accelCtl - AccelerometerCtl - Behavioral (AccelerometerCtl.vhd), Accel_Calculation - AccelArithmetics - Behavioral (AccelArithmetics.vhd), Magnitude_Calculation - Square_Root (Square_Root.xci)]", 7, false, false, false, false, true, false); // u:k (I:JPanel, ch:JFrame) - Popup Trigger
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // W:JMenu (ag:JPopupMenu, ch:JFrame)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // W:JMenu (ag:JPopupMenu, ch:JFrame)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // W:JMenu (ag:JPopupMenu, ch:JFrame)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // W:JMenu (ag:JPopupMenu, ch:JFrame)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // W:JMenu (ag:JPopupMenu, ch:JFrame)
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // W:JMenu (ag:JPopupMenu, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), accelCtl - AccelerometerCtl - Behavioral (AccelerometerCtl.vhd), Accel_Calculation - AccelArithmetics - Behavioral (AccelArithmetics.vhd), Magnitude_Calculation - Square_Root (Square_Root.xci)]", 7, false); // u:k (I:JPanel, ch:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), accelCtl - AccelerometerCtl - Behavioral (AccelerometerCtl.vhd), Accel_Calculation - AccelArithmetics - Behavioral (AccelArithmetics.vhd), Magnitude_Calculation - Square_Root (Square_Root.xci)]", 7); // u:k (I:JPanel, ch:JFrame)
+// al:bE (ch:JFrame): Show IP Hierarchy: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, al:bE)
+dismissDialog("Show IP Hierarchy"); // al:bE (ch:JFrame)
+// [GUI Memory]: 1,538 MB (+951kb) [05:43:40]
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-1102] /* in comment [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:5]. ]", 9, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-1102] /* in comment [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:5]. ]", 9, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Colten\Dropbox\_SCHOOL\ECE_540_SoC_Design\Final_Project\Labyrinth\accel\acceleratedball.v;-;;-;15;-;line;-;5;-;;-;15;-;"); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("acceleratedball.v", 31, 32); // bi:J (JPanel:JComponent, ch:JFrame)
+// [GUI Memory]: 1,539 MB (+1413kb) [05:43:52]
+// [GUI Memory]: 1,540 MB (+811kb) [05:43:57]
+// [GUI Memory]: 1,540 MB (+29kb) [05:43:59]
+// Elapsed time: 30 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2507] parameter declaration becomes local in debounce with formal parameter declaration list [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:46]. ]", 10, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 10 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2507] parameter declaration becomes local in debounce with formal parameter declaration list [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:46]. ]", 10, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Colten\Dropbox\_SCHOOL\ECE_540_SoC_Design\Final_Project\Labyrinth\accel\debounce.v;-;;-;15;-;line;-;46;-;;-;15;-;"); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 71 seconds
+selectCodeEditor("debounce.v", 510, 383); // bi:J (JPanel:JComponent, ch:JFrame)
+// [GUI Memory]: 1,542 MB (+1918kb) [05:45:39]
+selectCodeEditor("debounce.v", 217, 378); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("debounce.v", 221, 397); // bi:J (JPanel:JComponent, ch:JFrame)
+// [GUI Memory]: 1,543 MB (+2017kb) [05:45:51]
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2254] instance name 'icon' matches net/port name [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:73]. ]", 11, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 12 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2254] instance name 'icon' matches net/port name [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:73]. ]", 11, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Colten\Dropbox\_SCHOOL\ECE_540_SoC_Design\Final_Project\Labyrinth\accel\vga_subsystem.v;-;;-;15;-;line;-;73;-;;-;15;-;"); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// [GUI Memory]: 1,544 MB (+208kb) [05:46:04]
+// [GUI Memory]: 1,545 MB (+1704kb) [05:46:04]
+// Elapsed time: 15 seconds
+selectCodeEditor("vga_subsystem.v", 150, 537); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "vga_subsystem.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 120, 336); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "vga_subsystem.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 104, 248); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "vga_subsystem.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-689] width (4) of port connection 'd0' does not match port width (5) of module 'sevensegment' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:159]. ]", 12, true); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame) - Node
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-689] width (4) of port connection 'd0' does not match port width (5) of module 'sevensegment' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:159]. ]", 12); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// [GUI Memory]: 1,546 MB (+357kb) [05:46:52]
+// Elapsed time: 97 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-689] width (4) of port connection 'd0' does not match port width (5) of module 'sevensegment' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:159]. ]", 12, true); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Colten\Dropbox\_SCHOOL\ECE_540_SoC_Design\Final_Project\Labyrinth\accel\nexys4fpga.v;-;;-;15;-;line;-;159;-;;-;15;-;"); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// [GUI Memory]: 1,546 MB (+547kb) [05:48:25]
+// [GUI Memory]: 1,548 MB (+1817kb) [05:48:25]
+// [GUI Memory]: 1,548 MB (+611kb) [05:48:25]
+selectCodeEditor("nexys4fpga.v", 204, 178); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 26 seconds
+selectCodeEditor("nexys4fpga.v", 90, 228); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 25 seconds
+typeControlKey((HResource) null, "nexys4fpga.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "nexys4fpga.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "nexys4fpga.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "nexys4fpga.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+// [GUI Memory]: 1,550 MB (+1102kb) [05:49:34]
+// Elapsed time: 15 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-689] width (4) of port connection 'd0' does not match port width (5) of module 'sevensegment' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:159]. , [Synth 8-689] width (12) of port connection 'addra' does not match port width (8) of module 'icon_rom' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v:60]. ]", 16, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Colten\Dropbox\_SCHOOL\ECE_540_SoC_Design\Final_Project\Labyrinth\accel\icon.v;-;;-;15;-;line;-;60;-;;-;15;-;"); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-689] width (4) of port connection 'd0' does not match port width (5) of module 'sevensegment' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:159]. , [Synth 8-689] width (12) of port connection 'addra' does not match port width (8) of module 'icon_rom' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v:60]. ]", 16, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("icon.v", 57, 572); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 59 seconds
+selectCodeEditor("icon.v", 77, 381); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 14 seconds
+selectCodeEditor("icon.v", 829, 227); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("icon.v", 94, 63); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 10 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-689] width (4) of port connection 'd0' does not match port width (5) of module 'sevensegment' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:159]. , [Synth 8-689] width (9) of port connection 'bot_LocX' does not match port width (8) of module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:77]. ]", 18, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Colten\Dropbox\_SCHOOL\ECE_540_SoC_Design\Final_Project\Labyrinth\accel\vga_subsystem.v;-;;-;15;-;line;-;77;-;;-;15;-;"); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// [GUI Memory]: 1,550 MB (+705kb) [05:51:20]
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-689] width (4) of port connection 'd0' does not match port width (5) of module 'sevensegment' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:159]. , [Synth 8-689] width (9) of port connection 'bot_LocX' does not match port width (8) of module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:77]. ]", 18, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("vga_subsystem.v", 256, 544); // bi:J (JPanel:JComponent, ch:JFrame)
+// [GUI Memory]: 1,553 MB (+2673kb) [05:51:35]
+// [GUI Memory]: 1,554 MB (+1211kb) [05:55:52]
+// [GUI Memory]: 1,554 MB (+77kb) [05:55:57]
+// [GUI Memory]: 1,555 MB (+1278kb) [05:56:02]
+// [GUI Memory]: 1,555 MB (+79kb) [05:56:07]
+// [GUI Memory]: 1,556 MB (+820kb) [06:02:37]
+// [GUI Memory]: 1,556 MB (+217kb) [06:02:42]
+// [GUI Memory]: 1,557 MB (+1081kb) [06:02:47]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,702 MB. GUI used memory: 1,357 MB. Current time: 12/5/14 6:32:14 PM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 1753 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "icon.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "nexys4fpga.v", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "acceleratedball.v", 6); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "debounce.v", 7); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectCodeEditor("debounce.v", 751, 227); // bi:J (JPanel:JComponent, ch:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 19, false); // w:Y (v:I, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// al:bE (ch:JFrame): Run Synthesis: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, al:bE)
+// cm:N (ch:JFrame):  Resetting Runs : addNotify
+dismissDialog("Run Synthesis"); // al:bE (ch:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_MODIFY
+// cm:N (ch:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 
+// Tcl Message: [Fri Dec 05 18:48:30 2014] Launched synth_1... Run output will be captured here: C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/synth_1/runme.log 
+// 'm' command handler elapsed time: 6 seconds
+dismissDialog("Starting Design Runs"); // cm:N (ch:JFrame)
+// TclEventType: RUN_FAILED
+// Q:al (ch:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 13 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, Q:al)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // Q:al (ch:JFrame)
+// Elapsed time: 18 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-439] module 'debounce' not found [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:142]. ]", 6, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Colten\Dropbox\_SCHOOL\ECE_540_SoC_Design\Final_Project\Labyrinth\accel\nexys4fpga.v;-;;-;15;-;line;-;142;-;;-;15;-;"); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 10 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near parameter. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:35]. ]", 2, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Colten\Dropbox\_SCHOOL\ECE_540_SoC_Design\Final_Project\Labyrinth\accel\debounce.v;-;;-;15;-;line;-;35;-;;-;15;-;"); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("debounce.v", 389, 163); // bi:J (JPanel:JComponent, ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // w:Y (v:I, ch:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 19, false); // w:Y (v:I, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// cm:N (ch:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// cm:N (ch:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 
+// Tcl Message: [Fri Dec 05 18:49:23 2014] Launched synth_1... Run output will be captured here: C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // cm:N (ch:JFrame)
+// TclEventType: RUN_FAILED
+// Q:al (FrameFloatingContainer:ResizableFrame): Synthesis Failed: addNotify
+// Elapsed time: 10 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, Q:al)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // Q:al (FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("debounce.v", 478, 204); // bi:J (JPanel:JComponent, ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 19, false); // w:Y (v:I, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// cm:N (ch:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// cm:N (ch:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 
+// Tcl Message: [Fri Dec 05 18:49:45 2014] Launched synth_1... Run output will be captured here: C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // cm:N (ch:JFrame)
+// TclEventType: RUN_COMPLETED
+// Q:al (ch:JFrame): Synthesis Completed: addNotify
+// Elapsed time: 40 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:al)
+dismissDialog("Synthesis Completed"); // Q:al (ch:JFrame)
+selectCheckBox(PAResourceItoN.MsgView_WARNING_MESSAGES, (String) null, true); // h:JCheckBox (JPanel:JComponent, FrameFloatingContainer:ResizableFrame): TRUE
+selectCheckBox(PAResourceItoN.MsgView_WARNING_MESSAGES, (String) null, false); // h:JCheckBox (JPanel:JComponent, FrameFloatingContainer:ResizableFrame): FALSE
+selectCheckBox(PAResourceItoN.MsgView_WARNING_MESSAGES, (String) null, true); // h:JCheckBox (JPanel:JComponent, FrameFloatingContainer:ResizableFrame): TRUE
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, rtl_1, launch_runs synth_1. , [Runs 36-115] Could not delete directory 'c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/dcp'.. ]", 6, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 13 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.. C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/Square_Root/Square_Root.xci. . ]", 8, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [IP_Flow 19-2162] IP 'Square_Root' is locked:. * Current project part 'xc7a100tcsg324-1' and the part 'xc7a75tcsg324-1' used to customize the IP 'Square_Root' do not match.. Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.. ]", 9, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-350] instance 'accelCtl' of module 'AccelerometerCtl' requires 10 connections, but only 9 given [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:182]. ]", 10, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-350] instance 'accelCtl' of module 'AccelerometerCtl' requires 10 connections, but only 9 given [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:182]. ]", 10, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Colten\Dropbox\_SCHOOL\ECE_540_SoC_Design\Final_Project\Labyrinth\accel\nexys4fpga.v;-;;-;15;-;line;-;182;-;;-;15;-;"); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 17 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), accelCtl - AccelerometerCtl - Behavioral (AccelerometerCtl.vhd)]", 4, true); // u:k (I:JPanel, ch:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), accelCtl - AccelerometerCtl - Behavioral (AccelerometerCtl.vhd)]", 4, true, false, false, false, false, true); // u:k (I:JPanel, ch:JFrame) - Double Click - Node
+// Elapsed time: 10 seconds
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // R:JideMenu (CommandMenuBar:CommandBar, ch:JFrame)
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // R:JideMenu (CommandMenuBar:CommandBar, ch:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // R:JideMenu (CommandMenuBar:CommandBar, ch:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // R:JideMenu (CommandMenuBar:CommandBar, ch:JFrame)
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // R:JideMenu (CommandMenuBar:CommandBar, ch:JFrame)
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // R:JideMenu (CommandMenuBar:CommandBar, ch:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // R:JideMenu (CommandMenuBar:CommandBar, ch:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // R:JideMenu (CommandMenuBar:CommandBar, ch:JFrame)
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // R:JideMenu (CommandMenuBar:CommandBar, ch:JFrame)
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // R:JideMenu (CommandMenuBar:CommandBar, ch:JFrame)
+selectCodeEditor("AccelerometerCtl.vhd", 814, 301); // bi:J (JPanel:JComponent, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "AccelerometerCtl.vhd", 8); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "debounce.v", 7); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "debounce.v", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectCodeEditor("AccelerometerCtl.vhd", 240, 296); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 26 seconds
+selectCodeEditor("nexys4fpga.v", 403, 262); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 32 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-689] width (9) of port connection 'bot_LocX' does not match port width (8) of module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:77]. ]", 11, true); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Colten\Dropbox\_SCHOOL\ECE_540_SoC_Design\Final_Project\Labyrinth\accel\vga_subsystem.v;-;;-;15;-;line;-;77;-;;-;15;-;"); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// PAResourceOtoP.PAViews_CODE: Code: close view
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+selectCodeEditor("vga_subsystem.v", 359, 537); // bi:J (JPanel:JComponent, ch:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-689] width (9) of port connection 'bot_LocX' does not match port width (8) of module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:77]. ]", 11, true); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame) - Node
+// Elapsed time: 12 seconds
+selectCodeEditor("vga_subsystem.v", 207, 472); // bi:J (JPanel:JComponent, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vga_subsystem.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectCodeEditor("icon.v", 79, 97); // bi:J (JPanel:JComponent, ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "icon.v", 4); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3848] Net wrld_col_addr in module/entity Ball does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:57]. ]", 12, true); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3848] Net wrld_col_addr in module/entity Ball does not have driver. [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:57]. ]", 12, true); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Colten\Dropbox\_SCHOOL\ECE_540_SoC_Design\Final_Project\Labyrinth\accel\acceleratedball.v;-;;-;15;-;line;-;57;-;;-;15;-;"); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("acceleratedball.v", 228, 177); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("acceleratedball.v", 228, 177, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+// Elapsed time: 62 seconds
+selectCodeEditor("acceleratedball.v", 272, 418); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("acceleratedball.v", 272, 418, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+// Elapsed time: 61 seconds
+selectButton((HResource) null, "Messages_groupDuplicateMessages"); // r:JideToggleButton (CommandBar:DockableBar, FrameFloatingContainer:ResizableFrame): FALSE
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [IP_Flow 19-2162] IP 'Square_Root' is locked:. * Current project part 'xc7a100tcsg324-1' and the part 'xc7a75tcsg324-1' used to customize the IP 'Square_Root' do not match.. Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.. ]", 9, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-350] instance 'accelCtl' of module 'AccelerometerCtl' requires 10 connections, but only 9 given [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:182]. ]", 10, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-689] width (9) of port connection 'bot_LocX' does not match port width (8) of module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:77]. ]", 11, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-689] width (9) of port connection 'bot_LocX' does not match port width (8) of module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:77]. ]", 11, false, false, false, false, false, true); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-689] width (9) of port connection 'bot_LocY' does not match port width (8) of module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:78]. ]", 12, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Colten\Dropbox\_SCHOOL\ECE_540_SoC_Design\Final_Project\Labyrinth\accel\vga_subsystem.v;-;;-;15;-;line;-;78;-;;-;15;-;"); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("vga_subsystem.v", 154, 452); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("vga_subsystem.v", 153, 452, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+// Elapsed time: 14 seconds
+selectCodeEditor("vga_subsystem.v", 79, 195); // bi:J (JPanel:JComponent, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vga_subsystem.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "icon.v", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vga_subsystem.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "icon.v", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), vga - vga_subsystem (vga_subsystem.v), c - colorizer (colorizer.v)]", 8, false); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4fpga (nexys4fpga.v), vga - vga_subsystem (vga_subsystem.v), c - colorizer (colorizer.v)]", 8, false, false, false, false, false, true); // u:k (I:JPanel, ch:JFrame) - Double Click
+selectCodeEditor("colorizer.v", 559, 295); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 80, 180); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 496, 418); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 113 seconds
+selectCodeEditor("colorizer.v", 328, 416); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 22 seconds
+selectCodeEditor("colorizer.v", 140, 366); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "colorizer.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 72, 357); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 153, 333); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 177, 345); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 177, 345, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+typeControlKey((HResource) null, "colorizer.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 181, 336); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "colorizer.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 139, 366); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 56 seconds
+selectCodeEditor("colorizer.v", 108, 371); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "colorizer.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 178, 435); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey((HResource) null, "colorizer.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 131, 314); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 131, 314, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+typeControlKey((HResource) null, "colorizer.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 227, 467); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 227, 467, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+selectCodeEditor("colorizer.v", 246, 468); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 246, 468, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+typeControlKey((HResource) null, "colorizer.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 373, 469); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 373, 469, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+typeControlKey((HResource) null, "colorizer.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 482, 471); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 482, 471, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+typeControlKey((HResource) null, "colorizer.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 390, 502); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 13 seconds
+selectCodeEditor("colorizer.v", 319, 362); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 332, 190); // bi:J (JPanel:JComponent, ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Elaborated Design]", 13, true, false, false, false, true, false); // w:Y (v:I, ch:JFrame) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_RELOAD_RTL_DESIGN, "Reload Design"); // Z:JMenuItem (ag:JPopupMenu, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RELOAD_RTL_DESIGN
+// cm:N (ch:JFrame):  Reloading : addNotify
+// TclEventType: ELABORATE_START
+// Tcl Message: refresh_design 
+// TclEventType: ELABORATE_FAIL
+// Tcl Message: ERROR: [Synth 8-1031] ICON_ADDR_TP is not declared [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v:42] 
+// Tcl Message: INFO: [Synth 8-2350] module colorizer ignored due to previous errors [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v:23] 
+// Tcl Message: Failed to read verilog 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v'     while executing "rt::read_verilog {       ./.Xil/Vivado-3012-BeepBoop/realtime/Square_Root_stub.v       ./.Xil/Vivado-3012-BeepBoop/realtime/clk_wizard_stub.v       ./..."     ("uplevel" body line 23)     invoked from within "uplevel #0 {     set ::env(BUILTIN_SYNTH) true     source $::env(HRT_TCL_PATH)/rtSynthPrep.tcl     rt::HARTNDb_resetJobStats     rt::HARTNDb_startJobS..." ERROR: [Common 17-39] 'refresh_design' failed due to earlier errors. 
+dismissDialog("Reloading"); // cm:N (ch:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, rtl_1, refresh_design. , [Synth 8-1031] ICON_ADDR_TP is not declared [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v:42]. ]", 9, false); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Colten\Dropbox\_SCHOOL\ECE_540_SoC_Design\Final_Project\Labyrinth\accel\colorizer.v;-;;-;15;-;line;-;42;-;;-;15;-;"); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectCodeEditor("colorizer.v", 298, 345); // bi:J (JPanel:JComponent, ch:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("colorizer.v", 329, 496); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 316, 434); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 333, 331); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 127, 267); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 196, 450); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 134, 268); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 134, 268, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+selectCodeEditor("colorizer.v", 248, 264); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 157, 261); // bi:J (JPanel:JComponent, ch:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,702 MB. GUI used memory: 1,357 MB. Current time: 12/5/14 7:02:14 PM
+selectCodeEditor("colorizer.v", 156, 261, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+typeControlKey((HResource) null, "colorizer.v", 'c'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 199, 451); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 199, 451, false, false, false, false, true); // bi:J (JPanel:JComponent, ch:JFrame) - Double Click
+typeControlKey((HResource) null, "colorizer.v", 'v'); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 239, 271); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 287, 264); // bi:J (JPanel:JComponent, ch:JFrame)
+// Elapsed time: 16 seconds
+selectCodeEditor("colorizer.v", 432, 311); // bi:J (JPanel:JComponent, ch:JFrame)
+selectCodeEditor("colorizer.v", 559, 356); // bi:J (JPanel:JComponent, ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis]", 12, true, false, false, false, true, false); // w:Y (v:I, ch:JFrame) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_RELOAD_RTL_DESIGN, "Reload Design"); // Z:JMenuItem (ag:JPopupMenu, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RELOAD_RTL_DESIGN
+// cm:N (ch:JFrame):  Reloading : addNotify
+// TclEventType: ELABORATE_START
+// Tcl Message: refresh_design 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:16:40 ; elapsed = 06:35:24 . Memory (MB): peak = 3056.457 ; gain = 2894.234 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// TclEventType: ELABORATE_FINISH
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 2,702 MB. GUI used memory: 1,351 MB. Current time: 12/5/14 7:02:51 PM
+// Engine heap size: 2,702 MB. GUI used memory: 1,353 MB. Current time: 12/5/14 7:02:51 PM
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'Nexys4fpga' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:35] 
+// Tcl Message: 	Parameter SIMULATE bound to: 0 - type: integer  
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'debounce' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/debounce.v:24] 
+// Tcl Message: 	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter DEBOUNCE_FREQUENCY_HZ bound to: 250 - type: integer  	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer  	Parameter CNTR_WIDTH bound to: 32 - type: integer  	Parameter SIMULATE bound to: 0 - type: integer  	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer  	Parameter pb0_in bound to: 4'b0001  
+// Tcl Message: 	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter REFRESH_FREQUENCY_HZ bound to: 500 - type: integer  	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer  	Parameter CNTR_WIDTH bound to: 32 - type: integer  	Parameter SIMULATE bound to: 0 - type: integer  	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer  	Parameter digit1 bound to: 8'b11111110  	Parameter digit2 bound to: 8'b11111101  	Parameter digit3 bound to: 8'b11111011  	Parameter digit4 bound to: 8'b11110111  	Parameter digit5 bound to: 8'b11101111  	Parameter digit6 bound to: 8'b11011111  	Parameter digit7 bound to: 8'b10111111  	Parameter digit8 bound to: 8'b01111111  
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'Digit' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:196] 
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'Digit' (2#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:196] INFO: [Synth 8-256] done synthesizing module 'sevensegment' (3#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/sevensegment.v:35] INFO: [Synth 8-638] synthesizing module 'AccelerometerCtl' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:70] 
+// Tcl Message: 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer  	Parameter NUM_READS_AVG bound to: 16 - type: integer  	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer  	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer  	Parameter NUM_READS_AVG bound to: 16 - type: integer  	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer  
+// Tcl Message: INFO: [Synth 8-3491] module 'ADXL362Ctrl' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:89' bound to instance 'ADXL_Control' of component 'ADXL362Ctrl' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:163] INFO: [Synth 8-638] synthesizing module 'ADXL362Ctrl__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:117] 
+// Tcl Message: 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer  	Parameter NUM_READS_AVG bound to: 16 - type: integer  	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer  
+// Tcl Message: INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:283] INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:312] INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:365] 
+// Tcl Message: 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer  
+// Tcl Message: INFO: [Synth 8-3491] module 'SPI_If' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:42' bound to instance 'SPI_Interface' of component 'SPI_If' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:373] INFO: [Synth 8-638] synthesizing module 'SPI_If__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:66] 
+// Tcl Message: 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer  
+// Tcl Message: INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = USER [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:113] INFO: [Synth 8-256] done synthesizing module 'SPI_If__parameterized0' (4#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/SPI_If.vhd:66] INFO: [Synth 8-256] done synthesizing module 'ADXL362Ctrl__parameterized0' (5#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/ADXL362Ctrl.vhd:117] 
+// Tcl Message: 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter ACC_X_Y_MAX bound to: 10'b0111111111  	Parameter ACC_X_Y_MIN bound to: 10'b0000000000  
+// Tcl Message: INFO: [Synth 8-3491] module 'AccelArithmetics' declared at 'C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:49' bound to instance 'Accel_Calculation' of component 'AccelArithmetics' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelerometerCtl.vhd:190] INFO: [Synth 8-638] synthesizing module 'AccelArithmetics__parameterized0' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/AccelArithmetics.vhd:74] 
+// Tcl Message: 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter ACC_X_Y_MAX bound to: 10'b0111111111  	Parameter ACC_X_Y_MIN bound to: 10'b0000000000  
+// Tcl Message: 	Parameter HORIZ_PIXELS bound to: 512 - type: integer  	Parameter HCNT_MAX bound to: 799 - type: integer  	Parameter HCNT_END bound to: 699 - type: integer  	Parameter HSYNC_START bound to: 659 - type: integer  	Parameter HSYNC_END bound to: 755 - type: integer  	Parameter VERT_PIXELS bound to: 480 - type: integer  	Parameter VCNT_MAX bound to: 524 - type: integer  	Parameter VSYNC_START bound to: 493 - type: integer  	Parameter VSYNC_END bound to: 494 - type: integer  
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'dtg' (10#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/dtg.v:29] INFO: [Synth 8-638] synthesizing module 'colorizer' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v:23] 
+// Tcl Message: 	Parameter BLK bound to: 12'b000000000000  	Parameter TRANSPARENT bound to: 8'b00000000  
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'colorizer' (11#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/colorizer.v:23] 
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'draw_icon' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v:20] 
+// Tcl Message: 	Parameter ICON_WIDTH bound to: 15 - type: integer  	Parameter ICON_HEIGHT bound to: 15 - type: integer  	Parameter BLANK bound to: 226 - type: integer  
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'icon_rom' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/icon_rom_stub.v:7] INFO: [Synth 8-256] done synthesizing module 'icon_rom' (12#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/icon_rom_stub.v:7] INFO: [Synth 8-256] done synthesizing module 'draw_icon' (13#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/icon.v:20] 
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'vga_subsystem' (14#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/vga_subsystem.v:23] 
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'Ball' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:8] 
+// Tcl Message: 	Parameter CLK_FREQUENCY_HZ bound to: 100000000 - type: integer  	Parameter UPDATE_FREQUENCY_HZ bound to: 5 - type: integer  	Parameter RESET_POLARITY_LOW bound to: 1 - type: integer  	Parameter CNTR_WIDTH bound to: 32 - type: integer  	Parameter SIMULATE bound to: 0 - type: integer  	Parameter SIMULATE_FREQUENCY_CNT bound to: 5 - type: integer  
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'map' [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:47] INFO: [Synth 8-638] synthesizing module 'maze_memory' [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/maze_memory_stub.v:7] INFO: [Synth 8-256] done synthesizing module 'maze_memory' (15#1) [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/realtime/maze_memory_stub.v:7] 
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'map' (16#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/map.v:47] 
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'Ball' (17#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/acceleratedball.v:8] 
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'Nexys4fpga' (18#1) [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga.v:35] 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:16:41 ; elapsed = 06:35:25 . Memory (MB): peak = 3064.727 ; gain = 2902.504 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message:  Report Check Netlist:  +------+------------------+-------+---------+-------+------------------+ |      |Item              |Errors |Warnings |Status |Description       | +------+------------------+-------+---------+-------+------------------+ |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets | +------+------------------+-------+---------+-------+------------------+ 
+// Tcl Message: --------------------------------------------------------------------------------- Finished RTL Optimization Phase 1 : Time (s): cpu = 00:16:42 ; elapsed = 06:35:25 . Memory (MB): peak = 3064.727 ; gain = 2902.504 --------------------------------------------------------------------------------- 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_CNS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 2,702 MB. GUI used memory: 1,332 MB. Current time: 12/5/14 7:02:52 PM
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi.loadEngineXgd elapsed time: 0.3s
+// Tcl Message: INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message:  Processing XDC Constraints Initializing timing engine Parsing XDC File [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/dcp_3/clk_wizard_in_context.xdc] for cell 'vga/clk_wiz' Finished Parsing XDC File [c:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/hoa/.Xil/Vivado-3012-BeepBoop/dcp_3/clk_wizard_in_context.xdc] for cell 'vga/clk_wiz' Parsing XDC File [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga_withvideo.xdc] Finished Parsing XDC File [C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth/accel/nexys4fpga_withvideo.xdc] Completed Processing XDC Constraints  
+// Tcl Message: refresh_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 3075.680 ; gain = 19.223 
+// 'e' command handler elapsed time: 10 seconds
+// Elapsed time: 10 seconds
+dismissDialog("Reloading"); // cm:N (ch:JFrame)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0); // ae:k (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 19, false); // w:Y (v:I, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// aR:ad (ch:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aR:ad)
+// cm:N (ch:JFrame):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+// cm:N (ch:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aR:ad (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_MODIFY
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_MODIFY
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// cm:N (ch:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 
+// Tcl Message: [Fri Dec 05 19:03:16 2014] Launched synth_1... Run output will be captured here: C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/synth_1/runme.log 
+// 'm' command handler elapsed time: 5 seconds
+dismissDialog("Starting Design Runs"); // cm:N (ch:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_FAILED
+// Q:al (ch:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 21 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, Q:al)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // Q:al (ch:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 19, false); // w:Y (v:I, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// cm:N (ch:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// cm:N (FrameFloatingContainer:ResizableFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 
+// Tcl Message: [Fri Dec 05 19:03:40 2014] Launched synth_1... Run output will be captured here: C:/Users/Colten/Dropbox/_SCHOOL/ECE_540_SoC_Design/Final_Project/Labyrinth_viv/Labyrinth_viv.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // cm:N (FrameFloatingContainer:ResizableFrame)
+// TclEventType: RUN_FAILED
+// Q:al (ch:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 417 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, Q:al)
+dismissDialog("Synthesis Failed"); // Q:al (ch:JFrame)

@@ -2,7 +2,6 @@
 // 
 /* THIS IS A WORKING DRAFT OF THE BALL INSTANTIATED IN HARDWARE. NO PICOBLAZE NEEDED
 ///////////////////////////////////////////////////////////////////////////
-/*
 This stuff is just initialization
 */
 `timescale  1 ns / 1 ns
