@@ -36,13 +36,6 @@ module draw_icon(
     // Internal nets and regs
     reg [7:0] addr;
 
-	// Bot location is scaled up to match vga resolution
-    assign bot_LocXx4 = bot_LocX <<2;
-    assign bot_LocYx4 = bot_LocY <<2;
-	
-	// Base address into ROM before shifting for the orientation.
-	`define ADDR_BASE ((vert - bot_LocYx4 + `Y_OFFSET) * 16) + (horz - bot_LocXx4 + `X_OFFSET)
-	
 	always @ (*) begin
 		// determine if scan line is over bot icon
 		if	       ((vert >= bot_LocY) && (vert < (bot_LocY + ICON_HEIGHT))

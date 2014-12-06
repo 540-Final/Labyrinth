@@ -104,20 +104,22 @@ module Nexys4fpga (
 	wire [7:0]	lmdist;
 	wire [7:0]	rmdist;
 	wire 		upd_sysreg;
-	wire [8:0]	vid_row;				//video ctrlr
+	wire [9:0]	vid_row;				//video ctrlr
 	wire [9:0]	vid_col;				//video ctrlr
 	wire [7:0]	vid_pixel;	//video ctrlr
 	
 	//wire [9:0]	vid_rowx4;				//video ctrlr
 	//wire [9:0]	vid_colx4;				//video ctrlr
-	//wire [9:0]	vid_rowx2;				//video ctrlr
-	//wire [9:0]	vid_colx2;				//video ctrlr
+	wire [9:0]	vid_rowx2;				//video ctrlr
+	wire [9:0]	vid_colx2;				//video ctrlr
 	
 	//wire [1:0] icon;
 	
 	wire [8:0]	accelX;
 	wire [8:0]	accelY;
 	wire [11:0]	accelMag;
+	reg [9:0] rowmax;
+	reg [9:0] colmax;
 
 		
 /******************************************************************/
@@ -133,7 +135,22 @@ module Nexys4fpga (
 	
 	assign	JA = {sysclk, sysreset, 6'b000000};
 	
-
+	assign vid_rowx2 = vid_row >> 1;
+	assign vid_colx2 = vid_col >> 1;
+	
+	always @ (posedge sysclk) begin
+		if (~sysreset) begin
+			rowmax <= 0;
+			colmax <= 0;
+		end else begin
+			if (rowmax < vid_row)
+				rowmax <= vid_row;
+			if (colmax < vid_col)
+				colmax <= vid_col;
+		end
+	end
+			
+			
 	//instantiate the debounce module
 	debounce
 	#(
@@ -156,14 +173,18 @@ module Nexys4fpga (
 	) SSB
 	(
 		// inputs for control signals
-		.d0 ({1'b0, accelX[3:0]}),
-		.d1 ({1'b0,accelX[7:4]}),
-		.d2 ({1'b0,accelY[3:0]}),
-		.d3 ({1'b0,accelY[7:4]}),
-		.d4(dig4),
-		.d5(dig5),
-		.d6(dig6),
-		.d7(dig7),
+//		.d0 ({1'b0,accelX[3:0]}),
+//		.d1 ({1'b0,accelX[7:4]}),
+//		.d2 ({1'b0,accelY[3:0]}),
+//		.d3 ({1'b0,accelY[7:4]}),
+		.d0({1'b0,colmax[3:0]}),
+		.d1({1'b0,colmax[7:4]}),
+		.d2({3'b0,colmax[9:8]}),
+		.d3(5'b0),
+		.d4({1'b0,rowmax[3:0]}),
+		.d5({1'b0,rowmax[7:4]}),
+		.d6({3'b0,rowmax[9:8]}),
+		.d7(5'b0),
 		.dp(decpts),
 		
 		// outputs to seven segment display
@@ -220,8 +241,8 @@ module Nexys4fpga (
 		.y_out			(locX),
 		.x_out			(locY),
 	
-		.vid_row		(vid_row),	
-		.vid_col		(vid_col),		
+		.vid_row		(vid_rowx2),	
+		.vid_col		(vid_colx2),		
 		.vid_pixel_out  (vid_pixel)
 	);
 

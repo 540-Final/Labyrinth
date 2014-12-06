@@ -1,10 +1,10 @@
 // Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
-// Date        : Fri Dec 05 11:58:08 2014
+// Date        : Sat Dec 06 00:20:18 2014
 // Host        : Black-PC running 64-bit Service Pack 1  (build 7601)
 // Command     : write_verilog -force -mode synth_stub
-//               H:/Document/School/ece540/pfinal/pf-2/pf-2.srcs/sources_1/ip/clk_wizard/clk_wizard_stub.v
+//               H:/Document/School/ece540/pfinal/p31/p31.srcs/sources_1/ip/clk_wizard/clk_wizard_stub.v
 // Design      : clk_wizard
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1
