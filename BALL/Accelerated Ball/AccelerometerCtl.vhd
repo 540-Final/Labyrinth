@@ -25,7 +25,7 @@
 -- Revision: 
 -- Revision 0.01 - File Created
 -- Additional Comments: 
---
+-- THIS FILE HAD BEEN MODIFIED TO TAKE THE NEW ACCELARITHMETICS MODULE
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -51,7 +51,7 @@ port
 (
  SYSCLK     : in STD_LOGIC; -- System Clock
  RESET      : in STD_LOGIC;
-
+reset2		: in STD_LOGIC;
  -- Spi interface Signals
  SCLK       : out STD_LOGIC;
  MOSI       : out STD_LOGIC;
@@ -59,8 +59,8 @@ port
  SS         : out STD_LOGIC;
 
 -- Accelerometer data signals
- ACCEL_X_OUT    : out STD_LOGIC_VECTOR (8 downto 0);
- ACCEL_Y_OUT    : out STD_LOGIC_VECTOR (8 downto 0);
+ tilt    : out STD_LOGIC_VECTOR (3 downto 0);
+ --ACCEL_Y_OUT    : out STD_LOGIC_VECTOR (8 downto 0);
  ACCEL_MAG_OUT  : out STD_LOGIC_VECTOR (11 downto 0);
  ACCEL_TMP_OUT  : out STD_LOGIC_VECTOR (11 downto 0)
 
@@ -101,26 +101,26 @@ end component;
 component AccelArithmetics
 generic
 (
-   SYSCLK_FREQUENCY_HZ : integer := 100000000;
-   ACC_X_Y_MAX         : STD_LOGIC_VECTOR (9 downto 0) := "01" & X"FF"; -- 511 pixels, corresponding to +1g
-   ACC_X_Y_MIN         : STD_LOGIC_VECTOR (9 downto 0) := (others => '0') -- corresponding to -1g
+   SYSCLK_FREQUENCY_HZ : integer := 100000000
+  
 );
 port
 (
  SYSCLK     : in STD_LOGIC; -- System Clock
- RESET      : in STD_LOGIC;
+ reset2      : in STD_LOGIC;
  
  -- Accelerometer data input signals
- ACCEL_X_IN    : in STD_LOGIC_VECTOR (11 downto 0);
- ACCEL_Y_IN    : in STD_LOGIC_VECTOR (11 downto 0);
- ACCEL_Z_IN    : in STD_LOGIC_VECTOR (11 downto 0);
- Data_Ready    : in STD_LOGIC;
+ ACCEL_X    : in STD_LOGIC_VECTOR (11 downto 0);
+ ACCEL_Y    : in STD_LOGIC_VECTOR (11 downto 0);
+-- ACCEL_Z_IN    : in STD_LOGIC_VECTOR (11 downto 0);
+ tilt    : out STD_LOGIC_VECTOR (3 downto 0)
+ --Data_Ready    : in STD_LOGIC
 
  -- Accelerometer data output signals to be sent to the VGA controller
  
- ACCEL_X_OUT    : out STD_LOGIC_VECTOR (8 downto 0);
- ACCEL_Y_OUT    : out STD_LOGIC_VECTOR (8 downto 0);
- ACCEL_MAG_OUT  : out STD_LOGIC_VECTOR (11 downto 0)
+
+ 
+
 );
 end component;
 
@@ -190,25 +190,24 @@ port map
 Accel_Calculation: AccelArithmetics
 GENERIC MAP
 (
-   SYSCLK_FREQUENCY_HZ  => 100000000,
-   ACC_X_Y_MAX          => "01" & X"FF", -- 511 pixels, corresponding to +1g
-   ACC_X_Y_MIN          => (others => '0') -- corresponding to -1g
+   SYSCLK_FREQUENCY_HZ  => 100000000
+ 
 )
 PORT MAP
 (
  SYSCLK  => SYSCLK, 
- RESET   => RESET_INT,
+ reset2   => reset2,
  
  -- Accelerometer data input signals
- ACCEL_X_IN => ACCEL_X,
- ACCEL_Y_IN => ACCEL_Y,
- ACCEL_Z_IN => ACCEL_Z,
- Data_Ready => Data_Ready,
+ ACCEL_X    => ACCEL_X,
+ ACCEL_Y    => ACCEL_Y,
+-- ACCEL_Z_IN => ACCEL_Z,
+-- Data_Ready => Data_Ready,
 
  -- Accelerometer data output signals to be sent to the VGA display
- ACCEL_X_OUT => ACCEL_X_OUT,
- ACCEL_Y_OUT => ACCEL_Y_OUT,
- ACCEL_MAG_OUT => ACCEL_MAG_OUT
+ tilt => tilt
+
+-- ACCEL_MAG_OUT => ACCEL_MAG_OUT
 );
 
 end Behavioral;
