@@ -30,7 +30,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	input				x_decrement,
 	input				y_increment,
 	input				y_decrement,
-	
+	input  [7:0]             x_threshold,
+	input  [7:0]             y_threshold,
 	//These are the actual output coordinates of the ball, if it was able to move to a particular spot
     output reg	[7:0]	y_out,
 	output reg	[7:0]	x_out
@@ -71,20 +72,22 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 			y_pos <= 8'd0;
 			x_pos <= 8'd0;
 		end
-		else if (tick5hz) begin
-			case ({y_increment, y_decrement})
+		else if (tick5hz  ) begin
+			case ({y_increment&& y_threshold > 127 , y_decrement&& y_threshold < 127 })
 				2'b10: y_pos  <= y_pos + 1'b1;
 				2'b01: y_pos  <= y_pos - 1'b1;
 				
 				default: y_pos <= y_pos;
 			endcase
-			case ({x_increment, x_decrement})
+			
+			case ({x_increment&& x_threshold > 127 , x_decrement&& x_threshold < 127 })
 				2'b10: x_pos <= x_pos + 1'b1;
 				2'b01: x_pos <= x_pos - 1'b1;
 				
 				default: x_pos <= x_pos;
 			endcase
-		end
+			end
+		
 		else begin
 			y_pos <= y_pos;
 			x_pos <= x_pos;

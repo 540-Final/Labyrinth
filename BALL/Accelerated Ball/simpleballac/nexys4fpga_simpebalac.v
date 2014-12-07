@@ -99,8 +99,8 @@ module Nexys4fpga (
 		.d6 (accelY[7:4]),
 		.d5 (accelY[3:0]),
 		.d4 (accelX[8]),
-		.d3(dig3),
-		.d2(dig2),
+		.d3(accelX[7:4]),
+		.d2(accelX[3:0]),
 		.d1(y_out),
 		.d0(x_out),
 		.dp(decpts),
@@ -140,9 +140,11 @@ module Nexys4fpga (
 		.clk(sysclk),
 		.reset(sysreset),
 		.x_increment(accelX[8]),
-		.x_decrement(!accelX[8]), 
+		.x_decrement(!accelX[8]), //active low for negative numbers 
 		.y_increment(accelY[8]),
 		.y_decrement(!accelY[8]),
+		.x_threshold(accelX[7:0]), //bottom 8 bits give magnitude, read in for threshold readings
+		.y_threshold(accelY[7:0]),
 		.x_out(x_out),
 		.y_out(y_out) 
 	);
