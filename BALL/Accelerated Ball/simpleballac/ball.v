@@ -10,7 +10,9 @@ module Ball
 #(
 	// parameters
 	parameter integer	CLK_FREQUENCY_HZ		= 100000000, 
-	parameter integer	UPDATE_FREQUENCY_HZ		= 5,
+	parameter integer	UPDATE_FREQUENCY_2HZ		= 2,
+	parameter integer	UPDATE_FREQUENCY_4HZ		= 4,
+	parameter integer	UPDATE_FREQUENCY_8HZ	= 8,
 	parameter integer	RESET_POLARITY_LOW		= 1,
 	parameter integer 	CNTR_WIDTH 				= 32,
 	
@@ -45,42 +47,93 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	wire reset_in = RESET_POLARITY_LOW ? ~reset : reset;
 	
 	// clock divider 
-	reg			[CNTR_WIDTH-1:0]	clk_cnt;
-	wire		[CNTR_WIDTH-1:0]	top_cnt = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_HZ) - 1);
-	reg								tick5hz;				// update clock enable							
-    
+	reg			[CNTR_WIDTH-1:0]	clk_cnt4;
+	reg			[CNTR_WIDTH-1:0]					clk_cnt20;
+	reg			[CNTR_WIDTH-1:0]					clk_cnt2;
+	wire		[CNTR_WIDTH-1:0]	top_cnt4hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_4HZ) - 1);
+	wire		[CNTR_WIDTH-1:0]	top_cnt8hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_8HZ) - 1);
+	wire		[CNTR_WIDTH-1:0]	top_cnt2hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ ) - 1);
+	reg								tick4hz;				// update clock enable		
+	reg								tick8hz;
+	reg								tick2hz;
 	
-	// generate update clock enable
-	
+	//clock counters for 1hz, 5hz and 10hz
 	always @(posedge clk) begin
 		if (reset_in) begin
-			clk_cnt <= {CNTR_WIDTH{1'b0}};
+			clk_cnt2 <= {CNTR_WIDTH{1'b0}};
+			clk_cnt4 <= {CNTR_WIDTH{1'b0}};
+			clk_cnt20 <= {CNTR_WIDTH{1'b0}};
 		end
-		else if (clk_cnt == top_cnt) begin
-		    tick5hz <= 1'b1;
-		    clk_cnt <= {CNTR_WIDTH{1'b0}};
-		end
+		else if (clk_cnt4 == top_cnt4hz) begin
+		    tick4hz <= 1'b1;
+		    clk_cnt4 <= {CNTR_WIDTH{1'b0}};
+		    end
+			else if (clk_cnt20 == top_cnt8hz) begin
+			tick8hz<=1'b1;
+			clk_cnt20 <= {CNTR_WIDTH{1'b0}};
+			end
+			else if (clk_cnt2 ==top_cnt2hz) begin
+				tick2hz<=1'b1;
+				clk_cnt2 <= {CNTR_WIDTH{1'b0}};
+				end
+		
 		else begin
-		    clk_cnt <= clk_cnt + 1'b1;
-		    tick5hz <= 1'b0;
+		    clk_cnt2 <= clk_cnt2 + 1'b1;
+		    clk_cnt4 <= clk_cnt4 + 1'b1;
+		    clk_cnt20 <= clk_cnt20 + 1'b1;
+		    tick4hz <= 1'b0;
+			tick8hz<=1'b0;
+			tick2hz<=1'b0;
 		end
-	end // update clock enable
-    
-    // inc/dec wheel position counters    
-	always @(posedge clk) begin
+	end // update clock enable 
+	
+	
+	   // inc/dec position at 1hz, tilt threshold 191
+		always @(posedge clk) begin
 		if (reset_in) begin
 			y_pos <= 8'd0;
 			x_pos <= 8'd0;
 		end
-		else if (tick5hz  ) begin
-			case ({y_increment&& y_threshold > 127 , y_decrement&& y_threshold < 127 })
+		else if (tick2hz  ) begin
+			case ({y_increment && y_threshold > 31, y_decrement && y_threshold < 224})
 				2'b10: y_pos  <= y_pos + 1'b1;
 				2'b01: y_pos  <= y_pos - 1'b1;
 				
 				default: y_pos <= y_pos;
 			endcase
 			
-			case ({x_increment&& x_threshold > 127 , x_decrement&& x_threshold < 127 })
+			case ({x_increment && x_threshold > 31, x_decrement && x_threshold < 224})
+				2'b10: x_pos <= x_pos + 1'b1;
+				2'b01: x_pos <= x_pos - 1'b1;
+				
+				default: x_pos <= x_pos;
+			endcase
+			end
+		else if (tick4hz  ) begin
+			case ({y_increment && y_threshold > 127 , y_decrement && y_threshold < 127})
+				2'b10: y_pos  <= y_pos + 1'b1;
+				2'b01: y_pos  <= y_pos - 1'b1;
+				
+				default: y_pos <= y_pos;
+			endcase
+			
+			case ({x_increment && x_threshold > 127 , x_decrement&& x_threshold < 127 })
+				2'b10: x_pos <= x_pos + 1'b1;
+				2'b01: x_pos <= x_pos - 1'b1;
+				
+				default: x_pos <= x_pos;
+			endcase
+			end
+			
+			else if (tick8hz  ) begin
+			case ({y_increment && y_threshold > 253, y_decrement && y_threshold < 2})
+				2'b10: y_pos  <= y_pos + 1'b1;
+				2'b01: y_pos  <= y_pos - 1'b1;
+				
+				default: y_pos <= y_pos;
+			endcase
+			
+			case ({x_increment&& x_threshold > 255, x_decrement&& x_threshold < 1})
 				2'b10: x_pos <= x_pos + 1'b1;
 				2'b01: x_pos <= x_pos - 1'b1;
 				
@@ -88,12 +141,23 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 			endcase
 			end
 		
+			
 		else begin
 			y_pos <= y_pos;
 			x_pos <= x_pos;
 		end
 		
 	end  // inc/dec ball location counter
+	
+    
+    
+		
+	
+	
+	
+	
+	
+	
 	//This will assign the above values of x and y to output values of x and y if the map pixel is not blocked at that location
 	//this obviously doesnt work as is here, what we need to do is move, check the map, then update x_out and y_out
 	//I need to go back to the text book and check out blocking v non-blocking statements. I would like the above block which gets
