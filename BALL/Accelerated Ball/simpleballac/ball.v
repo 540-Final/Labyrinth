@@ -48,8 +48,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	
 	// clock divider 
 	reg			[CNTR_WIDTH-1:0]	clk_cnt4;
-	reg			[CNTR_WIDTH-1:0]					clk_cnt20;
-	reg			[CNTR_WIDTH-1:0]					clk_cnt2;
+	reg			[CNTR_WIDTH-1:0]	clk_cnt8;
+	reg			[CNTR_WIDTH-1:0]	clk_cnt2;
 	wire		[CNTR_WIDTH-1:0]	top_cnt4hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_4HZ) - 1);
 	wire		[CNTR_WIDTH-1:0]	top_cnt8hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_8HZ) - 1);
 	wire		[CNTR_WIDTH-1:0]	top_cnt2hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ ) - 1);
@@ -57,38 +57,57 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	reg								tick8hz;
 	reg								tick2hz;
 	
-	//clock counters for 1hz, 5hz and 10hz
+	//clock counters 
 	always @(posedge clk) begin
 		if (reset_in) begin
 			clk_cnt2 <= {CNTR_WIDTH{1'b0}};
 			clk_cnt4 <= {CNTR_WIDTH{1'b0}};
-			clk_cnt20 <= {CNTR_WIDTH{1'b0}};
+			clk_cnt8 <= {CNTR_WIDTH{1'b0}};
 		end
+		
+		
+			//++++++++++++++++++++++++++
+				//!!!!!!!!!!!!!!!!//
+			//++++++++++++++++++++++++++
 		else if (clk_cnt4 == top_cnt4hz) begin
 		    tick4hz <= 1'b1;
 		    clk_cnt4 <= {CNTR_WIDTH{1'b0}};
 		    end
-			else if (clk_cnt20 == top_cnt8hz) begin
+			//++++++++++++++++++++++++++
+				//!!!!!!!!!!!!!!!!//
+			//++++++++++++++++++++++++++
+			else if (clk_cnt8 == top_cnt8hz) begin
 			tick8hz<=1'b1;
-			clk_cnt20 <= {CNTR_WIDTH{1'b0}};
+			clk_cnt8 <= {CNTR_WIDTH{1'b0}};
 			end
+			//++++++++++++++++++++++++++
+				//!!!!!!!!!!!!!!!!//
+			//++++++++++++++++++++++++++
 			else if (clk_cnt2 ==top_cnt2hz) begin
 				tick2hz<=1'b1;
 				clk_cnt2 <= {CNTR_WIDTH{1'b0}};
 				end
+				
+			//++++++++++++++++++++++++++
+				//!!!!!!!!!!!!!!!!//
+			//++++++++++++++++++++++++++
 		
 		else begin
 		    clk_cnt2 <= clk_cnt2 + 1'b1;
 		    clk_cnt4 <= clk_cnt4 + 1'b1;
-		    clk_cnt20 <= clk_cnt20 + 1'b1;
+		    clk_cnt8 <= clk_cnt8 + 1'b1;
 		    tick4hz <= 1'b0;
 			tick8hz<=1'b0;
 			tick2hz<=1'b0;
 		end
 	end // update clock enable 
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+			//	*************************************** //
+						//$$$$$$$$$$$$$$$$$$$//
+			//	*************************************** //
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
-	
-	   // inc/dec position at 1hz, tilt threshold 191
+	   // inc/dec position at 1hz, tilt threshold 31/224
 		always @(posedge clk) begin
 		if (reset_in) begin
 			y_pos <= 8'd0;
@@ -109,6 +128,14 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 				default: x_pos <= x_pos;
 			endcase
 			end
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+			//	*************************************** //
+						//$$$$$$$$$$$$$$$$$$$//
+			//	*************************************** //
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
+			
+		  // inc/dec position at 4hz, tilt threshold 127/127	
+			
 		else if (tick4hz  ) begin
 			case ({y_increment && y_threshold > 127 , y_decrement && y_threshold < 127})
 				2'b10: y_pos  <= y_pos + 1'b1;
@@ -124,7 +151,13 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 				default: x_pos <= x_pos;
 			endcase
 			end
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+			//	*************************************** //
+						//$$$$$$$$$$$$$$$$$$$//
+			//	*************************************** //
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
 			
+		  // inc/dec position at 4hz, tilt threshold 253/2		
 			else if (tick8hz  ) begin
 			case ({y_increment && y_threshold > 253, y_decrement && y_threshold < 2})
 				2'b10: y_pos  <= y_pos + 1'b1;
@@ -149,7 +182,10 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 		
 	end  // inc/dec ball location counter
 	
-    
+   //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//				+++++MAX VALUE OF TILT+++++
+//					__________________
+	//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
 		
 	
