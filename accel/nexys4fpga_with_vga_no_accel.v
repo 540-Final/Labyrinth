@@ -181,11 +181,11 @@ module Nexys4fpga (
 //		.d3 ({1'b0,accelY[7:4]}),
 		.d0({1'b0,locY[3:0]}),
 		.d1({1'b0,locY[7:4]}),
-		.d2({3'b0,colmax[9:8]}),
+		.d2({4'b0,locY[8]}),
 		.d3(5'b0),
 		.d4({1'b0,locX[3:0]}),
 		.d5({1'b0,locX[7:4]}),
-		.d6({3'b0,rowmax[9:8]}),
+		.d6({3'b0,locX[9:8]}),
 		.d7(5'b0),
 		.dp(decpts),
 		
@@ -237,8 +237,8 @@ module Nexys4fpga (
 	(
 		.clk 			(sysclk),
 		.reset			(~sysreset),
-		.x_increment      (db_btns[4]),
-		.x_decrement      (db_btns[2]), 
+		.x_increment      (db_btns[2]),
+		.x_decrement      (db_btns[4]), 
 		.y_increment      (db_btns[1]),
 		.y_decrement      (db_btns[3]),
 	

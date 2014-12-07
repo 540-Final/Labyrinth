@@ -15,7 +15,10 @@ module Ball
 	parameter integer 	CNTR_WIDTH 				= 32,
 	
 	parameter integer	SIMULATE				= 0,
-	parameter integer	SIMULATE_FREQUENCY_CNT	= 5
+	parameter integer	SIMULATE_FREQUENCY_CNT	= 5,
+	parameter integer   INITIAL_X               = 521,
+	parameter integer   INITIAL_Y               = 247, 
+	parameter integer   NUM_PX_TO_CHECK         = 15
 )
 (
 /*The map value input is something Im a bit unsure about, Im guessing its all a big ROM, so we can just check an address at the rom when we get
@@ -32,8 +35,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	input				y_decrement,
 	
 	//These are the actual output coordinates of the ball, if it was able to move to a particular spot
-    output reg	[9:0]	y_out,
-	output reg	[8:0]	x_out,
+    output reg	[8:0]	y_out,
+	output reg	[9:0]	x_out,
 	
 	input 		[9:0]	vid_row,		// video logic row address
 	input 		[9:0]	vid_col,		// video logic column address
@@ -42,8 +45,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 
 	// internal variables
 	//These are internal registers for storing the next x/y position for later check against legality of the move on the map
-        reg            [9:0]    x_pos;
-        reg        [8:0]    y_pos;
+        reg        [9:0]    x_pos = INITIAL_X;
+        reg        [8:0]    y_pos = INITIAL_Y;
 	// reset - asserted high
 	wire reset_in = RESET_POLARITY_LOW ? ~reset : reset;
 	
@@ -69,37 +72,120 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 		end
 	end // update clock enable
     
+	
+	
+	
+	
+	`define UP 		2'b00;
+	`define DOWN 	2'b01;
+	`define LEFT 	2'b10;
+	`define RIGHT 	2'b11;
+	
+	`define YES		1'b1;
+	`define NO		1'b0;
+	
+	assign wire [3:0] inputs = {x_increment, x_decrement, y_increment, y_decrement};
+	
+	reg	locked_intended_move, movement_validated, move_is_valid;
+	reg [1:0] intended_movement_dir;
+	reg [3:0] check_px;
+	
+	initial begin
+		locked_intended_move	<= `NO;
+		movement_validated	 	<= `NO;
+		move_is_valid			<= `NO;
+		intended_movement_dir	<= 2'b00;
+		check_px				<= 4'b0000;
+	end	
+	
+	
     // inc/dec wheel position counters    
 	always @(posedge clk) begin
 		if (reset_in) begin
-			y_pos <= 8'd0;
-			x_pos <= 8'd0;
-		end
-		else if (tick5hz) begin
-			case ({y_increment, y_decrement})
-				2'b10: y_pos  <= y_pos + 1'b1;
-				2'b01: y_pos  <= y_pos - 1'b1;
-				
-				default: y_pos <= y_pos;
-			endcase
-			case ({x_increment, x_decrement})
-				2'b10: x_pos <= x_pos + 1'b1;
-				2'b01: x_pos <= x_pos - 1'b1;
-				
-				default: x_pos <= x_pos;
-			endcase
+			y_pos <= INITIAL_Y;
+			x_pos <= INITIAL_X;
 		end
 		else begin
-			y_pos <= y_pos;
-			x_pos <= x_pos;
-		end
-		
-	end  // inc/dec ball location counter
+			if (movement_validated) begin
+				if (tick5hz) begin
+					if (move_is_valid) begin
+						case (intended_movement_dir)
+							`UP 	: x_pos <= x_pos + 1'b1;	
+							`DOWN 	: x_pos <= x_pos - 1'b1;
+							`LEFT 	: y_pos  <= y_pos - 1'b1;
+							`RIGHT	: y_pos  <= y_pos + 1'b1;
+						endcase
+					end
+					movement_validated	 <= `NO;
+					move_is_valid 		 <= `NO;
+					locked_intended_move <= `NO;
+				end
+				else ;
+			end
+			else begin
+				// see if the user wants to move
+					// if so, lock in the direction
+				if (locked_intended_move) begin
+					if (check_px < NUM_PX_TO_CHECK) begin // More pixels to scan
+						case locked_intended_move
+							`RIGHT:
+							 `LEFT:
+								begin
+									intended_movement_dir = `RIGHT;
+									locked_intended_move <= `YES;
+								end
+							   `UP:
+							 `DOWN:
+								begin
+									intended_movement_dir = `RIGHT;
+									locked_intended_move <= `YES;
+								end
+						endcase
+						
+						
+						move_is_valid <= move_is_valid & (scan result) // check this logic
+					end
+					else begin // Scanned all pixels
+						movement_validated <= `YES;
+						check_px		   <= 4'b0000;
+					end
+				end
+				else begin
+				
+				
+				
+				// WORKING HERE
+					case inputs
+						4'b0001	: begin
+							intended_movement_dir = `RIGHT;
+							locked_intended_move <= `YES;
+							end
+						4'b0010	: begin
+							intended_movement_dir = `LEFT;
+							locked_intended_move <= `YES;
+							end
+						4'b0100	: begin
+							intended_movement_dir = `UP;
+							locked_intended_move <= `YES;
+							end
+						4'b1000	: begin
+							intended_movement_dir = `DOWN;
+							locked_intended_move <= `YES;
+							end
+						default : locked_intended_move <= `NO;
+					endcase
+				end
+			end
+		end		
+	end
+
+
+	// inc/dec ball location counter
 	//This will assign the above values of x and y to output values of x and y if the map pixel is not blocked at that location
 	//this obviously doesnt work as is here, what we need to do is move, check the map, then update x_out and y_out
 	//I need to go back to the text book and check out blocking v non-blocking statements. I would like the above block which gets
 	//x/y_pos to first update, and then go to the below block.
-	always @(posedge clk) begin
+/* 	always @(posedge clk) begin
 		if (reset_in) begin
 			y_out <= 8'd0;
 			x_out <= 8'd0;
@@ -110,7 +196,9 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 			x_out <=x_pos;
 	
 		end
-	end
+	end */
+	
+	
 	
 		map amap (
 			.clk (clk),
