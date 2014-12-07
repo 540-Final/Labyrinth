@@ -41,7 +41,7 @@ module draw_icon(
 		if	       ((vert >= bot_LocY) && (vert < (bot_LocY + ICON_HEIGHT))
 				&& 	(horz >= bot_LocX) && (horz < (bot_LocX + ICON_WIDTH))) 
 		begin
-			addr <= ((vert - bot_LocY * ICON_WIDTH) + (horz - bot_LocX));
+			addr <= (((vert - bot_LocY) * ICON_WIDTH) + (horz - bot_LocX));
 		end
 		// Not on icon, give transparent pixel
 		else begin
@@ -50,6 +50,6 @@ module draw_icon(
 	end
  		
  	// Instantiate ROM that contains icon images.
-    icon_rom irom (.clka(clk), .addra(addr), .douta(icon_out), .ena(1'b1));
+    icon_rom irom (.clk(clk), .a(addr), .qspo(icon_out));
     
 endmodule
