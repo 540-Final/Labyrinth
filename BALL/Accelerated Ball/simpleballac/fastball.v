@@ -12,6 +12,7 @@ module Ball
 	parameter integer	CLK_FREQUENCY_HZ		= 100000000, 
 	parameter integer	UPDATE_FREQUENCY_16HZ		= 16,
 	parameter integer	UPDATE_FREQUENCY_48HZ		= 48,
+	parameter integer	UPDATE_FREQUENCY_64HZ		= 64,
 	parameter integer	UPDATE_FREQUENCY_96HZ	= 96,
 	parameter integer	UPDATE_FREQUENCY_128HZ	= 128,
 	parameter integer	UPDATE_FREQUENCY_160HZ	= 160,
@@ -66,13 +67,13 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	wire		[CNTR_WIDTH-1:0]	top_cnt16hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_16HZ) - 1);
 	wire		[CNTR_WIDTH-1:0]	top_cnt48hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_48HZ) - 1);
 	wire		[CNTR_WIDTH-1:0]	top_cnt64hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_64HZ ) - 1);
-	wire		[CNTR_WIDTH-1:0]	top_cnt64hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_96HZ ) - 1);
-	wire		[CNTR_WIDTH-1:0]	top_cnt64hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_128HZ ) - 1);
-	wire		[CNTR_WIDTH-1:0]	top_cnt64hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_160HZ ) - 1);
-	wire		[CNTR_WIDTH-1:0]	top_cnt64hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_208HZ ) - 1);
-	wire		[CNTR_WIDTH-1:0]	top_cnt64hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_264HZ ) - 1);
-	wire		[CNTR_WIDTH-1:0]	top_cnt64hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_384HZ ) - 1);
-	wire		[CNTR_WIDTH-1:0]	top_cnt64hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_512HZ ) - 1);
+	wire		[CNTR_WIDTH-1:0]	top_cnt96hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_96HZ ) - 1);
+	wire		[CNTR_WIDTH-1:0]	top_cnt128hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_128HZ ) - 1);
+	wire		[CNTR_WIDTH-1:0]	top_cnt160hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_160HZ ) - 1);
+	wire		[CNTR_WIDTH-1:0]	top_cnt208hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_208HZ ) - 1);
+	wire		[CNTR_WIDTH-1:0]	top_cnt264hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_264HZ ) - 1);
+	wire		[CNTR_WIDTH-1:0]	top_cnt384hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_384HZ ) - 1);
+	wire		[CNTR_WIDTH-1:0]	top_cnt512hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_512HZ ) - 1);
 	reg								tick16hz;				// update clock enable		
 	reg								tick48hz;
 	reg								tick64hz;
@@ -187,8 +188,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 			
 		
 		else begin
-		    clk_cnt16 <= clk_cnt2 + 1'b1;
-		    clk_cnt48 <= clk_cnt4 + 1'b1;
+		    clk_cnt16 <= clk_cnt16 + 1'b1;
+		    clk_cnt48 <= clk_cnt48 + 1'b1;
 		    clk_cnt64 <= clk_cnt64 + 1'b1;
 			clk_cnt96 <= clk_cnt96 + 1'b1;
 			clk_cnt128 <= clk_cnt128 + 1'b1;
