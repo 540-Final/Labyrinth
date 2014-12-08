@@ -254,7 +254,7 @@ module Nexys4fpga (
 	wire [3:0] moarvement;
 	assign moarvement[3] = db_btns[2] & tick_1;
 	assign moarvement[2] = db_btns[4] & tick_1;
-	assign moarvement[3] = db_btns[1] & tick_1;
+	assign moarvement[1] = db_btns[1] & tick_1;
 	assign moarvement[0] = db_btns[3] & tick_1;
 	
 	reg [2:0] fuck = 0;

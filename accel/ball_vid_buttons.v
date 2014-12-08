@@ -78,6 +78,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 		x_out					<= INITIAL_X;
 	end	*/
 	
+	
 	always @(posedge clk) begin
 		if (reset_in) begin
 			y_out <= INITIAL_Y;
@@ -113,10 +114,10 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 								movement_validated  <= YES;		// move is invalid, no need to keep scanning.
 								check_px		    <= 4'b0000;
 							end
-							else begin
-								rom_read_delay	<= 2'b00; 				// reset read delay
+							else begin 				// reset read delay
 								check_px		<= check_px + 1'b1;		// increment the check pixel
 							end
+                            rom_read_delay    <= 2'b00;
 						end
 						else if (rom_read_delay	== 2'b00) begin
 							// Set the address of the next pixel to check
