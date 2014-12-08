@@ -268,6 +268,7 @@ module Nexys4fpga (
         
 		.clk 			(clk),
 		.reset			(~sysreset),
+		.update           (clk),
 	
 		.y_out			(locY),
 		.x_out			(locX),

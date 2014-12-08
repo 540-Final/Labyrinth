@@ -19,7 +19,7 @@ module Ball
 	parameter integer   INITIAL_Y               = 'hFE, 
 	parameter integer   NUM_PX_TO_CHECK         = 15,	// 
 	parameter integer   OFFSET                  = 8,		// From center pixel to edge that needs checked
-	parameter 			VALID_MOVE_PX			= 8'h26,
+	parameter 			WALL					= 8'h26,
 	parameter           READ_DELAY              = 3
 )
 (
@@ -41,7 +41,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	input 		[9:0]	vid_col,		// video logic column address
 	output   	[7:0]	vid_pixel_out,	// pixel (location) value
 	
-	output [12:0] debug
+	output [12:0] debug,
+	input update
 );
 
 	// internal variables
@@ -79,7 +80,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	end	*/
 	
 	
-	always @(posedge clk) begin
+	always @(posedge update) begin
 		if (reset_in) begin
 			y_out <= INITIAL_Y;
 			x_out <= INITIAL_X;
@@ -109,7 +110,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 					if (check_px < NUM_PX_TO_CHECK) begin // More pixels to scan
 						if (rom_read_delay == READ_DELAY) begin // Ready to read the world pixel
 							// TODO read the rom and set if move is valid
-							if(px_result != VALID_MOVE_PX) begin
+							if(px_result == WALL) begin
 								move_is_valid 		<= NO;
 								movement_validated  <= YES;		// move is invalid, no need to keep scanning.
 								check_px		    <= 4'b0000;
@@ -154,7 +155,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 				end		
 			end
 			else begin
-				if(movement > 0) begin
+				if(|movement) begin
 					intended_movement_dir <= movement;
 					locked_intended_move <= YES;
 				end
