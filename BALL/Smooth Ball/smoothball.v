@@ -10,9 +10,8 @@ module Ball
 #(
 	// parameters
 	parameter integer	CLK_FREQUENCY_HZ		= 100000000, 
-	parameter integer	UPDATE_FREQUENCY_2HZ		= 2,
-	parameter integer	UPDATE_FREQUENCY_4HZ		= 4,
-	parameter integer	UPDATE_FREQUENCY_8HZ	= 8,
+	//parameter integer	UPDATE_FREQUENCY_X_16		= 16,
+
 	parameter integer	RESET_POLARITY_LOW		= 1,
 	parameter integer 	CNTR_WIDTH 				= 32,
 	
@@ -37,68 +36,77 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	//These are the actual output coordinates of the ball, if it was able to move to a particular spot
     output reg	[7:0]	y_out,
 	output reg	[7:0]	x_out
+	
 );
 
 	// internal variables
 	//These are internal registers for storing the next x/y position for later check against legality of the move on the map
+		reg		[7:0]			X_magnatude;
+		reg		[7:0]			Y_magnatude;
+		reg		[7:0]			UPDATE_FREQUENCY_X;
+		reg		[7:0]			UPDATE_FREQUENCY_Y;
         reg            [3:0]    x_pos;
         reg        [3:0]    y_pos;
 	// reset - asserted high
-	wire reset_in = RESET_POLARITY_LOW ? ~reset : reset;
 	
+	wire reset_in = RESET_POLARITY_LOW ? ~reset : reset;
+	always @(posedge clk) begin
+			case({y_increment, y_decrement})
+			2'b10: Y_magnatude <= y_threshold;
+			2'b01: Y_magnatude <=y_threshold ^ 8'b11111111;
+			
+			endcase 
+		case({x_increment, x_decrement})
+		2'b10:	X_magnatude <= x_threshold;
+		2'b01:	 X_magnatude <=x_threshold ^ 8'b11111111 ;
+			 
+			 endcase
+		end
+	always @(posedge clk) begin
+		
+			UPDATE_FREQUENCY_X <=  X_magnatude;
+			UPDATE_FREQUENCY_Y <= Y_magnatude;
+			
+		
+		end
 	// clock divider 
-	reg			[CNTR_WIDTH-1:0]	clk_cnt4;
-	reg			[CNTR_WIDTH-1:0]	clk_cnt8;
-	reg			[CNTR_WIDTH-1:0]	clk_cnt2;
-	wire		[CNTR_WIDTH-1:0]	top_cnt4hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_4HZ) - 1);
-	wire		[CNTR_WIDTH-1:0]	top_cnt8hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_8HZ) - 1);
-	wire		[CNTR_WIDTH-1:0]	top_cnt2hz = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ ) - 1);
-	reg								tick4hz;				// update clock enable		
-	reg								tick8hz;
-	reg								tick2hz;
+	reg			[CNTR_WIDTH-1:0]	clk_cntX;
+	reg			[CNTR_WIDTH-1:0]	clk_cntY;
+	wire		[CNTR_WIDTH-1:0]	top_cnt_X = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_X) - 1);
+	wire		[CNTR_WIDTH-1:0]	top_cnt_Y = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_Y) - 1);
+	reg								tick_X;				// update clock enable		
+	reg								tick_Y;	
+	
+	
+	
 	
 	//clock counters 
 	always @(posedge clk) begin
 		if (reset_in) begin
-			clk_cnt2 <= {CNTR_WIDTH{1'b0}};
-			clk_cnt4 <= {CNTR_WIDTH{1'b0}};
-			clk_cnt8 <= {CNTR_WIDTH{1'b0}};
+			clk_cntX <= {CNTR_WIDTH{1'b0}};
+			clk_cntY <= {CNTR_WIDTH{1'b0}};
+			
 		end
 		
 		
-			//++++++++++++++++++++++++++
-				//!!!!!!!!!!!!!!!!//
-			//++++++++++++++++++++++++++
-		else if (clk_cnt4 == top_cnt4hz) begin
-		    tick4hz <= 1'b1;
-		    clk_cnt4 <= {CNTR_WIDTH{1'b0}};
-		    end
-			//++++++++++++++++++++++++++
-				//!!!!!!!!!!!!!!!!//
-			//++++++++++++++++++++++++++
-			else if (clk_cnt8 == top_cnt8hz) begin
-			tick8hz<=1'b1;
-			clk_cnt8 <= {CNTR_WIDTH{1'b0}};
-			end
-			//++++++++++++++++++++++++++
-				//!!!!!!!!!!!!!!!!//
-			//++++++++++++++++++++++++++
-			else if (clk_cnt2 ==top_cnt2hz) begin
-				tick2hz<=1'b1;
-				clk_cnt2 <= {CNTR_WIDTH{1'b0}};
+			else if (clk_cntX ==top_cnt_X) begin
+				tick_X<=1'b1;
+				clk_cntX <= {CNTR_WIDTH{1'b0}};
 				end
-				
-			//++++++++++++++++++++++++++
-				//!!!!!!!!!!!!!!!!//
-			//++++++++++++++++++++++++++
+			else if (clk_cntY ==top_cnt_Y) begin
+				tick_Y<=1'b1;
+				clk_cntY <= {CNTR_WIDTH{1'b0}};
+				end	
+		
+			
 		
 		else begin
-		    clk_cnt2 <= clk_cnt2 + 1'b1;
-		    clk_cnt4 <= clk_cnt4 + 1'b1;
-		    clk_cnt8 <= clk_cnt8 + 1'b1;
-		    tick4hz <= 1'b0;
-			tick8hz<=1'b0;
-			tick2hz<=1'b0;
+		    clk_cntX<= clk_cntX + 1'b1;
+			clk_cntY<= clk_cntY + 1'b1;
+			
+			tick_Y <=1'b0;
+		    tick_X <= 1'b0;
+		
 		end
 	end // update clock enable 
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -107,21 +115,22 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 			//	*************************************** //
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
-	   // inc/dec position at 1hz, tilt threshold 31/224
+	   // inc/dec position at 16hz, tilt threshold 31/224
 		always @(posedge clk) begin
 		if (reset_in) begin
 			y_pos <= 8'd0;
 			x_pos <= 8'd0;
 		end
-		else if (tick2hz  ) begin
-			case ({y_increment && y_threshold > 31, y_decrement && y_threshold < 224})
+		else if (tick_Y) begin
+			case ({y_increment, y_decrement})
 				2'b10: y_pos  <= y_pos + 1'b1;
 				2'b01: y_pos  <= y_pos - 1'b1;
 				
 				default: y_pos <= y_pos;
 			endcase
-			
-			case ({x_increment && x_threshold > 31, x_decrement && x_threshold < 224})
+			end
+		else if (tick_X) begin
+			case ({x_increment, x_decrement})
 				2'b10: x_pos <= x_pos + 1'b1;
 				2'b01: x_pos <= x_pos - 1'b1;
 				
@@ -133,46 +142,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 						//$$$$$$$$$$$$$$$$$$$//
 			//	*************************************** //
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
-			
-		  // inc/dec position at 4hz, tilt threshold 127/127	
-			
-		else if (tick4hz  ) begin
-			case ({y_increment && y_threshold > 127 , y_decrement && y_threshold < 127})
-				2'b10: y_pos  <= y_pos + 1'b1;
-				2'b01: y_pos  <= y_pos - 1'b1;
-				
-				default: y_pos <= y_pos;
-			endcase
-			
-			case ({x_increment && x_threshold > 127 , x_decrement&& x_threshold < 127 })
-				2'b10: x_pos <= x_pos + 1'b1;
-				2'b01: x_pos <= x_pos - 1'b1;
-				
-				default: x_pos <= x_pos;
-			endcase
-			end
-	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-			//	*************************************** //
-						//$$$$$$$$$$$$$$$$$$$//
-			//	*************************************** //
-	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
-			
-		  // inc/dec position at 4hz, tilt threshold 253/2		
-			else if (tick8hz  ) begin
-			case ({y_increment && y_threshold > 253, y_decrement && y_threshold < 2})
-				2'b10: y_pos  <= y_pos + 1'b1;
-				2'b01: y_pos  <= y_pos - 1'b1;
-				
-				default: y_pos <= y_pos;
-			endcase
-			
-			case ({x_increment&& x_threshold > 255, x_decrement&& x_threshold < 1})
-				2'b10: x_pos <= x_pos + 1'b1;
-				2'b01: x_pos <= x_pos - 1'b1;
-				
-				default: x_pos <= x_pos;
-			endcase
-			end
+	 
 		
 			
 		else begin
@@ -182,10 +152,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 		
 	end  // inc/dec ball location counter
 	
-   //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-//				+++++MAX VALUE OF TILT+++++
-//					__________________
-	//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+	
     
 		
 	
