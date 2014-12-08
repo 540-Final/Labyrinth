@@ -79,26 +79,10 @@ module Nexys4fpga (
 	wire 	[7:0]		decpts;					// decimal points
 	wire    [7:0]       segs_int;              // sevensegment module the segments and the decimal point
 	
-	//wires for kcpsm6
-	wire [11:0]	address;				//proj2demo
-	wire [17:0]	instruction;		//proj2demo
-	wire 		bram_enable;		//proj2demo
-	wire [7:0]	port_id;				//n4_bot_if
-	wire [7:0]	out_port;				//n4_bot_if
-	wire [7:0]	in_port;				//n4_bot_if
-	wire 		write_strobe;		//n4_bot_if
-	wire 		k_write_strobe;	//n4_bot_if
-	wire 		read_strobe;		//n4_bot_if
-	wire 		interrupt;			//n4_bot_if
-	wire 		interrupt_ack;	//n4_bot_if
-	wire 		kcpsm6_reset;
-	wire 		rdl;
-	wire 		kcpsm6_sleep;
-	
 	//wires for bot
 	wire [7:0]	motctl;
 	wire [9:0]	locX;
-	wire [8:0]	locY;
+	wire [9:0]	locY;
 	wire [7:0]	sensors;
 	wire [7:0]	botinfo;
 	wire [7:0]	lmdist;
@@ -107,25 +91,17 @@ module Nexys4fpga (
 	wire [9:0]	vid_row;				//video ctrlr
 	wire [9:0]	vid_col;				//video ctrlr
 	wire [7:0]	vid_pixel;	//video ctrlr
-	
-	//wire [9:0]	vid_rowx4;				//video ctrlr
-	//wire [9:0]	vid_colx4;				//video ctrlr
-	wire [9:0]	vid_rowx2;				//video ctrlr
-	wire [9:0]	vid_colx2;				//video ctrlr
-	
-	//wire [1:0] icon;
-	
+
 	wire [8:0]	accelX;
 	wire [8:0]	accelY;
 	wire [11:0]	accelMag;
-	reg [9:0] rowmax;
-	reg [9:0] colmax;
-
+	
+	wire gameover;
+	wire [15:0] score; 
 		
 /******************************************************************/
 /* THIS SECTION SHOULDN'T HAVE TO CHANGE FOR LAB 1                */
 /******************************************************************/			
-
 	assign	sysclk = clk;
 	assign 	sysreset = db_btns[0]; // btnCpuReset is asserted low
 	
@@ -135,8 +111,8 @@ module Nexys4fpga (
 	// assign led[3:0] = {db_btns[4],db_btns[3],db_btns[2],db_btns[1]};
 	
 	assign	JA = {sysclk, sysreset, 6'b000000};
-			
-			
+
+
 	//instantiate the debounce module
 	debounce
 	#(
@@ -165,12 +141,12 @@ module Nexys4fpga (
 //		.d3 ({1'b0,accelY[7:4]}),
 		.d0({1'b0,locY[3:0]}),
 		.d1({1'b0,locY[7:4]}),
-		.d2({4'b0,locY[8]}),
-		.d7({1'b0,map_val[7:4]}),
-		.d3({1'b0,locX[3:0]}),
-		.d4({1'b0,locX[7:4]}),
-		.d5({3'b0,locX[9:8]}),
-		.d6({1'b0,map_val[3:0]}),
+		.d2({3'b0,locY[9:8]}),
+		.d3(5'b0),
+		.d4({1'b0,locX[3:0]}),
+		.d5({1'b0,locX[7:4]}),
+		.d6({3'b0,locX[9:8]}),
+		.d7(5'b0),
 		.dp(decpts),
 		
 		// outputs to seven segment display
@@ -186,7 +162,7 @@ module Nexys4fpga (
 	);
 
 	
-/*	AccelerometerCtl accelCtl (
+	AccelerometerCtl accelCtl (
 								.SYSCLK(sysclk),
 								.RESET (~sysreset),
 								.ACCEL_X_OUT (accelX),
@@ -197,7 +173,7 @@ module Nexys4fpga (
 								.MOSI (aclMOSI),
 								.MISO (aclMISO),
 								.SS (aclSS)
-	);*/
+	);
 	
 	vga_subsystem vga(
 		.sys_clk(sysclk),
@@ -219,7 +195,7 @@ module Nexys4fpga (
 	
 	reg [31:0] clk_cnt_1, clk_cnt_2;
 	reg tick_1, tick_2;
-	wire [31:0] top_cnt_1 = ((100000000 / 30) - 1);
+	wire [31:0] top_cnt_1 = ((100000000 / 90) - 1);
 	wire [31:0] top_cnt_2 = ((100000000 / 60) - 1);
 	
 		always @(posedge clk) begin
@@ -241,14 +217,13 @@ module Nexys4fpga (
         else if (clk_cnt_2 == top_cnt_2) begin
             tick_2 <= 1'b1;
             clk_cnt_2 <= {32{1'b0}};
-        end
-        else begin
+		end
+		else begin
             clk_cnt_2 <= clk_cnt_2 + 1'b1;
             tick_2 <= 1'b0;
-        end
+		end
 	end
 	
-	wire [7:0] map_val;
 	wire [3:0] moarvement;
 	assign moarvement[3] = db_btns[2] & tick_1;
 	assign moarvement[2] = db_btns[4] & tick_1;
@@ -276,8 +251,29 @@ module Nexys4fpga (
 		.vid_pixel_out  (vid_pixel),
 		
 		.debug(led[15:3]),
-		.px_result(map_val)
+		.gameover (gameover)
 	);
-
+	score myscore
+	(
+		.clk 		(sysclk),
+		.reset		(~sysreset),
+		.gameover	(gameover), 
+		.score		(score),
+	);
+	
+//	ball_accel_ctrl bac
+//	(
+//		.clk(),
+//		.reset(),
+					
+//		.x_increment(),
+//		.x_decrement(),
+//		.y_increment(),
+//		.y_decrement(),
+//		.x_threshold(),
+//		.y_threshold(),
+//		.y_out(),
+//		.x_out()
+//	);
 
 endmodule

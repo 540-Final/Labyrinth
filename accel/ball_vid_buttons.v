@@ -17,6 +17,8 @@ module Ball
 	parameter integer	SIMULATE_FREQUENCY_CNT	= 5,
 	parameter integer   INITIAL_X               = 'h20F,	// Starting Col 
 	parameter integer   INITIAL_Y               = 'hFE, 
+	parameter integer   WIN_X               = 'h139,	// Starting Col 
+	parameter integer   WIN_Y               = 'h30, 
 	parameter integer   NUM_PX_TO_CHECK         = 15,	// 
 	parameter integer   OFFSET                  = 8,		// From center pixel to edge that needs checked
 	parameter 			WALL					= 8'h26,
@@ -46,7 +48,6 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	
 	output [12:0] debug,
 	input update
-	output [7:0] px_result
 );
 
 	// internal variables
@@ -86,8 +87,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 			check_px				<= 4'b0000;
 		end
 		else begin
-			if (!gameover) begin
-			
+			if (!gameover) begin			
 				if (locked_intended_move) begin // We already have an intended direction
 					if (movement_validated) begin
 						if (move_is_valid) begin
@@ -166,16 +166,12 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 						intended_movement_dir <= movement;
 						locked_intended_move <= YES;
 					end	
-					else begin
-						locked_intended_move <= NO;
-				    	x_move_check_addr <= x_out;
-				    	y_move_check_addr <= y_out;
-					end
+					else locked_intended_move <= NO;
 				end
 			end
 			else begin
-				x_move_check_addr <= x_move_check_addr;
-				y_move_check_addr <= y_move_check_addr;
+				x_out <= WIN_X;
+				y_out <= WIN_Y;
 			end
 		end		
 	end	
