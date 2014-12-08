@@ -234,13 +234,11 @@ module Nexys4fpga (
 	);
 	
 	Ball aball 
-	(
+	(  
+        .movement({db_btns[2], db_btns[4], db_btns[1], db_btns[3]}),
+        
 		.clk 			(sysclk),
 		.reset			(~sysreset),
-		.x_increment      (db_btns[2]),
-		.x_decrement      (db_btns[4]), 
-		.y_increment      (db_btns[1]),
-		.y_decrement      (db_btns[3]),
 	
 		.y_out			(locY),
 		.x_out			(locX),
