@@ -44,11 +44,11 @@ module colorizer(
         else begin
             // Icon is transparent, use world color
             if (icon == TRANSPARENT)
-				color <= {world_pixel[2:0],1'b0, world_pixel[5:3], 1'b0, world_pixel[7:6], 2'b0};
+				color <= {world_pixel[7:5],1'b0, world_pixel[4:2], 1'b0, world_pixel[1:0], 2'b0};
 			
 			// Icon is not transparent, use the icon color
 			else
-			     color <= {icon[2:0],1'b0, icon[5:3], 1'b0, icon[7:6], 2'b0};
+			     color <= {icon[7:5], 1'b0, icon[4:2], 1'b0, icon[1:0], 2'b00};
         end
     end
     

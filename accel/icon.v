@@ -22,7 +22,7 @@ module draw_icon(
     input [9:0] horz,
     input clk,
     input [9:0] bot_LocX,
-    input [8:0] bot_LocY,
+    input [9:0] bot_LocY,
     //input [2:0] bot_Orie,
     output [7:0] icon_out
     );
