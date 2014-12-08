@@ -51,14 +51,14 @@ module Nexys4fpga (
 	output  [3:0]		vgaRed,
 	output  [3:0]		vgaGreen,
 	output  [3:0]		vgaBlue,
-	output				Hsync, Vsync,
+	output				Hsync, Vsync
 	
-	output	aclSCK,
-	input	aclMISO,
-	output	aclMOSI,
-	output	aclSS,
-	input	aclInt1,
-	input	aclInt2
+//	output	aclSCK,
+//	input	aclMISO,
+//	output	aclMOSI,
+//	output	aclSS,
+//	input	aclInt1,
+//	input	aclInt2
 	
 ); 
 
@@ -125,32 +125,19 @@ module Nexys4fpga (
 /******************************************************************/
 /* THIS SECTION SHOULDN'T HAVE TO CHANGE FOR LAB 1                */
 /******************************************************************/			
-	// global assigns
-	assign  kcpsm6_sleep = 0;
+
 	assign	sysclk = clk;
 	assign 	sysreset = db_btns[0]; // btnCpuReset is asserted low
 	
 	assign dp = segs_int[7];
 	assign seg = segs_int[6:0];
 	
-	assign led[3:0] = {db_btns[4],db_btns[3],db_btns[2],db_btns[1]};
+	// assign led[3:0] = {db_btns[4],db_btns[3],db_btns[2],db_btns[1]};
 	
 	assign	JA = {sysclk, sysreset, 6'b000000};
 	
 	assign vid_rowx2 = vid_row >> 1;
 	assign vid_colx2 = vid_col >> 1;
-	
-	always @ (posedge sysclk) begin
-		if (~sysreset) begin
-			rowmax <= 0;
-			colmax <= 0;
-		end else begin
-			if (rowmax < vid_row)
-				rowmax <= vid_row;
-			if (colmax < vid_col)
-				colmax <= vid_col;
-		end
-	end
 			
 			
 	//instantiate the debounce module
@@ -233,35 +220,53 @@ module Nexys4fpga (
 		.horiz_sync(Hsync)
 	);
 	
-	reg [31:0] clk_cnt;
-	reg tick5hz;
-	wire [31:0] top_cnt = ((100000000 / 10) - 1);
+	reg [31:0] clk_cnt_1, clk_cnt_2;
+	reg tick_1, tick_2;
+	wire [31:0] top_cnt_1 = ((100000000 / 1) - 1);
+	wire [31:0] top_cnt_2 = ((100000000 / 60) - 1);
 	
 		always @(posedge clk) begin
-		if (sysreset) begin
-			clk_cnt <= {32{1'b0}};
+		if (~sysreset) begin
+			clk_cnt_1 <= {32{1'b0}};
 		end
-		else if (clk_cnt == top_cnt) begin
-		    tick5hz <= 1'b1;
-		    clk_cnt <= {32{1'b0}};
+		else if (clk_cnt_1 == top_cnt_1) begin
+		    tick_1 <= 1'b1;
+		    clk_cnt_1 <= {32{1'b0}};
 		end
 		else begin
-		    clk_cnt <= clk_cnt + 1'b1;
-		    tick5hz <= 1'b0;
+		    clk_cnt_1 <= clk_cnt_1 + 1'b1;
+		    tick_1 <= 1'b0;
 		end
+		
+        if (~sysreset) begin
+            clk_cnt_2 <= {32{1'b0}};
+        end
+        else if (clk_cnt_2 == top_cnt_2) begin
+            tick_2 <= 1'b1;
+            clk_cnt_2 <= {32{1'b0}};
+        end
+        else begin
+            clk_cnt_2 <= clk_cnt_2 + 1'b1;
+            tick_2 <= 1'b0;
+        end
 	end
 	
 	wire [3:0] moarvement;
-	assign moarvement[3] = db_btns[2] & tick5hz;
-	assign moarvement[2] = db_btns[4] & tick5hz;
-	assign moarvement[3] = db_btns[1] & tick5hz;
-	assign moarvement[0] = db_btns[3] & tick5hz;
+	assign moarvement[3] = db_btns[2] & tick_1;
+	assign moarvement[2] = db_btns[4] & tick_1;
+	assign moarvement[3] = db_btns[1] & tick_1;
+	assign moarvement[0] = db_btns[3] & tick_1;
+	
+	reg [2:0] fuck = 0;
+	always @(posedge moarvement[2]) fuck <= fuck + 1'b1;
+	
+	assign led[2:0] = fuck;
 	
 	Ball aball 
 	(  
         .movement(moarvement),//db_btns[2], db_btns[4], db_btns[1], db_btns[3]}),
         
-		.clk 			(sysclk),
+		.clk 			(clk),
 		.reset			(~sysreset),
 	
 		.y_out			(locY),
@@ -269,7 +274,9 @@ module Nexys4fpga (
 	
 		.vid_row		(vid_rowx2),	
 		.vid_col		(vid_colx2),		
-		.vid_pixel_out  (vid_pixel)
+		.vid_pixel_out  (vid_pixel),
+		
+		.debug(led[15:3])
 	);
 
 

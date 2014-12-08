@@ -39,7 +39,9 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	
 	input 		[9:0]	vid_row,		// video logic row address
 	input 		[9:0]	vid_col,		// video logic column address
-	output   	[7:0]	vid_pixel_out	// pixel (location) value
+	output   	[7:0]	vid_pixel_out,	// pixel (location) value
+	
+	output [12:0] debug
 );
 
 	// internal variables
@@ -63,8 +65,9 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	
 	wire [7:0] px_result;
 	
+	assign debug = {locked_intended_move, movement_validated, move_is_valid, rom_read_delay, intended_movement_dir, check_px};
 	
-	initial begin
+/*	initial begin
 		locked_intended_move	<= NO;
 		movement_validated	 	<= NO;
 		move_is_valid			<= YES;
@@ -73,7 +76,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 		check_px				<= 4'b0000;
 		y_out					<= INITIAL_Y;
 		x_out					<= INITIAL_X;
-	end	
+	end	*/
 	
 	always @(posedge clk) begin
 		if (reset_in) begin
@@ -147,17 +150,17 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 						movement_validated <= YES;
 						check_px		   <= 4'b0000;
 					end
-				end
+				end		
 			end
 			else begin
-				if(|movement) begin
+				if(movement > 0) begin
 					intended_movement_dir <= movement;
 					locked_intended_move <= YES;
 				end
 				else locked_intended_move <= NO;
-			end
-		end		
-	end	
+			end			
+		end
+	end
 	
 	map amap (
 		.clk (clk),
