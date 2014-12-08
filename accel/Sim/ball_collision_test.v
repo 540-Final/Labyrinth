@@ -1,4 +1,4 @@
-`timescale 1ns / 1ns
+`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -24,33 +24,39 @@ module ball_collision_test();
 
 	parameter PERIOD = 10;
 	
-	reg clk, rst = 1'b1, up = 1'b0, down = 1'b0, left = 1'b0, right = 1'b0;
+	reg clk, rst, up, down, left, right;
 	wire [3:0] moves = {right, left, down, up};
 	
 	initial begin
-		clk = 1'b0;
+		CLK = 1'b0;
 		#(PERIOD/2);
 		forever
-			#(PERIOD/2) clk = ~clk;
+			#(PERIOD/2) CLK = ~CLK;
 	end
     
-	initial begin		
-		#100 rst = 1'b0;
+	initial begin
+		up <=  1'b0;
+		down <=  1'b0;
+		right <=  1'b0;
+		left <=  1'b0;
+		reset <= 1'b1;
+		
+		#100 reset <= 1'b0;
 		#100 up = 1'b1;
-		#10000 $stop;
 	end
 	
    Ball ball
 (
+	map_value,	
 	.clk(clk),
 	.reset(rst),	
 	.movement(moves),	
-	.y_out(),
-	.x_out(),
+	.y_out,
+	.x_out,
 	
-	.vid_row(),		// video logic row address
-	.vid_col(),		// video logic column address
-	.vid_pixel_out()	// pixel (location) value
+	.vid_row,		// video logic row address
+	.vid_col,		// video logic column address
+	.vid_pixel_out	// pixel (location) value
 );
    
 endmodule

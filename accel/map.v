@@ -46,8 +46,8 @@
 
 module map 
 #(
-    parameter PORT_A_ENABLE = 'b1,
-    parameter PORT_B_ENABLE = 'b1,
+    parameter PORT_A_ENABLE = 1,
+    parameter PORT_B_ENABLE = 1,
     parameter integer MAP_WIDTH = 320,
     parameter integer MAP_HEIGHT = 240
 )
