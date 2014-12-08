@@ -20,14 +20,37 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ball_collision_test(
+module ball_collision_test();
+
+	parameter PERIOD = 10;
+	
+	reg clk, rst, up, down, left, right;
+	wire [3:0] moves = {right, left, down, up};
+	
+	initial begin
+		CLK = 1'b0;
+		#(PERIOD/2);
+		forever
+			#(PERIOD/2) CLK = ~CLK;
+	end
     
+	initial begin
+		up <=  1'b0;
+		down <=  1'b0;
+		right <=  1'b0;
+		left <=  1'b0;
+		reset <= 1'b1;
+		
+		#100 reset <= 1'b0;
+		#100 up = 1'b1;
+	end
+	
    Ball ball
 (
 	map_value,	
-	.clk,
-	.reset,	
-	.movement,	
+	.clk(clk),
+	.reset(rst),	
+	.movement(moves),	
 	.y_out,
 	.x_out,
 	
@@ -35,6 +58,5 @@ module ball_collision_test(
 	.vid_col,		// video logic column address
 	.vid_pixel_out	// pixel (location) value
 );
-    
-    );
+   
 endmodule

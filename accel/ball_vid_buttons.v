@@ -42,10 +42,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	output   	[7:0]	vid_pixel_out	// pixel (location) value
 );
 
-	// internal variables
-	//These are internal registers for storing the next x/y position for later check against legality of the move on the map
-        reg        [9:0]    x_pos = INITIAL_X;
-        reg        [8:0]    y_pos = INITIAL_Y;
+
 	// reset - asserted high
 	wire reset_in = RESET_POLARITY_LOW ? ~reset : reset;
 
@@ -65,7 +62,6 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	
 	wire [7:0] px_result;
 	
-	
 	initial begin
 		locked_intended_move	<= NO;
 		movement_validated	 	<= NO;
@@ -73,12 +69,20 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 		intended_movement_dir	<= 2'b00;
 		rom_read_delay			<= 2'b00;
 		check_px				<= 4'b0000;
+		x_out 					<= INITIAL_X;
+		y_out 					<= INITIAL_Y;
 	end	
 	
 	always @(posedge clk) begin
 		if (reset_in) begin
-			y_pos <= INITIAL_Y;
-			x_pos <= INITIAL_X;
+			locked_intended_move	<= NO;
+			movement_validated	 	<= NO;
+			move_is_valid			<= YES;
+			intended_movement_dir	<= 2'b00;
+			rom_read_delay			<= 2'b00;
+			check_px				<= 4'b0000;
+			y_out					<= INITIAL_Y;
+			x_out					<= INITIAL_X;
 		end
 		else begin
 			if (locked_intended_move) begin // We already have an intended direction
@@ -114,23 +118,23 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 							case (intended_movement_dir)
 								RIGHT:
 									begin
-										x_move_check_addr <= x_pos + OFFSET;
-										y_move_check_addr <= y_pos - OFFSET + check_px;
+										x_move_check_addr <= x_out + OFFSET;
+										y_move_check_addr <= y_out - OFFSET + check_px;
 									end
 								 LEFT:
 									begin
-										x_move_check_addr <= x_pos - OFFSET;
-										y_move_check_addr <= y_pos - OFFSET + check_px;
+										x_move_check_addr <= x_out - OFFSET;
+										y_move_check_addr <= y_out - OFFSET + check_px;
 									end
 								   UP:
 									begin
-										y_move_check_addr <= y_pos - OFFSET;
-										x_move_check_addr <= x_pos - OFFSET + check_px;
+										y_move_check_addr <= y_out - OFFSET;
+										x_move_check_addr <= x_out - OFFSET + check_px;
 									end
 								 DOWN:
 									begin
-										y_move_check_addr <= y_pos + OFFSET;
-										x_move_check_addr <= x_pos - OFFSET + check_px;
+										y_move_check_addr <= y_out + OFFSET;
+										x_move_check_addr <= x_out - OFFSET + check_px;
 									end
 							endcase
 							rom_read_delay = rom_read_delay + 1'b1; // start waiting for rom response
@@ -165,8 +169,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 		.a_row_addr (y_move_check_addr),
 		.a_out (px_result),
 		
-		.b_col_addr (vid_row),
-		.b_row_addr(vid_col),
+		.b_col_addr (vid_col),
+		.b_row_addr (vid_row),
 		.b_out(vid_pixel_out)
 	);
 endmodule
