@@ -24,6 +24,7 @@ module colorizer(
     input video_on,
     input [7:0] world_pixel,
     input [7:0] icon,
+    input [7:0] img_pixel,
     output [3:0] red,
     output [3:0] green,
     output [3:0] blue
@@ -42,12 +43,15 @@ module colorizer(
             color 	<= BLK;
         end
         else begin
+        	if (img_pixel != TRANSPARENT)
+        		color <= {img_pixel[2:0],1'b0, img_pixel[5:3], 1'b0, img_pixel[7:6], 2'b0};
+        		
             // Icon is transparent, use world color
-            if (icon == TRANSPARENT)
+            else if (icon == TRANSPARENT)
 				color <= {world_pixel[2:0],1'b0, world_pixel[5:3], 1'b0, world_pixel[7:6], 2'b0};
 			
 			// Icon is not transparent, use the icon color
-			else
+			else 
 			     color <= {icon[2:0],1'b0, icon[5:3], 1'b0, icon[7:6], 2'b0};
         end
     end

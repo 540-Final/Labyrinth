@@ -23,8 +23,9 @@
 module vga_subsystem(
     input sys_clk,
     input sys_rst,
+    input gameover,
     input [9:0] ball_loc_X,
-    input [8:0] ball_loc_Y,
+    input [9:0] ball_loc_Y,
     input [7:0] world_pixel,
     // input [1:0] icon_pixel,
     output vert_sync,
@@ -40,6 +41,7 @@ module vga_subsystem(
 wire new_clk;           // 25MHz
 wire [7:0] icon_pixel; // for testing, change after implementing icon module
 wire video_on;
+wire [7:0] img_pixel;;
 
     // Clock divider 100MHz -> 25MHz
   clk_wizard clk_wiz
@@ -65,6 +67,7 @@ wire video_on;
         .video_on(video_on),
         .world_pixel(world_pixel),
         .icon(icon_pixel),
+        .img_pixel (img_pixel),
         .red(red),
         .green(green),
         .blue(blue)
@@ -74,10 +77,18 @@ wire video_on;
         .vert(pixel_row),
         .horz(pixel_column),
         .clk(new_clk),
+        
         .bot_LocX(ball_loc_X),
         .bot_LocY(ball_loc_Y),
         .icon_out(icon_pixel)
     );
     
+	draw_success img(
+        .vert(pixel_row),
+        .horz(pixel_column),
+        .clk(new_clk),
+    	.gameover (gameover),
+    	.img_out (img_pixel)
+    );
 
 endmodule

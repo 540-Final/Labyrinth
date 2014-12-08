@@ -17,7 +17,7 @@ module Ball
 	parameter integer	SIMULATE_FREQUENCY_CNT	= 5,
 	parameter integer   INITIAL_X               = 'h20F,	// Starting Col 
 	parameter integer   INITIAL_Y               = 'hFE, 
-	parameter integer   WIN_X               = 'h139,	// Starting Col 
+	parameter integer   WIN_X               = 'h13A,	// Starting Col 
 	parameter integer   WIN_Y               = 'h30, 
 	parameter integer   NUM_PX_TO_CHECK         = 15,	// 
 	parameter integer   OFFSET                  = 8,		// From center pixel to edge that needs checked
