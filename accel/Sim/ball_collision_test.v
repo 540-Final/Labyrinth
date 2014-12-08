@@ -24,7 +24,7 @@ module ball_collision_test();
 
 	parameter PERIOD = 10;
 	
-	reg clk, rst, up, down, left, right;
+	reg clk, rst, up= 1'b0, down= 1'b0, left= 1'b0, right= 1'b0;
 	wire [3:0] moves = {right, left, down, up};
 	
 	initial begin
@@ -35,13 +35,9 @@ module ball_collision_test();
 	end
     
 	initial begin
-		up <=  1'b0;
-		down <=  1'b0;
-		right <=  1'b0;
-		left <=  1'b0;
-		reset <= 1'b1;
+		rst = 1'b1;
 		
-		#100 reset <= 1'b0;
+		#100 rst = 1'b0;
 		#100 up = 1'b1;
 	end
 	
