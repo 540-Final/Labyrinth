@@ -61,5 +61,5 @@ module score_cnt(
 		if (gameover) begin
 		score<=score_count;
     end
-    
+  end  
 endmodule
