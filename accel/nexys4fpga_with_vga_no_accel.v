@@ -202,7 +202,7 @@ module Nexys4fpga (
 	);
 
 	
-	AccelerometerCtl accelCtl (
+/*	AccelerometerCtl accelCtl (
 								.SYSCLK(sysclk),
 								.RESET (~sysreset),
 								.ACCEL_X_OUT (accelX),
@@ -213,7 +213,7 @@ module Nexys4fpga (
 								.MOSI (aclMOSI),
 								.MISO (aclMISO),
 								.SS (aclSS)
-	);
+	);*/
 	
 	vga_subsystem vga(
 		.sys_clk(sysclk),
@@ -233,9 +233,33 @@ module Nexys4fpga (
 		.horiz_sync(Hsync)
 	);
 	
+	reg [31:0] clk_cnt;
+	reg tick5hz;
+	wire [31:0] top_cnt = ((100000000 / 10) - 1);
+	
+		always @(posedge clk) begin
+		if (sysreset) begin
+			clk_cnt <= {32{1'b0}};
+		end
+		else if (clk_cnt == top_cnt) begin
+		    tick5hz <= 1'b1;
+		    clk_cnt <= {32{1'b0}};
+		end
+		else begin
+		    clk_cnt <= clk_cnt + 1'b1;
+		    tick5hz <= 1'b0;
+		end
+	end
+	
+	wire [3:0] moarvement;
+	assign moarvement[3] = db_btns[2] & tick5hz;
+	assign moarvement[2] = db_btns[4] & tick5hz;
+	assign moarvement[3] = db_btns[1] & tick5hz;
+	assign moarvement[0] = db_btns[3] & tick5hz;
+	
 	Ball aball 
 	(  
-        .movement({db_btns[2], db_btns[4], db_btns[1], db_btns[3]}),
+        .movement(moarvement),//db_btns[2], db_btns[4], db_btns[1], db_btns[3]}),
         
 		.clk 			(sysclk),
 		.reset			(~sysreset),

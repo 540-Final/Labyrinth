@@ -19,7 +19,7 @@ module Ball
 	parameter integer   INITIAL_Y               = 'hFE, 
 	parameter integer   NUM_PX_TO_CHECK         = 15,	// 
 	parameter integer   OFFSET                  = 8,		// From center pixel to edge that needs checked
-	parameter 			VALID_MOVE_PX			= 8'hBF,
+	parameter 			VALID_MOVE_PX			= 8'h26,
 	parameter           READ_DELAY              = 3
 )
 (
@@ -121,22 +121,22 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 								RIGHT:
 									begin
 										x_move_check_addr <= x_out + OFFSET;
-										y_move_check_addr <= y_out - OFFSET + check_px;
+										y_move_check_addr <= y_out - OFFSET + 1'b1 + check_px;
 									end
 								 LEFT:
 									begin
 										x_move_check_addr <= x_out - OFFSET;
-										y_move_check_addr <= y_out - OFFSET + check_px;
+										y_move_check_addr <= y_out - OFFSET + 1'b1 + check_px;
 									end
 								   UP:
 									begin
 										y_move_check_addr <= y_out - OFFSET;
-										x_move_check_addr <= x_out - OFFSET + check_px;
+										x_move_check_addr <= x_out - OFFSET + 1'b1 + check_px;
 									end
 								 DOWN:
 									begin
 										y_move_check_addr <= y_out + OFFSET;
-										x_move_check_addr <= x_out - OFFSET + check_px;
+										x_move_check_addr <= x_out - OFFSET + 1'b1 + check_px;
 									end
 							endcase
 							rom_read_delay = rom_read_delay + 1'b1; // start waiting for rom response
@@ -159,11 +159,6 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 		end		
 	end	
 	
-	
-	always @(posedge movement) begin
-		
-	end
-	
 	map amap (
 		.clk (clk),
 		.reset (reset),
@@ -171,8 +166,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 		.a_row_addr (y_move_check_addr),
 		.a_out (px_result),
 		
-		.b_col_addr (vid_row),
-		.b_row_addr(vid_col),
+		.b_col_addr(vid_col),
+		.b_row_addr(vid_row),
 		.b_out(vid_pixel_out)
 	);
 endmodule
