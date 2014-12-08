@@ -135,9 +135,6 @@ module Nexys4fpga (
 	// assign led[3:0] = {db_btns[4],db_btns[3],db_btns[2],db_btns[1]};
 	
 	assign	JA = {sysclk, sysreset, 6'b000000};
-	
-	assign vid_rowx2 = vid_row >> 1;
-	assign vid_colx2 = vid_col >> 1;
 			
 			
 	//instantiate the debounce module
@@ -169,11 +166,11 @@ module Nexys4fpga (
 		.d0({1'b0,locY[3:0]}),
 		.d1({1'b0,locY[7:4]}),
 		.d2({4'b0,locY[8]}),
-		.d3(5'b0),
-		.d4({1'b0,locX[3:0]}),
-		.d5({1'b0,locX[7:4]}),
-		.d6({3'b0,locX[9:8]}),
-		.d7(5'b0),
+		.d7({1'b0,map_val[7:4]}),
+		.d3({1'b0,locX[3:0]}),
+		.d4({1'b0,locX[7:4]}),
+		.d5({3'b0,locX[9:8]}),
+		.d6({1'b0,map_val[3:0]}),
 		.dp(decpts),
 		
 		// outputs to seven segment display
@@ -222,7 +219,7 @@ module Nexys4fpga (
 	
 	reg [31:0] clk_cnt_1, clk_cnt_2;
 	reg tick_1, tick_2;
-	wire [31:0] top_cnt_1 = ((100000000 / 1) - 1);
+	wire [31:0] top_cnt_1 = ((100000000 / 30) - 1);
 	wire [31:0] top_cnt_2 = ((100000000 / 60) - 1);
 	
 		always @(posedge clk) begin
@@ -251,6 +248,7 @@ module Nexys4fpga (
         end
 	end
 	
+	wire [7:0] map_val;
 	wire [3:0] moarvement;
 	assign moarvement[3] = db_btns[2] & tick_1;
 	assign moarvement[2] = db_btns[4] & tick_1;
@@ -273,11 +271,12 @@ module Nexys4fpga (
 		.y_out			(locY),
 		.x_out			(locX),
 	
-		.vid_row		(vid_rowx2),	
-		.vid_col		(vid_colx2),		
+		.vid_row		(vid_row),	
+		.vid_col		(vid_col),		
 		.vid_pixel_out  (vid_pixel),
 		
-		.debug(led[15:3])
+		.debug(led[15:3]),
+		.px_result(map_val)
 	);
 
 

@@ -42,7 +42,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	output   	[7:0]	vid_pixel_out,	// pixel (location) value
 	
 	output [12:0] debug,
-	input update
+	input update,
+	output [7:0] px_result
 );
 
 	// internal variables
@@ -96,10 +97,10 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 				if (movement_validated) begin
 					if (move_is_valid) begin
 						case (intended_movement_dir)
-							UP 	    : x_out <= x_out + 1'b1;	
-							DOWN 	: x_out <= x_out - 1'b1;
-							LEFT 	: y_out <= y_out - 1'b1;
-							RIGHT	: y_out <= y_out + 1'b1;
+							UP 	    : y_out <= y_out - 1'b1;	
+							DOWN 	: y_out <= y_out + 1'b1;
+							LEFT 	: x_out <= x_out - 1'b1;
+							RIGHT	: x_out <= x_out + 1'b1;
 						endcase
 					end
 					movement_validated	 <= NO;
@@ -159,7 +160,11 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 					intended_movement_dir <= movement;
 					locked_intended_move <= YES;
 				end
-				else locked_intended_move <= NO;
+				else begin
+				    locked_intended_move <= NO;
+				    x_move_check_addr <= x_out;
+				    y_move_check_addr <= y_out;
+				end
 			end			
 		end
 	end
