@@ -27,9 +27,14 @@ module draw_icon(
     output [7:0] icon_out
     );
     
+							 
 	// Positioning variables
     parameter ICON_WIDTH = 15;
 	parameter ICON_HEIGHT = 15;
+	parameter GRID_WIDTH = 2;
+	parameter GRID_HEIGHT = 2;
+	parameter X_OFFSET = 7;
+	parameter Y_OFFSET = 7;
 	parameter BLANK = 'd226; // the depth of the rom should be the size of the icon + 1, with remaining spots initialized to 0.
 	                         // This value should refer to the last address in the rom.
     
@@ -38,10 +43,10 @@ module draw_icon(
 
 	always @ (*) begin
 		// determine if scan line is over bot icon
-		if	       ((vert >= bot_LocY) && (vert < (bot_LocY + ICON_HEIGHT))
-				&& 	(horz >= bot_LocX) && (horz < (bot_LocX + ICON_WIDTH))) 
+		if	       ((vert >= bot_LocY - Y_OFFSET) && (vert < (bot_LocY - Y_OFFSET + ICON_HEIGHT))
+				&& 	(horz >= bot_LocX - X_OFFSET) && (horz < (bot_LocX - X_OFFSET + ICON_WIDTH))) 
 		begin
-			addr <= (((vert - bot_LocY) * ICON_WIDTH) + (horz - bot_LocX));
+			addr <= (((vert - bot_LocY + Y_OFFSET) * ICON_WIDTH) + (horz - bot_LocX + X_OFFSET));
 		end
 		// Not on icon, give transparent pixel
 		else begin
