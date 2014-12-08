@@ -44,8 +44,6 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 
 	// internal variables
 	//These are internal registers for storing the next x/y position for later check against legality of the move on the map
-        reg        [9:0]    x_pos = INITIAL_X;
-        reg        [8:0]    y_pos = INITIAL_Y;
 	// reset - asserted high
 	wire reset_in = RESET_POLARITY_LOW ? ~reset : reset;
 
@@ -70,15 +68,23 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 		locked_intended_move	<= NO;
 		movement_validated	 	<= NO;
 		move_is_valid			<= YES;
-		intended_movement_dir	<= 2'b00;
+		intended_movement_dir	<= 4'b0000;
 		rom_read_delay			<= 2'b00;
 		check_px				<= 4'b0000;
+		y_out					<= INITIAL_Y;
+		x_out					<= INITIAL_X;
 	end	
 	
 	always @(posedge clk) begin
 		if (reset_in) begin
-			y_pos <= INITIAL_Y;
-			x_pos <= INITIAL_X;
+			y_out <= INITIAL_Y;
+			x_out <= INITIAL_X;
+			locked_intended_move	<= NO;
+			movement_validated	 	<= NO;
+			move_is_valid			<= YES;
+			intended_movement_dir	<= 4'b0000;
+			rom_read_delay			<= 2'b00;
+			check_px				<= 4'b0000;
 		end
 		else begin
 			if (locked_intended_move) begin // We already have an intended direction
@@ -114,23 +120,23 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 							case (intended_movement_dir)
 								RIGHT:
 									begin
-										x_move_check_addr <= x_pos + OFFSET;
-										y_move_check_addr <= y_pos - OFFSET + check_px;
+										x_move_check_addr <= x_out + OFFSET;
+										y_move_check_addr <= y_out - OFFSET + check_px;
 									end
 								 LEFT:
 									begin
-										x_move_check_addr <= x_pos - OFFSET;
-										y_move_check_addr <= y_pos - OFFSET + check_px;
+										x_move_check_addr <= x_out - OFFSET;
+										y_move_check_addr <= y_out - OFFSET + check_px;
 									end
 								   UP:
 									begin
-										y_move_check_addr <= y_pos - OFFSET;
-										x_move_check_addr <= x_pos - OFFSET + check_px;
+										y_move_check_addr <= y_out - OFFSET;
+										x_move_check_addr <= x_out - OFFSET + check_px;
 									end
 								 DOWN:
 									begin
-										y_move_check_addr <= y_pos + OFFSET;
-										x_move_check_addr <= x_pos - OFFSET + check_px;
+										y_move_check_addr <= y_out + OFFSET;
+										x_move_check_addr <= x_out - OFFSET + check_px;
 									end
 							endcase
 							rom_read_delay = rom_read_delay + 1'b1; // start waiting for rom response
