@@ -72,8 +72,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	// clock divider 
 	reg			[CNTR_WIDTH-1:0]	clk_cntX;
 	reg			[CNTR_WIDTH-1:0]	clk_cntY;
-	wire		[CNTR_WIDTH-1:0]	top_cnt_X = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_X+1) - 1);
-	wire		[CNTR_WIDTH-1:0]	top_cnt_Y = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_Y+1) - 1);
+	wire		[CNTR_WIDTH-1:0]	top_cnt_X = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_X) - 1);
+	wire		[CNTR_WIDTH-1:0]	top_cnt_Y = SIMULATE ? SIMULATE_FREQUENCY_CNT : ((CLK_FREQUENCY_HZ / UPDATE_FREQUENCY_Y) - 1);
 	reg								tick_X;				// update clock enable		
 	reg								tick_Y;	
 	
