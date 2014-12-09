@@ -233,7 +233,9 @@ module Nexys4fpga (
 	assign moarvement[0] = (db_btns[3] & tick_1) | accelmove[0];
 
 
-	assign led[3:0] = moarvement;
+	assign led[3:0] = moarvement[3:0];
+	assign led[7:4] = {db_btns[1],db_btns[2],db_btns[3],db_btns[4]};
+	assign led[11:7] = {accelmove[1],accelmove[2],accelmove[3],accelmove[4]};
 	
 	Ball aball 
 	(  
@@ -250,7 +252,7 @@ module Nexys4fpga (
 		.vid_col		(vid_col),		
 		.vid_pixel_out  (vid_pixel),
 		
-		.debug(led[15:3]),
+		.debug(),
 		.gameover (gameover)
 	);
 //	score myscore
@@ -272,7 +274,7 @@ module Nexys4fpga (
 		.backward_tilt(~accelY[8]),
 		.x_threshold(accelX[7:0]),
 		.y_threshold(accelY[7:0]),
-		.move_pulses(moarvement)
+		.move_pulses(accelmove)
 	);
 
 endmodule
