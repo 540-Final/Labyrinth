@@ -245,7 +245,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
 	  // inc/dec position at 5, tilt threshold 127/127	
 			
-		else if (tick2  ) begin
+		else if (tick3  ) begin
 			case ({x_increment && (x_threshold > 70) , x_decrement && (x_threshold < 185)})
 				2'b10: move_pulses[1]<=1'b1;
 				2'b01: move_pulses[0]<=1'b1;
@@ -266,7 +266,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 			//	*************************************** //
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++			
 		  // inc/dec position at 5, tilt threshold 127/127	
-		else if (tick3  ) begin
+		else if (tick4  ) begin
 			case ({x_increment && (x_threshold > 90) , x_decrement && (x_threshold < 165)})
 				2'b10: move_pulses[1]<=1'b1;
 				2'b01: move_pulses[0]<=1'b1;
@@ -286,7 +286,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 						//$$$$$$$$$$$$$$$$$$$//
 			//	*************************************** //
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++			
-		else if (tick4  ) begin
+		else if (tick5  ) begin
 			case ({x_increment && (x_threshold > 110) , x_decrement && (x_threshold < 145)})
 				2'b10: move_pulses[1]<=1'b1;
 				2'b01: move_pulses[0]<=1'b1;
@@ -306,7 +306,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 						//$$$$$$$$$$$$$$$$$$$//
 			//	*************************************** //
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++					
-		else if (tick5  ) begin
+		else if (tick6  ) begin
 			case ({x_increment && (x_threshold > 127) , x_decrement && (x_threshold < 127)})
 				2'b10: move_pulses[1]<=1'b1;
 				2'b01: move_pulses[0]<=1'b1;
@@ -326,15 +326,15 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 						//$$$$$$$$$$$$$$$$$$$//
 			//	*************************************** //
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
-		else if (tick6  ) begin
-			case ({x_increment && (x_threshold > 82) , x_decrement && (x_threshold < 146)})
+		else if (tick2  ) begin
+			case ({x_increment && (x_threshold > 50) , x_decrement && (x_threshold < 205)})
 				2'b10: move_pulses[1]<=1'b1;
 				2'b01: move_pulses[0]<=1'b1;
 				
 				default:begin move_pulses[1]<=1'b0; move_pulses[0]<=1'b0;end
 			endcase
 			
-			case ({y_increment && (y_threshold > 82) , y_decrement && (y_threshold < 146) })
+			case ({y_increment && (y_threshold > 50) , y_decrement && (y_threshold < 205) })
 				2'b10: move_pulses[3]<=1'b1;
 				2'b01: move_pulses[2]<=1'b1;
 				
