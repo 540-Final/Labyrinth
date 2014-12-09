@@ -1,22 +1,9 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 10/31/2014 01:54:46 PM
-// Design Name: 
+// Engineer:  	Colten Nye, Hoa Quach, Mark Ronay
 // Module Name: vga_subsystem
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
 // Additional Comments:
-// 
+// 		Handles all aspects of creating a VGA video feed
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -27,7 +14,6 @@ module vga_subsystem(
     input [9:0] ball_loc_X,
     input [9:0] ball_loc_Y,
     input [7:0] world_pixel,
-    // input [1:0] icon_pixel,
     output vert_sync,
     output horiz_sync,
     output [9:0] pixel_row,
@@ -39,9 +25,9 @@ module vga_subsystem(
 
 // Internal connections
 wire new_clk;           // 25MHz
-wire [7:0] icon_pixel; // for testing, change after implementing icon module
+wire [7:0] icon_pixel;
+wire [7:0] img_pixel;
 wire video_on;
-wire [7:0] img_pixel;;
 
     // Clock divider 100MHz -> 25MHz
   clk_wizard clk_wiz
@@ -63,6 +49,7 @@ wire [7:0] img_pixel;;
         .pixel_column(pixel_column)
     );
     
+	// Combines all video sources and produces vga feed
     colorizer c(
         .video_on(video_on),
         .world_pixel(world_pixel),
@@ -73,6 +60,7 @@ wire [7:0] img_pixel;;
         .blue(blue)
     );
     
+	// Draws the icon based on it's location
     draw_icon icon(
         .vert(pixel_row),
         .horz(pixel_column),
@@ -83,6 +71,7 @@ wire [7:0] img_pixel;;
         .icon_out(icon_pixel)
     );
     
+	// Draw the success overlay based on win conditions
 	draw_success img(
         .vert(pixel_row),
         .horz(pixel_column),
