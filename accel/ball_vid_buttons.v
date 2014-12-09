@@ -4,7 +4,7 @@
 ///////////////////////////////////////////////////////////////////////////
 This stuff is just initialization
 */
-`timescale  1 ns / 1 ns
+
 module Ball
 #(
 	// parameters
@@ -59,6 +59,10 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	localparam DOWN 	= 4'b0010;
 	localparam LEFT 	= 4'b0100;
 	localparam RIGHT 	= 4'b1000;
+	localparam UL		= 4'b0101;
+	localparam UR		= 4'b1001;
+	localparam DL		= 4'b0110;
+	localparam DR		= 4'b1010;
 	
 	localparam YES		= 1'b1;
 	localparam NO		= 1'b0;
@@ -96,6 +100,10 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 								DOWN 	: y_out <= y_out + 1'b1;
 								LEFT 	: x_out <= x_out - 1'b1;
 								RIGHT	: x_out <= x_out + 1'b1;
+								UL		: begin y_out <= y_out - 1'b1; x_out <= x_out - 1'b1;end
+								UR		: begin y_out <= y_out - 1'b1; x_out <= x_out + 1'b1;end
+								DL		: begin y_out <= y_out + 1'b1; x_out <= x_out - 1'b1;end
+								DR		: begin y_out <= y_out + 1'b1; x_out <= x_out + 1'b1;end
 							endcase
 						end
 						movement_validated	 <= NO;
@@ -145,10 +153,55 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 											y_move_check_addr <= y_out - OFFSET;
 											x_move_check_addr <= x_out - OFFSET + 1'b1 + check_px;
 										end
-									 DOWN:
+									DOWN:
 										begin
 											y_move_check_addr <= y_out + OFFSET;
 											x_move_check_addr <= x_out - OFFSET + 1'b1 + check_px;
+										end
+									UL:
+										begin
+											if (check_px < 12)	begin	
+												y_move_check_addr <= y_out - check_px;		
+												x_move_check_addr <= x_out - 12 + check_px; 
+											end	
+											else begin
+												y_move_check_addr <= y_out;		
+												x_move_check_addr <= x_out;
+											end
+										end
+									UR:
+										begin
+											if (check_px < 12)	begin	
+												y_move_check_addr <= y_out - check_px;		
+												x_move_check_addr <= x_out + 12 - check_px; 
+											end	
+											else begin
+												y_move_check_addr <= y_out;		
+												x_move_check_addr <= x_out;
+											end
+										end
+									DL:
+										begin
+											if (check_px < 12)	begin	
+												y_move_check_addr <= y_out + check_px;		
+												x_move_check_addr <= x_out - 12 + check_px; 
+											end	
+											else begin
+												y_move_check_addr <= y_out;		
+												x_move_check_addr <= x_out;
+											end
+										
+										end
+									DR:
+										begin
+											if (check_px < 12)	begin	
+												y_move_check_addr <= y_out + check_px;		
+												x_move_check_addr <= x_out + 12 - check_px; 
+											end	
+											else begin
+												y_move_check_addr <= y_out;		
+												x_move_check_addr <= x_out;
+											end
 										end
 								endcase
 								rom_read_delay = rom_read_delay + 1'b1; // start waiting for rom response
