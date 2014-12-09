@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module score_cnt(
+module score(
     input clk,
     input reset,
  	input gameover,
@@ -60,6 +60,7 @@ module score_cnt(
     	end 
 		if (gameover) begin
 		score<=score_count;
+		end
     end
     
 endmodule

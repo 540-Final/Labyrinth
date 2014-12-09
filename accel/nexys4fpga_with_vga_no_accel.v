@@ -51,14 +51,14 @@ module Nexys4fpga (
 	output  [3:0]		vgaRed,
 	output  [3:0]		vgaGreen,
 	output  [3:0]		vgaBlue,
-	output				Hsync, Vsync
+	output				Hsync, Vsync,
 	
-//	output	aclSCK,
-//	input	aclMISO,
-//	output	aclMOSI,
-//	output	aclSS,
-//	input	aclInt1,
-//	input	aclInt2
+	output	aclSCK,
+	input	aclMISO,
+	output	aclMOSI,
+	output	aclSS,
+	input	aclInt1,
+	input	aclInt2
 	
 ); 
 
@@ -139,13 +139,13 @@ module Nexys4fpga (
 //		.d1 ({1'b0,accelX[7:4]}),
 //		.d2 ({1'b0,accelY[3:0]}),
 //		.d3 ({1'b0,accelY[7:4]}),
-		.d0({1'b0,locY[3:0]}),
-		.d1({1'b0,locY[7:4]}),
-		.d2({3'b0,locY[9:8]}),
+		.d0({1'b0,accelY[3:0]}),
+		.d1({1'b0,accelY[7:4]}),
+		.d2({4'b0,accelY[8]}),
 		.d3(5'b0),
-		.d4({1'b0,locX[3:0]}),
-		.d5({1'b0,locX[7:4]}),
-		.d6({3'b0,locX[9:8]}),
+		.d4({1'b0,accelX[3:0]}),
+		.d5({1'b0,accelX[7:4]}),
+		.d6({4'b0,accelX[8]}),
 		.d7(5'b0),
 		.dp(decpts),
 		
@@ -185,6 +185,7 @@ module Nexys4fpga (
 		.pixel_row(vid_row),
 		.pixel_column(vid_col),
 		.world_pixel(vid_pixel),
+		.gameover	(gameover),
 		
 		.red(vgaRed),
 		.green(vgaGreen),
@@ -225,15 +226,14 @@ module Nexys4fpga (
 	end
 	
 	wire [3:0] moarvement;
-	assign moarvement[3] = db_btns[2] & tick_1;
-	assign moarvement[2] = db_btns[4] & tick_1;
-	assign moarvement[1] = db_btns[1] & tick_1;
-	assign moarvement[0] = db_btns[3] & tick_1;
-	
-	reg [2:0] fuck = 0;
-	always @(posedge moarvement[2]) fuck <= fuck + 1'b1;
-	
-	assign led[2:0] = fuck;
+	wire [3:0] accelmove;
+	assign moarvement[3] = (db_btns[2] & tick_1) | accelmove[3];
+	assign moarvement[2] = (db_btns[4] & tick_1) | accelmove[2];
+	assign moarvement[1] = (db_btns[1] & tick_1) | accelmove[1];
+	assign moarvement[0] = (db_btns[3] & tick_1) | accelmove[0];
+
+
+	assign led[3:0] = moarvement;
 	
 	Ball aball 
 	(  
@@ -253,27 +253,26 @@ module Nexys4fpga (
 		.debug(led[15:3]),
 		.gameover (gameover)
 	);
-	score myscore
-	(
-		.clk 		(sysclk),
-		.reset		(~sysreset),
-		.gameover	(gameover), 
-		.score		(score),
-	);
-	
-//	ball_accel_ctrl bac
+//	score myscore
 //	(
-//		.clk(),
-//		.reset(),
-					
-//		.x_increment(),
-//		.x_decrement(),
-//		.y_increment(),
-//		.y_decrement(),
-//		.x_threshold(),
-//		.y_threshold(),
-//		.y_out(),
-//		.x_out()
+//		.clk 		(sysclk),
+//		.reset		(~sysreset),
+//		.gameover	(gameover), 
+//		.score		(score),
 //	);
+	
+	Ball_accel_ctl bac
+	(
+		.clk(sysclk),
+		.reset(sysreset),
+					
+		.right_tilt(accelX[8]),
+		.left_tilt(~accelX[8]),
+		.forward_tilt(accelY[8]),
+		.backward_tilt(~accelY[8]),
+		.x_threshold(accelX[7:0]),
+		.y_threshold(accelY[7:0]),
+		.move_pulses(moarvement)
+	);
 
 endmodule
