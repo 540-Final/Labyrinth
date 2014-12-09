@@ -1,76 +1,60 @@
-// nexys4fpga.v - Top level module for Nexys4 as used in the ECE 540 Project 1
-//
-// Copyright Roy Kravitz, 2008-2013, 2014, 2015
-// 
-// Created By:		Roy Kravitz and Dave Glover
-// Last Modified:	27-Mar-2014 (RK)
-//
-// Revision History:
-// -----------------
-// Nov-2008		RK		Created this module for the S3E Starter Board
-// Apr-2012		DG		Modified for Nexys 3 board
-// Dec-2014		RJ		Cleaned up formatting.  No functional changes
-// Mar-2014		CZ		Modified for Nexys 4 board and added functionality for CPU RESET button
-// Aug-2014		RK		Modified for Vivado.  No functional changes
-//
-// Description:
-// ------------
-// Top level module for the ECE 540 Project 1 reference design
-// on the Nexys4 FPGA Board (Xilinx XC7A100T-CSG324)
-// Can be used with some modifications for Projec1 1
-//
-// Use the pushbuttons to control the Rojobot wheels:
-//	btnl			Left wheel forward
-//	btnu			Left wheel reverse
-//	btnr			Right wheel forward
-//	btnd			Right wheel reverse
-//  btnc			Not used in this design
-//	btnCpuReset		CPU RESET Button - System reset.  Asserted low by Nexys 4 board
-//
-//	sw[15:0]		Not used in this design
-//
-// External port names match pin names in the nexys4fpga.xdc constraints file
-///////////////////////////////////////////////////////////////////////////
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Engineer:  	Colten Nye, Hoa Quach, Mark Ronay
+// Module Name: Nexys4fpga
+// Additional Comments:
+// 		Top level module for Nexys4 as used in the ECE 540 Final Project
+//////////////////////////////////////////////////////////////////////////////////
 
 module Nexys4fpga (
 	input 				clk,                 	// 100MHz clock from on-board oscillator
+	
+	// Buttons
 	input				btnL, btnR,				// pushbutton inputs - left (db_btns[4])and right (db_btns[2])
 	input				btnU, btnD,				// pushbutton inputs - up (db_btns[3]) and down (db_btns[1])
 	input				btnC,					// pushbutton inputs - center button -> db_btns[5]
 	input				btnCpuReset,			// red pushbutton input -> db_btns[0]
+	
+	// Switches
 	input	[15:0]		sw,						// switch inputs
 	
+	// LEDs
 	output	[15:0]		led,  					// LED outputs	
 	
+	// Seven Segment Display
 	output 	[6:0]		seg,					// Seven segment display cathode pins
 	output              dp,
 	output	[7:0]		an,						// Seven segment display anode pins	
 	
+	// JA
 	output	[7:0]		JA,						// JA Header
 	
+	// VGA
 	output  [3:0]		vgaRed,
 	output  [3:0]		vgaGreen,
 	output  [3:0]		vgaBlue,
 	output				Hsync, Vsync,
 	
+	// SPI
 	output	aclSCK,
 	input	aclMISO,
 	output	aclMOSI,
 	output	aclSS,
 	input	aclInt1,
 	input	aclInt2
-	
 ); 
 
 	// parameter
 	parameter SIMULATE = 0;
 
-	// internal variables
-	wire 	[15:0]		db_sw;					// debounced switches
-	wire 	[5:0]		db_btns;				// debounced buttons
-	
+		// Internal nets	
+	// System
 	wire				sysclk;					// 100MHz clock from on-board oscillator	
 	wire				sysreset;				// system reset signal - asserted high to force reset
+	
+	// I/O
+	wire 	[15:0]		db_sw;					// debounced switches
+	wire 	[5:0]		db_btns;				// debounced buttons	
 	
 	wire 	[4:0]		dig7, dig6,
 						dig5, dig4,
@@ -79,25 +63,22 @@ module Nexys4fpga (
 	wire 	[7:0]		decpts;					// decimal points
 	wire    [7:0]       segs_int;              // sevensegment module the segments and the decimal point
 	
-	//wires for bot
-	wire [7:0]	motctl;
+	// Ball
 	wire [9:0]	locX;
 	wire [9:0]	locY;
-	wire [7:0]	sensors;
-	wire [7:0]	botinfo;
-	wire [7:0]	lmdist;
-	wire [7:0]	rmdist;
-	wire 		upd_sysreg;
-	wire [9:0]	vid_row;				//video ctrlr
-	wire [9:0]	vid_col;				//video ctrlr
-	wire [7:0]	vid_pixel;	//video ctrlr
+	wire 		gameover;
+	wire [15:0] score; 
+	
+	// Video
+	wire [9:0]	vid_row;
+	wire [9:0]	vid_col;
+	wire [7:0]	vid_pixel;
 
+	// Accelerometer
 	wire [8:0]	accelX;
 	wire [8:0]	accelY;
 	wire [11:0]	accelMag;
 	
-	wire gameover;
-	wire [15:0] score; 
 		
 /******************************************************************/
 /* THIS SECTION SHOULDN'T HAVE TO CHANGE FOR LAB 1                */
@@ -107,8 +88,6 @@ module Nexys4fpga (
 	
 	assign dp = segs_int[7];
 	assign seg = segs_int[6:0];
-	
-	// assign led[3:0] = {db_btns[4],db_btns[3],db_btns[2],db_btns[1]};
 	
 	assign	JA = {sysclk, sysreset, 6'b000000};
 
@@ -134,11 +113,6 @@ module Nexys4fpga (
 		.SIMULATE(SIMULATE)
 	) SSB
 	(
-		// inputs for control signals
-//		.d0 ({1'b0,accelX[3:0]}),
-//		.d1 ({1'b0,accelX[7:4]}),
-//		.d2 ({1'b0,accelY[3:0]}),
-//		.d3 ({1'b0,accelY[7:4]}),
 		.d0({1'b0,accelY[3:0]}),
 		.d1({1'b0,accelY[7:4]}),
 		.d2({4'b0,accelY[8]}),
@@ -161,26 +135,26 @@ module Nexys4fpga (
 		.digits_out()//digits_out)
 	);
 
-	
+	// Accelerometer Controller
 	AccelerometerCtl accelCtl (
-								.SYSCLK(sysclk),
-								.RESET (~sysreset),
-								.ACCEL_X_OUT (accelX),
-								.ACCEL_Y_OUT (accelY),
-								.ACCEL_MAG_OUT (accelMag),
-								.ACCEL_TMP_OUT (),
-								.SCLK (aclSCK),
-								.MOSI (aclMOSI),
-								.MISO (aclMISO),
-								.SS (aclSS)
+		.SYSCLK(sysclk),
+		.RESET (~sysreset),
+		.ACCEL_X_OUT (accelX),
+		.ACCEL_Y_OUT (accelY),
+		.ACCEL_MAG_OUT (accelMag),
+		.ACCEL_TMP_OUT (),
+		.SCLK (aclSCK),
+		.MOSI (aclMOSI),
+		.MISO (aclMISO),
+		.SS (aclSS)
 	);
 	
+	// Video Controller
 	vga_subsystem vga(
 		.sys_clk(sysclk),
 		.sys_rst(~sysreset),
 		.ball_loc_X(locX),
 		.ball_loc_Y(locY),
-		//.icon_pixel (icon),
 		
 		.pixel_row(vid_row),
 		.pixel_column(vid_col),
@@ -199,7 +173,7 @@ module Nexys4fpga (
 	wire [31:0] top_cnt_1 = ((100000000 / 90) - 1);
 	wire [31:0] top_cnt_2 = ((100000000 / 60) - 1);
 	
-		always @(posedge clk) begin
+		always @(posedge sysclk) begin
 		if (~sysreset) begin
 			clk_cnt_1 <= {32{1'b0}};
 		end
@@ -241,9 +215,9 @@ module Nexys4fpga (
 	(  
         .movement(moarvement),//db_btns[2], db_btns[4], db_btns[1], db_btns[3]}),
         
-		.clk 			(clk),
+		.clk 			(sysclk),
 		.reset			(~sysreset),
-		.update           (clk),
+		.update           (sysclk),
 	
 		.y_out			(locY),
 		.x_out			(locX),
@@ -255,6 +229,7 @@ module Nexys4fpga (
 		.debug(),
 		.gameover (gameover)
 	);
+	
 //	score myscore
 //	(
 //		.clk 		(sysclk),

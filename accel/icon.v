@@ -1,21 +1,10 @@
 `timescale 1ns / 1ps
-
 //////////////////////////////////////////////////////////////////////////////////
-// Authors: Colten Nye, Hoa Quach
-// 
-// Create Date: 10/31/2014 10:07:18 PM
+// Engineer:  	Colten Nye, Hoa Quach, Mark Ronay
 // Module Name: draw_icon
-// Project Name: ECE 540 Project 2
-// Description: 
-// 		Feeds pixel info to the colorizer to draw the icon of RojoBot based on
-//		it's position and orientation.
-// 
+// Additional Comments:
+// 		Draws the icon on the map
 //////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
 	
 module draw_icon(
     input [9:0] vert,
@@ -23,24 +12,20 @@ module draw_icon(
     input clk,
     input [9:0] bot_LocX,
     input [9:0] bot_LocY,
-    //input [2:0] bot_Orie,
     output [7:0] icon_out
-    );
+);
     
-							 
 	// Positioning variables
     parameter ICON_WIDTH = 15;
 	parameter ICON_HEIGHT = 15;
-	parameter GRID_WIDTH = 2;
-	parameter GRID_HEIGHT = 2;
 	parameter X_OFFSET = 7;
 	parameter Y_OFFSET = 7;
 	parameter BLANK = 'd226; // the depth of the rom should be the size of the icon + 1, with remaining spots initialized to 0.
 	                         // This value should refer to the last address in the rom.
     
-    // Internal nets and regs
-    reg [7:0] addr;
+    reg [7:0] addr;	// Address into the icon rom
 
+	// If the scan line is over where the icon should be painted, compute the linear address into the rom for that coordinate
 	always @ (*) begin
 		// determine if scan line is over bot icon
 		if	       ((vert >= bot_LocY - Y_OFFSET) && (vert < (bot_LocY - Y_OFFSET + ICON_HEIGHT))
@@ -54,7 +39,7 @@ module draw_icon(
 		end 
 	end
  		
- 	// Instantiate ROM that contains icon images.
+ 	// Instantiate ROM that contains icon image.
     icon_rom irom (.clk(clk), .a(addr), .qspo(icon_out));
     
 endmodule
