@@ -27,7 +27,7 @@ module high_score(
     always @(posedge clk) begin
     	if (reset) begin
     		clk_cnt <= 26'b0;
-    	end	else if (clk_cnt == (TICK_HIT) begin
+    	end	else if (clk_cnt == TICK_HIT) begin
             tick <= 1'b1;
             clk_cnt <= 26'b0;
         end else begin 

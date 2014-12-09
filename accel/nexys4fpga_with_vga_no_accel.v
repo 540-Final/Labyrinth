@@ -207,9 +207,14 @@ module Nexys4fpga (
 	assign moarvement[0] = (db_btns[3] & tick_1) | accelmove[0];
 
 
-	assign led[3:0] = moarvement[3:0];
-	assign led[7:4] = {db_btns[1],db_btns[2],db_btns[3],db_btns[4]};
-	assign led[11:7] = {accelmove[1],accelmove[2],accelmove[3],accelmove[4]};
+	//assign led[3:0] = moarvement[3:0];
+	//assign led[7:4] = {db_btns[1],db_btns[2],db_btns[3],db_btns[4]};
+	//sassign led[11:7] = {accelmove[1],accelmove[2],accelmove[3],accelmove[4]};
+	wire [3:0] x_threshs, y_threshs;
+	assign led[3:0]   = (x_threshs & ~accelX[8]);
+	assign led[7:4] = ({y_threshs[0] & accelY[8], y_threshs[1] & accelY[8], y_threshs[2] & accelY[8], y_threshs[3] & accelY[8]});
+	assign led[11:8] = (y_threshs & ~accelY[8]);
+	assign led[15:12] = ({x_threshs[0], x_threshs[1], x_threshs[2], x_threshs[3]} & accelX[8]);
 	
 	Ball aball 
 	(  
@@ -230,26 +235,37 @@ module Nexys4fpga (
 		.gameover (gameover)
 	);
 	
-//	score myscore
-//	(
-//		.clk 		(sysclk),
-//		.reset		(~sysreset),
-//		.gameover	(gameover), 
-//		.score		(score),
-//	);
-	
-	Ball_accel_ctl bac
-	(
+	accel_threshold_ticker ticker(
 		.clk(sysclk),
-		.reset(sysreset),
-					
-		.x_increment(accelX[8]),
-		.x_decrement(~accelX[8]),
-		.y_increment(accelY[8]),
-		.y_decrement(~accelY[8]),
-		.x_threshold(accelX[7:0]),
-		.y_threshold(accelY[7:0]),
+		.reset(~sysreset),
+		.accel_x_in(accelX),
+		.accel_y_in(accelY),
+		.settings(db_sw),
+		.x_thresh_level(x_threshs),
+        .y_thresh_level(y_threshs),
 		.move_pulses(accelmove)
+    );
+	
+	high_score myscore
+	(
+		.clk 		(sysclk),
+		.reset		(~sysreset),
+		.gameover	(gameover), 
+		.high_score		(score)
 	);
+	
+	// Ball_accel_ctl bac
+	// (
+		// .clk(sysclk),
+		// .reset(sysreset),
+					
+		// .x_increment(accelX[8]),
+		// .x_decrement(~accelX[8]),
+		// .y_increment(accelY[8]),
+		// .y_decrement(~accelY[8]),
+		// .x_threshold(accelX[7:0]),
+		// .y_threshold(accelY[7:0]),
+		// .move_pulses(accelmove)
+	// );
 
 endmodule

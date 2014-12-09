@@ -80,12 +80,12 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	
 	always @(posedge update) begin
 		if (reset_in) begin
-			y_out <= INITIAL_Y;
-			x_out <= INITIAL_X;
+			y_out 					<= INITIAL_Y;
+			x_out 					<= INITIAL_X;
 			locked_intended_move	<= NO;
 			movement_validated	 	<= NO;
 			move_is_valid			<= YES;
-			gameover <= NO;
+			gameover 				<= NO;
 			intended_movement_dir	<= 4'b0000;
 			rom_read_delay			<= 2'b00;
 			check_px				<= 4'b0000;
@@ -100,16 +100,16 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 								DOWN 	: y_out <= y_out + 1'b1;
 								LEFT 	: x_out <= x_out - 1'b1;
 								RIGHT	: x_out <= x_out + 1'b1;
-								UL		: begin y_out <= y_out - 1'b1; x_out <= x_out - 1'b1;end
+								/* UL		: begin y_out <= y_out - 1'b1; x_out <= x_out - 1'b1;end
 								UR		: begin y_out <= y_out - 1'b1; x_out <= x_out + 1'b1;end
 								DL		: begin y_out <= y_out + 1'b1; x_out <= x_out - 1'b1;end
-								DR		: begin y_out <= y_out + 1'b1; x_out <= x_out + 1'b1;end
+								DR		: begin y_out <= y_out + 1'b1; x_out <= x_out + 1'b1;end */
 							endcase
 						end
 						movement_validated	 <= NO;
 						move_is_valid 		 <= YES;
 						locked_intended_move <= NO;
-						gameover <= NO;
+						gameover			 <= NO;
 					end
 					else begin
 						if (check_px < NUM_PX_TO_CHECK) begin // More pixels to scan
@@ -120,14 +120,14 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 									movement_validated  <= YES;		// move is invalid, no need to keep scanning.
 									check_px		    <= 4'b0000;
 								end
-								else if (px_result == HOLE)begin
+								else if (px_result == HOLE) begin
 								 	move_is_valid 		<= NO;
 									movement_validated  <= YES;		// move is invalid, no need to keep scanning.
 									check_px		    <= 4'b0000;
 									y_out <= INITIAL_Y;
 									x_out <= INITIAL_X;
 								end
-								else if ( px_result == WIN)begin
+								else if ( px_result == WIN) begin
 									gameover <= YES;							
 								end
 								else begin 				// reset read delay
@@ -158,7 +158,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 											y_move_check_addr <= y_out + OFFSET;
 											x_move_check_addr <= x_out - OFFSET + 1'b1 + check_px;
 										end
-									UL:
+									/* UL:
 										begin
 											if (check_px < 12)	begin	
 												y_move_check_addr <= y_out - check_px;		
@@ -202,7 +202,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 												y_move_check_addr <= y_out;		
 												x_move_check_addr <= x_out;
 											end
-										end
+										end */
 								endcase
 								rom_read_delay = rom_read_delay + 1'b1; // start waiting for rom response
 							end

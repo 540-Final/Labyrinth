@@ -30,10 +30,10 @@ reg 	[16:0] 	a_mem_addr, b_mem_addr;	// dual port RAM addresses
 
 // Since the size of the map is x/2 and y/2 the world that the icon lives in
 // We must shift the addresses to match the rom size
-wire	[9:0]	a_col_half = a_row_addr >> 1;
-wire	[9:0]	a_row_half = a_col_addr >> 1;
-wire	[9:0]	b_col_half = b_row_addr >> 1;
-wire	[9:0]	b_row_half = b_col_addr >> 1;
+wire	[9:0]	a_col_half = a_col_addr >> 1;
+wire	[9:0]	a_row_half = a_row_addr >> 1;
+wire	[9:0]	b_col_half = b_col_addr >> 1;
+wire	[9:0]	b_row_half = b_row_addr >> 1;
                                      
 // Instantiate the world map ROM
 maze_memory maze (
