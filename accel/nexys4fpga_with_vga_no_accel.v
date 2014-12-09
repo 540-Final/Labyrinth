@@ -243,10 +243,10 @@ module Nexys4fpga (
 		.clk(sysclk),
 		.reset(sysreset),
 					
-		.right_tilt(accelX[8]),
-		.left_tilt(~accelX[8]),
-		.forward_tilt(accelY[8]),
-		.backward_tilt(~accelY[8]),
+		.x_increment(accelX[8]),
+		.x_decrement(~accelX[8]),
+		.y_increment(accelY[8]),
+		.y_decrement(~accelY[8]),
 		.x_threshold(accelX[7:0]),
 		.y_threshold(accelY[7:0]),
 		.move_pulses(accelmove)
