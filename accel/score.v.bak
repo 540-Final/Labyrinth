@@ -12,7 +12,7 @@ module high_score(
 		input reset,
 		input won_the_game,
 		input hit_a_hole,
-		output reg [15:0] score
+		output reg [15:0] timer
     );
 	
 	localparam CLK_FREQ = 100000000;
@@ -22,7 +22,6 @@ module high_score(
     reg [26:0] clk_cnt;
     reg count_reset;
     reg tick;
-    reg [15:0] timer;
     
     // Generate a 10hz tick
     always @(posedge clk) begin
@@ -45,10 +44,8 @@ module high_score(
 		else begin
     		if (tick & ~won_the_game) begin
     			timer <= timer + 1'b1;
-    			score <= timer;
     		end	else begin
     			timer <= timer;
-    			score <= 65000 - timer;
     		end
     	end 
     end

@@ -56,12 +56,12 @@ module Nexys4fpga (
 	wire 	[15:0]		db_sw;					// debounced switches
 	wire 	[5:0]		db_btns;				// debounced buttons	
 	
+	wire 	[4:0]		dig7, dig6,
+						dig5, dig4,
+						dig3, dig2, 
+						dig1, dig0;				// display digits
 	wire 	[7:0]		decpts;					// decimal points
 	wire    [7:0]       segs_int;              // sevensegment module the segments and the decimal point
-	wire	[19:0]		score_bcded;
-	reg 	[4:0]		score_dig0, score_dig1,
-						score_dig2, score_dig3,
-						score_dig4;
 	
 	// Ball
 	wire [9:0]	locX;
@@ -69,8 +69,6 @@ module Nexys4fpga (
 	wire 		won_the_game, hit_a_hole;
 	wire [15:0] score; 
 	wire [3:0]  accelmove;
-	reg [32:0] clk_cnt;
-	reg tick;
 	
 	// Video
 	wire [9:0]	vid_row;
@@ -120,15 +118,15 @@ module Nexys4fpga (
 		.SIMULATE(SIMULATE)
 	) SSB
 	(
-		.d0(score_dig0),
-		.d1(score_dig1),
-		.d2(score_dig2),
-		.d3(score_dig3),
-		.d4(score_dig4),
-		.d5(5'b0),
-		.d6(5'b0),
+		.d0({1'b0,accelY[3:0]}),
+		.d1({1'b0,accelY[7:4]}),
+		.d2({4'b0,accelY[8]}),
+		.d3(5'b0),
+		.d4({1'b0,accelX[3:0]}),
+		.d5({1'b0,accelX[7:4]}),
+		.d6({4'b0,accelX[8]}),
 		.d7(5'b0),
-		.dp({4'b0,tick}),
+		.dp(decpts),
 		
 		// outputs to seven segment display
 		.seg(segs_int),			
@@ -210,52 +208,7 @@ module Nexys4fpga (
 		.reset		(~sysreset),
 		.won_the_game	(won_the_game), 
 		.hit_a_hole		(hit_a_hole),
-		.score		(score)
+		.timer		(score)
 	);
-	
-	new_bcd #(.BIN_WIDTH(16), .BCD_WIDTH (20)) scorebcd (
-		.bin_in (score),
-		.bcd_out (score_bcded)
-	);
-	
-	//Blink the score when the ball reaches Win point
-	always @(posedge sysclk) begin
-		if (~sysreset) begin
-			clk_cnt <= 32'b0;
-		end	else if (clk_cnt > 50000000 && clk_cnt < 100000000) begin
-	        tick <= 1'b1;
-	        clk_cnt <= clk_cnt + 32'b1;
-	    end	else if (clk_cnt == 100000000) begin
-	        clk_cnt <= 32'b0;
-	    end else begin 
-	    	tick <= 1'b0;
-	    	clk_cnt <= clk_cnt + 32'b1;
-	    end
-	 end
-	 
-	 always @(posedge sysclk) begin
-	    if(~ won_the_game) begin	    
-			score_dig0 <= {1'b0,score_bcded[3:0]};
-			score_dig1 <= {1'b0,score_bcded[7:4]};
-			score_dig2 <= {1'b0,score_bcded[11:8]};
-			score_dig3 <= {1'b0,score_bcded[15:12]};
-			score_dig4 <= {1'b0,score_bcded[19:16]};
-		end
-		else begin
-			if (tick) begin
-				score_dig1 <= 5'b11111;
-				score_dig2 <= 5'b11111;
-				score_dig3 <= 5'b11111;
-				score_dig4 <= 5'b11111;
-				score_dig0 <= 5'b11111;
-			end else begin
-				score_dig0 <= {1'b0,score_bcded[3:0]};
-				score_dig1 <= {1'b0,score_bcded[7:4]};
-				score_dig2 <= {1'b0,score_bcded[11:8]};
-				score_dig3 <= {1'b0,score_bcded[15:12]};
-				score_dig4 <= {1'b0,score_bcded[19:16]};
-			end
-		end
-	end	
 
 endmodule
