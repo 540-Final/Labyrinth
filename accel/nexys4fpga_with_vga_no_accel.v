@@ -125,9 +125,9 @@ module Nexys4fpga (
 		.d2(score_dig2),
 		.d3(score_dig3),
 		.d4(score_dig4),
-		.d5(5'b0),
-		.d6(5'b0),
-		.d7(5'b0),
+		.d5(5'b11111),
+		.d6(5'b11111),
+		.d7(5'b11111),
 		.dp({4'b0,tick}),
 		
 		// outputs to seven segment display
