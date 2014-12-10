@@ -66,8 +66,9 @@ module Nexys4fpga (
 	// Ball
 	wire [9:0]	locX;
 	wire [9:0]	locY;
-	wire 		gameover;
+	wire 		won_the_game, hit_a_hole;
 	wire [15:0] score; 
+	wire [3:0]  accelmove;
 	
 	// Video
 	wire [9:0]	vid_row;
@@ -163,7 +164,7 @@ module Nexys4fpga (
 		.pixel_row(vid_row),
 		.pixel_column(vid_col),
 		.world_pixel(vid_pixel),
-		.gameover	(gameover),
+		.won_the_game	(won_the_game),
 		
 		.red(vgaRed),
 		.green(vgaGreen),
@@ -178,7 +179,6 @@ module Nexys4fpga (
         
 		.clk 			(sysclk),
 		.reset			(~sysreset),
-		.update           (sysclk),
 	
 		.y_out			(locY),
 		.x_out			(locX),
@@ -187,8 +187,8 @@ module Nexys4fpga (
 		.vid_col		(vid_col),		
 		.vid_pixel_out  (vid_pixel),
 		
-		.debug(),
-		.gameover (gameover)
+		.won_the_game 	(won_the_game),
+		.hit_a_hole		(hit_a_hole)
 	);
 	
 	accel_threshold_ticker ticker(
@@ -206,8 +206,9 @@ module Nexys4fpga (
 	(
 		.clk 		(sysclk),
 		.reset		(~sysreset),
-		.gameover	(gameover), 
-		.high_score		(score)
+		.won_the_game	(won_the_game), 
+		.hit_a_hole		(hit_a_hole),
+		.timer		(score)
 	);
 
 endmodule

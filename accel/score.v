@@ -10,8 +10,9 @@
 module high_score(
 		input clk,
 		input reset,
-		input gameover,
-		output reg [15:0] high_score
+		input won_the_game,
+		input hit_a_hole,
+		output reg [15:0] timer
     );
 	
 	localparam CLK_FREQ = 100000000;
@@ -19,7 +20,6 @@ module high_score(
 	localparam TICK_HIT = (CLK_FREQ/TICK_RATE) - 1;
 	
     reg [26:0] clk_cnt;
-    reg [15:0] timer;
     reg count_reset;
     reg tick;
     
@@ -38,20 +38,16 @@ module high_score(
         	
 	// Increment the timer on the tick, if the game hasn't ended. If the game has ended, show the high score.
     always @ (posedge clk) begin
-    	if (reset) begin
+    	if (reset | hit_a_hole) begin
     		timer <= 0;
-			high_score <= 0;
     	end 
 		else begin
-    		if (tick & ~gameover) begin
+    		if (tick & ~won_the_game) begin
     			timer <= timer + 1'b1;
     		end	else begin
     			timer <= timer;
     		end
     	end 
-		if (gameover) begin
-			high_score <= timer;
-		end
     end
     
 endmodule

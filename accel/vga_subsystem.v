@@ -10,7 +10,8 @@
 module vga_subsystem(
     input sys_clk,
     input sys_rst,
-    input gameover,
+    input won_the_game,
+    input hit_a_hole,
     input [9:0] ball_loc_X,
     input [9:0] ball_loc_Y,
     input [7:0] world_pixel,
@@ -76,7 +77,7 @@ wire video_on;
         .vert(pixel_row),
         .horz(pixel_column),
         .clk(new_clk),
-    	.gameover (gameover),
+    	.gameover (won_the_game),
     	.img_out (img_pixel)
     );
 

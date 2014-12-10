@@ -1,9 +1,10 @@
-
-// 
-/* THIS IS A WORKING DRAFT OF THE BALL INSTANTIATED IN HARDWARE. NO PICOBLAZE NEEDED
-///////////////////////////////////////////////////////////////////////////
-This stuff is just initialization
-*/
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Engineer:  	Colten Nye, Hoa Quach, Mark Ronay
+// Module Name: high_score
+// Additional Comments:
+// 		Keeps track of the time spent on completing the maze
+//////////////////////////////////////////////////////////////////////////////////
 
 module Ball
 #(
@@ -17,8 +18,8 @@ module Ball
 	parameter integer	SIMULATE_FREQUENCY_CNT	= 5,
 	parameter integer   INITIAL_X               = 'h20F,	// Starting Col 
 	parameter integer   INITIAL_Y               = 'hFE, 
-	parameter integer   WIN_X               = 'h13A,	// Starting Col 
-	parameter integer   WIN_Y               = 'h30, 
+	parameter integer   WIN_X              		= 'h13A,	// Starting Col 
+	parameter integer   WIN_Y              		= 'h30, 
 	parameter integer   NUM_PX_TO_CHECK         = 15,	// 
 	parameter integer   OFFSET                  = 8,		// From center pixel to edge that needs checked
 	parameter 			WALL					= 8'h26,
@@ -44,10 +45,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	input 		[9:0]	vid_row,		// video logic row address
 	input 		[9:0]	vid_col,		// video logic column address
 	output   	[7:0]	vid_pixel_out,	// pixel (location) value
-	output	reg			gameover,
-	
-	output [12:0] debug,
-	input update
+	output	reg			won_the_game,
+	output	reg			hit_a_hole
 );
 
 	// internal variables
@@ -63,31 +62,27 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	localparam YES		= 1'b1;
 	localparam NO		= 1'b0;
 	
-	
 	reg	locked_intended_move, movement_validated, move_is_valid;
 	reg [1:0] rom_read_delay;
 	reg [3:0] intended_movement_dir, check_px;
 	reg [9:0] x_move_check_addr, y_move_check_addr;
 
-	
 	wire [7:0] px_result;
 	
-	assign debug = {locked_intended_move, movement_validated, move_is_valid, rom_read_delay, intended_movement_dir, check_px};
-	
-	always @(posedge update) begin
+	always @(posedge clk) begin
 		if (reset_in) begin
 			y_out 					<= INITIAL_Y;
 			x_out 					<= INITIAL_X;
 			locked_intended_move	<= NO;
 			movement_validated	 	<= NO;
 			move_is_valid			<= YES;
-			gameover 				<= NO;
+			won_the_game 				<= NO;
 			intended_movement_dir	<= 4'b0000;
 			rom_read_delay			<= 2'b00;
 			check_px				<= 4'b0000;
 		end
 		else begin
-			if (!gameover) begin			
+			if (!won_the_game) begin			
 				if (locked_intended_move) begin // We already have an intended direction
 					if (movement_validated) begin
 						if (move_is_valid) begin
@@ -101,7 +96,8 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 						movement_validated	 <= NO;
 						move_is_valid 		 <= YES;
 						locked_intended_move <= NO;
-						gameover			 <= NO;
+						won_the_game		 <= NO;
+						hit_a_hole			 <= NO;
 					end
 					else begin
 						if (check_px < NUM_PX_TO_CHECK) begin // More pixels to scan
@@ -113,13 +109,14 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 								end
 								else if (px_result == HOLE) begin
 								 	move_is_valid 		<= NO;
-									movement_validated  <= YES;		// move is invalid, no need to keep scanning.
+									movement_validated  <= YES;
 									check_px		    <= 4'b0000;
+									hit_a_hole			<= YES;
 									y_out <= INITIAL_Y;
 									x_out <= INITIAL_X;
 								end
 								else if ( px_result == WIN) begin
-									gameover <= YES;							
+									won_the_game <= YES;							
 								end
 								else begin 				// reset read delay
 									check_px		<= check_px + 1'b1;		// increment the check pixel
