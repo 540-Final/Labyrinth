@@ -24,7 +24,7 @@ module draw_success(
     parameter BLANK = 'd57601; // the depth of the rom should be the size of the icon + 1, with remaining spot initialized to 0.
                              // This value should refer to the last address in the rom.
 
-    reg [16:0] addr;  // Address into the icon rom
+    reg [15:0] addr;  // Address into the icon rom
 
 	// If the scan line is over where the splash should be painted, compute the linear address into the rom for that coordinate
     always @ (*) begin
