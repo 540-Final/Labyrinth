@@ -1,57 +1,54 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Engineer:  	Colten Nye, Hoa Quach, Mark Ronay
-// Module Name: high_score
+// Module Name: Ball
 // Additional Comments:
-// 		Keeps track of the time spent on completing the maze
+// 		Keeps track of a virtual ball. Recieves direction signals from the ticker,
+// 		calculates if that move can be made, and what impact that move has on the game
+// 		(hit a hole, made it to the endzone). Each move is made one pixel at a time,
+// 		in one of the four cardinal basic directions. In order to determine if a move can
+// 		be made, the module must check every pixel along the face of the direction to move in.
+// 		If none of the pixels are a wall, the move is valid. If any of the pixels results in
+// 		a hole or the endzone, appropriate measures are taken. This module also holds the ROM
+// 		that contains the maze information.		
 //////////////////////////////////////////////////////////////////////////////////
 
 module Ball
 #(
 	// parameters
-	parameter integer	CLK_FREQUENCY_HZ		= 100000000, 
-	parameter integer	UPDATE_FREQUENCY_HZ		= 30,
 	parameter integer	RESET_POLARITY_LOW		= 0,
-	parameter integer 	CNTR_WIDTH 				= 32,
-	
-	parameter integer	SIMULATE				= 0,
-	parameter integer	SIMULATE_FREQUENCY_CNT	= 5,
-	parameter integer   INITIAL_X               = 'h20F,	// Starting Col 
-	parameter integer   INITIAL_Y               = 'hFE, 
-	parameter integer   WIN_X              		= 'h13A,	// Starting Col 
-	parameter integer   WIN_Y              		= 'h30, 
-	parameter integer   NUM_PX_TO_CHECK         = 15,	// 
+	parameter integer   INITIAL_X               = 'h20F,	// Address to set ball to upon reset 
+	parameter integer   INITIAL_Y               = 'hFE, 	// Address to set ball to upon reset 
+	parameter integer   WIN_X              		= 'h13A,	// Address to set ball to upon win 
+	parameter integer   WIN_Y              		= 'h30, 	// Address to set ball to upon win
+	parameter integer   NUM_PX_TO_CHECK         = 15,		// Width of the edge of the 'ball'
 	parameter integer   OFFSET                  = 8,		// From center pixel to edge that needs checked
-	parameter 			WALL					= 8'h26,
-	parameter 			HOLE					= 8'h49,
-	parameter 			WIN						= 8'hF9,
-	parameter           READ_DELAY              = 3
+	parameter 			WALL					= 8'h26,	// What a wall looks like
+	parameter 			HOLE					= 8'h49,	// What a hole looks like
+	parameter 			WIN						= 8'hF9,	// What the win circle looks like
+	parameter           READ_DELAY              = 3			// Cycles to get a reading for the ROM
 )
 (
-/*The map value input is something Im a bit unsure about, Im guessing its all a big ROM, so we can just check an address at the rom when we get
-an x/y location from the increment/decrement command and then update the x/y out registers if the move is legal by the value in the rom, but 
-I need to figure out how to do that here in a way that makes sense. For now its all commented out.
-*/
-	//input				map_value,	
     input 				clk,
 	input				reset,
-	//These are move_pulses from the accelerometer, I dont know what actual format they will come in. 					
+	// These are move_pulses from the accelerometer ticker. 					
 	input		[3:0]	movement,
 	
-	//These are the actual output coordinates of the ball, if it was able to move to a particular spot
+	// These are the coordinates of the ball.
     output reg	[9:0]	y_out,
 	output reg	[9:0]	x_out,
 	
+	// Allow the video feed to access the map ROM
 	input 		[9:0]	vid_row,		// video logic row address
 	input 		[9:0]	vid_col,		// video logic column address
 	output   	[7:0]	vid_pixel_out,	// pixel (location) value
+	
+	// Signals to the score and splash modules
 	output	reg			won_the_game,
 	output	reg			hit_a_hole
 );
 
-	// internal variables
-	//These are internal registers for storing the next x/y position for later check against legality of the move on the map
-	// reset - asserted high
+	// Internal variables
 	wire reset_in = RESET_POLARITY_LOW ? ~reset : reset;
 
 	localparam UP 		= 4'b0001;
@@ -62,11 +59,11 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 	localparam YES		= 1'b1;
 	localparam NO		= 1'b0;
 	
+	// Variables for the pixel checking algorithm
 	reg	locked_intended_move, movement_validated, move_is_valid;
 	reg [1:0] rom_read_delay;
 	reg [3:0] intended_movement_dir, check_px;
 	reg [9:0] x_move_check_addr, y_move_check_addr;
-
 	wire [7:0] px_result;
 	
 	always @(posedge clk) begin
@@ -83,9 +80,13 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 		end
 		else begin
 			if (!won_the_game) begin			
-				if (locked_intended_move) begin // We already have an intended direction
+				if (locked_intended_move) begin
 					if (movement_validated) begin
+						// Reach this point when we are still playing the game,
+						// we have locked in a direction we want to move, and we have fully
+						// validated that move.
 						if (move_is_valid) begin
+							// Only update the position if the move was valid
 							case (intended_movement_dir)
 								UP 	    : y_out <= y_out - 1'b1;	
 								DOWN 	: y_out <= y_out + 1'b1;
@@ -93,6 +94,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 								RIGHT	: x_out <= x_out + 1'b1;
 							endcase
 						end
+						// Reset variables for the next movement check
 						movement_validated	 <= NO;
 						move_is_valid 		 <= YES;
 						locked_intended_move <= NO;
@@ -100,8 +102,12 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 						hit_a_hole			 <= NO;
 					end
 					else begin
-						if (check_px < NUM_PX_TO_CHECK) begin // More pixels to scan
-							if (rom_read_delay == READ_DELAY) begin // Ready to read the world pixel
+						// Reach this point when a movement is locked and still being verified
+						if (check_px < NUM_PX_TO_CHECK) begin 
+							// Reach this point when there are more pixels to scan
+							if (rom_read_delay == READ_DELAY) begin
+								// Reach this point when ROM result is ready to read
+								// Take actions from here based on the result
 								if(px_result == WALL) begin
 									move_is_valid 		<= NO;
 									movement_validated  <= YES;		// move is invalid, no need to keep scanning.
@@ -118,13 +124,16 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 								else if ( px_result == WIN) begin
 									won_the_game <= YES;							
 								end
-								else begin 				// reset read delay
+								else begin
+									// Reach this point when the pixel is valid to move to. Continue to check pixels
 									check_px		<= check_px + 1'b1;		// increment the check pixel
 								end
-               	             rom_read_delay    <= 2'b00;
+									// in any case, reset the rom delay for the next pixel
+								rom_read_delay    <= 2'b00;
 							end
 							else if (rom_read_delay	== 2'b00) begin
-								// Set the address of the next pixel to check
+								// Starting on a new pixel, so set the address of the next pixel
+								// to check based on which direction we want to move
 								case (intended_movement_dir)
 									RIGHT:
 										begin
@@ -149,16 +158,19 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 								endcase
 								rom_read_delay = rom_read_delay + 1'b1; // start waiting for rom response
 							end
-							else rom_read_delay = rom_read_delay + 1'b1; // Waiting for rom response
+							else rom_read_delay = rom_read_delay + 1'b1; // still waiting for rom response
 						end
-						else begin // Scanned all pixels
+						else begin 
+							// Reach this point when all pixels have been scanned
 							movement_validated <= YES;
-							check_px		   <= 4'b0000;
+							check_px		   <= 4'b0000; // reset the number of pixel checked
 						end
 					end
 				end
 				else begin
+					// Reach this point when we havent locked in a direction yet
 					if(|movement) begin
+						// If any movement pulse is detected, lock in that direction until we validate it.
 						intended_movement_dir <= movement;
 						locked_intended_move <= YES;
 					end	
@@ -166,6 +178,7 @@ I need to figure out how to do that here in a way that makes sense. For now its 
 				end
 			end
 			else begin
+				// Reach this point when we have won the game. At this point all that can be done is reset the game.
 				x_out <= WIN_X;
 				y_out <= WIN_Y;
 			end
