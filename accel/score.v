@@ -16,13 +16,14 @@ module high_score(
     );
 	
 	localparam CLK_FREQ = 100000000;
-	localparam TICK_RATE = 10;
+	localparam TICK_RATE = 20;
 	localparam TICK_HIT = (CLK_FREQ/TICK_RATE) - 1;
-	
+
     reg [26:0] clk_cnt;
     reg count_reset;
     reg tick;
     reg [15:0] timer;
+    reg timeout;
     
     // Generate a 10hz tick
     always @(posedge clk) begin
@@ -41,16 +42,20 @@ module high_score(
     always @ (posedge clk) begin
     	if (reset | hit_a_hole) begin
     		timer <= 0;
+    		timeout <= 0;
     	end 
 		else begin
-    		if (tick & ~won_the_game) begin
-    			timer <= timer + 1'b1;
-    			score <= timer;
-    		end	else begin
-    			timer <= timer;
-    			score <= 65000 - timer;
+    		if (tick & ~won_the_game & ~timeout) begin
+    			timer <= timer + 2;
+    		end	else if (won_the_game | timeout)begin
+    			timer <= timer;	
+    		end    		
+    		if (timer == 65000) begin
+    			timeout <= 1;
     		end
+    		else timeout <= timeout;
+    		score <= 65000 - timer;
     	end 
     end
-    
+
 endmodule
