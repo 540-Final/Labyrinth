@@ -49,8 +49,8 @@ module Nexys4fpga (
 
 		// Internal nets	
 	// System
-	wire				sysclk;					// 100MHz clock from on-board oscillator	
-	wire				sysreset;				// system reset signal - asserted high to force reset
+	wire				sysclk = clk;					// 100MHz clock from on-board oscillator	
+	wire				sysreset = db_btns[0];				// system reset signal - asserted high to force reset
 	
 	// I/O
 	wire 	[15:0]		db_sw;					// debounced switches
@@ -78,17 +78,21 @@ module Nexys4fpga (
 	wire [8:0]	accelX;
 	wire [8:0]	accelY;
 	wire [11:0]	accelMag;
+	wire [3:0] x_threshs, y_threshs;
 	
-		
-/******************************************************************/
-/* THIS SECTION SHOULDN'T HAVE TO CHANGE FOR LAB 1                */
-/******************************************************************/			
-	assign	sysclk = clk;
-	assign 	sysreset = db_btns[0]; // btnCpuReset is asserted low
 	
+		// Internal Hookups
+	// LEDs
+	assign led[3:0]   = (x_threshs & {4{~accelX[8]}});
+	assign led[7:4]   = ({y_threshs[0], y_threshs[1], y_threshs[2], y_threshs[3]} & {4{accelY[8]}});
+	assign led[11:8]  = (y_threshs & {4{~accelY[8]}});
+	assign led[15:12] = ({x_threshs[0], x_threshs[1], x_threshs[2], x_threshs[3]} & {4{accelX[8]}});
+	
+	// 7-seg
 	assign dp = segs_int[7];
 	assign seg = segs_int[6:0];
 	
+	// Debug
 	assign	JA = {sysclk, sysreset, 6'b000000};
 
 
@@ -168,57 +172,9 @@ module Nexys4fpga (
 		.horiz_sync(Hsync)
 	);
 	
-	reg [31:0] clk_cnt_1, clk_cnt_2;
-	reg tick_1, tick_2;
-	wire [31:0] top_cnt_1 = ((100000000 / 90) - 1);
-	wire [31:0] top_cnt_2 = ((100000000 / 60) - 1);
-	
-		always @(posedge sysclk) begin
-		if (~sysreset) begin
-			clk_cnt_1 <= {32{1'b0}};
-		end
-		else if (clk_cnt_1 == top_cnt_1) begin
-		    tick_1 <= 1'b1;
-		    clk_cnt_1 <= {32{1'b0}};
-		end
-		else begin
-		    clk_cnt_1 <= clk_cnt_1 + 1'b1;
-		    tick_1 <= 1'b0;
-		end
-		
-        if (~sysreset) begin
-            clk_cnt_2 <= {32{1'b0}};
-        end
-        else if (clk_cnt_2 == top_cnt_2) begin
-            tick_2 <= 1'b1;
-            clk_cnt_2 <= {32{1'b0}};
-		end
-		else begin
-            clk_cnt_2 <= clk_cnt_2 + 1'b1;
-            tick_2 <= 1'b0;
-		end
-	end
-	
-	wire [3:0] moarvement;
-	wire [3:0] accelmove;
-	assign moarvement[3] = (db_btns[2] & tick_1) | accelmove[3];
-	assign moarvement[2] = (db_btns[4] & tick_1) | accelmove[2];
-	assign moarvement[1] = (db_btns[1] & tick_1) | accelmove[1];
-	assign moarvement[0] = (db_btns[3] & tick_1) | accelmove[0];
-
-
-	//assign led[3:0] = moarvement[3:0];
-	//assign led[7:4] = {db_btns[1],db_btns[2],db_btns[3],db_btns[4]};
-	//sassign led[11:7] = {accelmove[1],accelmove[2],accelmove[3],accelmove[4]};
-	wire [3:0] x_threshs, y_threshs;
-	assign led[3:0]   = (x_threshs & ~accelX[8]);
-	assign led[7:4] = ({y_threshs[0] & accelY[8], y_threshs[1] & accelY[8], y_threshs[2] & accelY[8], y_threshs[3] & accelY[8]});
-	assign led[11:8] = (y_threshs & ~accelY[8]);
-	assign led[15:12] = ({x_threshs[0], x_threshs[1], x_threshs[2], x_threshs[3]} & accelX[8]);
-	
 	Ball aball 
 	(  
-        .movement(moarvement),//db_btns[2], db_btns[4], db_btns[1], db_btns[3]}),
+        .movement(accelmove),
         
 		.clk 			(sysclk),
 		.reset			(~sysreset),
@@ -253,19 +209,5 @@ module Nexys4fpga (
 		.gameover	(gameover), 
 		.high_score		(score)
 	);
-	
-	// Ball_accel_ctl bac
-	// (
-		// .clk(sysclk),
-		// .reset(sysreset),
-					
-		// .x_increment(accelX[8]),
-		// .x_decrement(~accelX[8]),
-		// .y_increment(accelY[8]),
-		// .y_decrement(~accelY[8]),
-		// .x_threshold(accelX[7:0]),
-		// .y_threshold(accelY[7:0]),
-		// .move_pulses(accelmove)
-	// );
 
 endmodule
