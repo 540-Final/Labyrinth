@@ -1,0 +1,37 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
+| Date         : Sun Dec 07 20:33:15 2014
+| Host         : Black-PC running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'maze_memory'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of maze_memory (xilinx.com:ip:blk_mem_gen:8.2) from (Rev. 1) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.2 (win64) Build 932637 Wed Jun 11 13:30:22 MDT 2014
+| Date         : Sun Dec 07 20:10:59 2014
+| Host         : Black-PC running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+-----------------------------------------------------------------------------------
+
+Upgrade Log for IP 'maze_memory'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of maze_memory (xilinx.com:ip:blk_mem_gen:8.2) from (Rev. 3) to (Rev. 1)
+
