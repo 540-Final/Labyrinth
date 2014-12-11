@@ -1,0 +1,23 @@
+;******************************************************************
+;****                 BMP file in .COE Format                 *****
+;******************************************************************
+; This .COE file specifies initialization values for a
+; block memory of depth= 225, and width=8. In this case,
+; values are specified in hexadecimal format.
+memory_initialization_radix=16;
+memory_initialization_vector=
+00,00,00,00,00,00,5C,5C,5C,00,00,00,00,00,00,
+00,00,00,00,5C,A4,A3,A3,A3,A4,5C,00,00,00,00,
+00,00,5C,A3,A3,A4,A4,A4,A4,A4,A3,A3,5C,00,00,
+00,00,A3,A4,A4,F7,F7,F7,F7,F7,A4,A4,A4,00,00,
+00,5C,A3,A4,F7,08,08,F7,F7,F7,F7,A4,A3,5C,00,
+00,A4,A4,F7,07,08,08,F7,F7,F7,F7,F7,A4,A4,00,
+5C,A3,A4,F7,F7,08,08,F7,F7,F7,F7,F7,A4,A3,5C,
+5C,A3,A4,F7,F7,F7,F7,F7,F7,F7,F7,F7,A4,A3,5C,
+5C,A3,A4,F7,F7,F7,F7,F7,F7,F7,F7,F7,A4,A3,5C,
+00,A4,A4,F7,F7,F7,F7,F7,08,F7,F7,F7,A4,A4,00,
+00,5C,A3,A4,F7,F7,F7,F7,08,F7,F7,A4,A3,5C,00,
+00,00,A3,A4,A4,F7,F7,F7,F7,F7,A4,A4,A4,00,00,
+00,00,5C,A4,A3,A4,A4,A4,A4,A4,A3,A4,00,00,00,
+00,00,00,00,5C,A4,A3,A3,A3,A4,5C,00,00,00,00,
+00,00,00,00,00,00,5C,5C,5C,00,00,00,00,00,00;

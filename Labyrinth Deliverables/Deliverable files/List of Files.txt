@@ -1,0 +1,24 @@
+
+Verilog Files
+
+accel_threshold_ticker 
+ball_vid_buttons
+bin2bdc
+colorizer
+draw_success
+icon
+labyrinth_top_module
+map
+score
+vga_subsytem
+
+Sub Folders
+icon_rom_1  - rom IP
+image_stuff - image files
+maze_memory - rom IP
+success     - rom IP
+Non-orginal files - verilog and vhdl files from other projects used with attribution
+
+Text Documents
+
+List of files - this file
